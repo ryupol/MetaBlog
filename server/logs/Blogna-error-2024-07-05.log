@@ -1,0 +1,83 @@
+2024-07-05 00:06:17 ERROR: ER_001[400] | AppError: Image is required
+2024-07-05 00:06:17 ERROR: ER_001[400] | AppError: Image not found
+2024-07-05 00:06:17 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-05 00:06:17 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-05 00:06:17 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-05 00:06:17 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-05 00:06:17 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-05 00:06:17 ERROR: NF_001[404] | AppError: User not found
+2024-07-05 00:06:17 ERROR: Token not found
+2024-07-05 00:06:17 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-05 00:07:12 ERROR: ER_001[400] | AppError: Image is required
+2024-07-05 00:07:12 ERROR: ER_001[400] | AppError: Image not found
+2024-07-05 00:07:12 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-05 00:07:12 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-05 00:07:13 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-05 00:07:13 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-05 00:07:13 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-05 00:07:13 ERROR: NF_001[404] | AppError: User not found
+2024-07-05 00:07:13 ERROR: Token not found
+2024-07-05 00:07:13 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-05 00:07:30 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-05 00:11:05 ERROR: ER_001[400] | AppError: Image is required
+2024-07-05 00:11:05 ERROR: ER_001[400] | AppError: Image not found
+2024-07-05 00:11:05 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-05 00:11:05 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-05 00:11:05 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-05 00:11:06 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-05 00:11:06 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-05 00:11:06 ERROR: NF_001[404] | AppError: User not found
+2024-07-05 00:11:06 ERROR: Token not found
+2024-07-05 00:11:06 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-05 00:11:26 ERROR: ER_001[400] | AppError: Image is required
+2024-07-05 00:11:26 ERROR: ER_001[400] | AppError: Image not found
+2024-07-05 00:11:26 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-05 00:11:26 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-05 00:11:27 ERROR: ❌ Error connecting to PostgreSQL read ECONNRESET
+2024-07-05 00:11:27 ERROR: ❌ Error connecting to PostgreSQL read ECONNRESET
+2024-07-05 00:11:27 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-05 00:11:27 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-05 00:11:27 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-05 00:11:27 ERROR: NF_001[404] | AppError: User not found
+2024-07-05 00:11:27 ERROR: Token not found
+2024-07-05 00:11:27 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-05 00:11:27 ERROR: ❌ Error connecting to PostgreSQL read ECONNRESET
+2024-07-05 00:11:27 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 00:12:36 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 00:12:36 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 00:12:36 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 00:12:36 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-05 00:12:36 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-05 00:12:36 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-05 00:12:36 ERROR: NF_001[404] | AppError: User not found
+2024-07-05 00:12:36 ERROR: Token not found
+2024-07-05 00:12:36 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-05 00:12:36 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 00:12:36 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 00:12:36 ERROR: ER_001[400] | AppError: Image is required
+2024-07-05 00:12:36 ERROR: ER_001[400] | AppError: Image not found
+2024-07-05 00:12:36 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-05 00:12:36 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-05 00:12:36 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 00:12:37 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 00:12:51 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 00:12:51 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 00:12:51 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 00:12:51 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-05 00:12:51 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-05 00:12:51 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-05 00:12:51 ERROR: NF_001[404] | AppError: User not found
+2024-07-05 00:12:51 ERROR: Token not found
+2024-07-05 00:12:51 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-05 00:12:51 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 00:12:51 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 00:12:51 ERROR: ER_001[400] | AppError: Image is required
+2024-07-05 00:12:51 ERROR: ER_001[400] | AppError: Image not found
+2024-07-05 00:12:51 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-05 00:12:51 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-05 00:12:51 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 00:12:52 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 00:12:54 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 00:14:56 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 00:16:31 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 00:16:31 ERROR: ❌ Error connecting to PostgreSQL

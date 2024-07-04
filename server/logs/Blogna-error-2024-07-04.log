@@ -1,0 +1,583 @@
+2024-07-04 20:52:27 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-04 20:52:27 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-04 20:52:27 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-04 20:52:27 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-04 20:52:27 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-04 20:52:27 ERROR: NF_001[404] | AppError: User not found
+2024-07-04 20:52:27 ERROR: Token not found
+2024-07-04 20:52:27 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-04 20:52:27 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-04 20:52:27 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-04 20:52:28 ERROR: fail to creating blog, Image not found
+2024-07-04 20:52:28 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 20:52:28 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 20:52:28 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-04 20:52:28 ERROR: All field are required
+2024-07-04 20:52:28 ERROR: All field are required
+2024-07-04 20:52:28 ERROR: password does not matched
+2024-07-04 20:52:28 ERROR: password does not matched
+2024-07-04 20:52:28 ERROR: Email: test@gmail.com not found, Can't login
+2024-07-04 20:52:28 ERROR: Email: test@gmail.com not found, Can't login
+2024-07-04 20:52:28 ERROR: Can't login email: test@gmail.com, wrong password
+2024-07-04 20:52:28 ERROR: Can't login email: test@gmail.com, wrong password
+2024-07-04 20:52:28 ERROR: Can't find token
+2024-07-04 20:52:28 ERROR: Can't find token
+2024-07-04 20:52:28 ERROR: Can't get user, JWT fail
+2024-07-04 20:52:28 ERROR: Can't get user, JWT fail
+2024-07-04 20:52:29 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-04 20:52:28 ERROR: BlogId: 1 not found, cannot update
+2024-07-04 20:52:29 ERROR: BlogId: 1 unauthorized, cannot delete
+2024-07-04 20:52:29 ERROR: BlogId: 1 not found, cannot delete
+2024-07-04 20:52:29 ERROR: Blog not found
+2024-07-04 20:52:29 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-04 20:52:29 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-04 20:52:29 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-04 20:52:29 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-04 20:52:29 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-04 20:52:29 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-04 20:52:29 ERROR: NF_001[404] | AppError: User not found
+2024-07-04 20:52:29 ERROR: Token not found
+2024-07-04 20:52:29 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-04 20:52:30 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-04 20:52:30 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-04 20:52:30 ERROR: fail to creating blog, Image not found
+2024-07-04 20:52:30 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 20:52:30 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 20:52:30 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-04 20:52:30 ERROR: All field are required
+2024-07-04 20:52:30 ERROR: All field are required
+2024-07-04 20:52:30 ERROR: password does not matched
+2024-07-04 20:52:30 ERROR: password does not matched
+2024-07-04 20:52:30 ERROR: Email: test@gmail.com not found, Can't login
+2024-07-04 20:52:30 ERROR: Email: test@gmail.com not found, Can't login
+2024-07-04 20:52:30 ERROR: Can't login email: test@gmail.com, wrong password
+2024-07-04 20:52:30 ERROR: Can't login email: test@gmail.com, wrong password
+2024-07-04 20:52:30 ERROR: Can't find token
+2024-07-04 20:52:30 ERROR: Can't find token
+2024-07-04 20:52:30 ERROR: Can't get user, JWT fail
+2024-07-04 20:52:30 ERROR: Can't get user, JWT fail
+2024-07-04 20:52:31 ERROR: BlogId: 1 not found, cannot update
+2024-07-04 20:52:31 ERROR: BlogId: 1 unauthorized, cannot delete
+2024-07-04 20:52:31 ERROR: BlogId: 1 not found, cannot delete
+2024-07-04 20:52:31 ERROR: Blog not found
+2024-07-04 20:52:31 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-04 20:52:31 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-04 20:54:05 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-04 20:54:05 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-04 20:54:05 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-04 20:54:05 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-04 20:54:05 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-04 20:54:05 ERROR: NF_001[404] | AppError: User not found
+2024-07-04 20:54:06 ERROR: Token not found
+2024-07-04 20:54:06 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-04 20:54:06 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-04 20:54:06 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-04 20:54:06 ERROR: fail to creating blog, Image not found
+2024-07-04 20:54:06 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 20:54:06 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 20:54:06 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-04 20:54:06 ERROR: All field are required
+2024-07-04 20:54:06 ERROR: All field are required
+2024-07-04 20:54:06 ERROR: password does not matched
+2024-07-04 20:54:06 ERROR: password does not matched
+2024-07-04 20:54:06 ERROR: Email: test@gmail.com not found, Can't login
+2024-07-04 20:54:06 ERROR: Email: test@gmail.com not found, Can't login
+2024-07-04 20:54:06 ERROR: Can't login email: test@gmail.com, wrong password
+2024-07-04 20:54:06 ERROR: Can't login email: test@gmail.com, wrong password
+2024-07-04 20:54:06 ERROR: Can't find token
+2024-07-04 20:54:06 ERROR: Can't find token
+2024-07-04 20:54:06 ERROR: Can't get user, JWT fail
+2024-07-04 20:54:06 ERROR: Can't get user, JWT fail
+2024-07-04 20:54:07 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-04 20:54:07 ERROR: BlogId: 1 unauthorized, cannot update
+2024-07-04 20:54:07 ERROR: BlogId: 1 not found, cannot update
+2024-07-04 20:54:07 ERROR: BlogId: 1 unauthorized, cannot delete
+2024-07-04 20:54:07 ERROR: BlogId: 1 not found, cannot delete
+2024-07-04 20:54:07 ERROR: Blog not found
+2024-07-04 20:54:07 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-04 20:54:33 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-04 20:54:33 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-04 20:54:34 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-04 20:54:34 ERROR: NF_001[404] | AppError: User not found
+2024-07-04 20:54:34 ERROR: Token not found
+2024-07-04 20:54:34 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-04 20:54:34 ERROR: fail to creating blog, Image not found
+2024-07-04 20:54:34 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 20:54:34 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 20:54:34 ERROR: All field are required
+2024-07-04 20:54:34 ERROR: All field are required
+2024-07-04 20:54:34 ERROR: password does not matched
+2024-07-04 20:54:34 ERROR: password does not matched
+2024-07-04 20:54:34 ERROR: Email: test@gmail.com not found, Can't login
+2024-07-04 20:54:34 ERROR: Email: test@gmail.com not found, Can't login
+2024-07-04 20:54:34 ERROR: Can't login email: test@gmail.com, wrong password
+2024-07-04 20:54:35 ERROR: Can't login email: test@gmail.com, wrong password
+2024-07-04 20:54:35 ERROR: Can't find token
+2024-07-04 20:54:35 ERROR: Can't find token
+2024-07-04 20:54:35 ERROR: Can't get user, JWT fail
+2024-07-04 20:54:35 ERROR: Can't get user, JWT fail
+2024-07-04 20:54:35 ERROR: BlogId: 1 unauthorized, cannot update
+2024-07-04 20:54:35 ERROR: BlogId: 1 not found, cannot update
+2024-07-04 20:54:35 ERROR: BlogId: 1 unauthorized, cannot delete
+2024-07-04 20:54:35 ERROR: BlogId: 1 not found, cannot delete
+2024-07-04 20:54:35 ERROR: Blog not found
+2024-07-04 20:58:33 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-04 20:58:33 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-04 20:58:34 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-04 20:58:34 ERROR: NF_001[404] | AppError: User not found
+2024-07-04 20:58:34 ERROR: Token not found
+2024-07-04 20:58:34 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-04 20:58:34 ERROR: fail to creating blog, Image not found
+2024-07-04 20:58:34 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 20:58:34 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 20:58:34 ERROR: All field are required
+2024-07-04 20:58:34 ERROR: All field are required
+2024-07-04 20:58:34 ERROR: password does not matched
+2024-07-04 20:58:34 ERROR: password does not matched
+2024-07-04 20:58:34 ERROR: Email: test@gmail.com not found, Can't login
+2024-07-04 20:58:34 ERROR: Email: test@gmail.com not found, Can't login
+2024-07-04 20:58:34 ERROR: Can't login email: test@gmail.com, wrong password
+2024-07-04 20:58:35 ERROR: Can't login email: test@gmail.com, wrong password
+2024-07-04 20:58:35 ERROR: Can't find token
+2024-07-04 20:58:35 ERROR: Can't find token
+2024-07-04 20:58:35 ERROR: Can't get user, JWT fail
+2024-07-04 20:58:35 ERROR: Can't get user, JWT fail
+2024-07-04 20:58:35 ERROR: BlogId: 1 unauthorized, cannot update
+2024-07-04 20:58:35 ERROR: BlogId: 1 not found, cannot update
+2024-07-04 20:58:35 ERROR: BlogId: 1 unauthorized, cannot delete
+2024-07-04 20:58:35 ERROR: BlogId: 1 not found, cannot delete
+2024-07-04 20:58:35 ERROR: Blog not found
+2024-07-04 21:22:14 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-04 21:22:14 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-04 21:22:14 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-04 21:22:14 ERROR: NF_001[404] | AppError: User not found
+2024-07-04 21:22:14 ERROR: Token not found
+2024-07-04 21:22:14 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-04 21:22:15 ERROR: fail to creating blog, Image not found
+2024-07-04 21:22:15 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 21:22:15 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 21:22:15 ERROR: All field are required
+2024-07-04 21:22:15 ERROR: All field are required
+2024-07-04 21:22:15 ERROR: password does not matched
+2024-07-04 21:22:15 ERROR: password does not matched
+2024-07-04 21:22:15 ERROR: Email: test@gmail.com not found, Can't login
+2024-07-04 21:22:15 ERROR: Email: test@gmail.com not found, Can't login
+2024-07-04 21:22:15 ERROR: Can't login email: test@gmail.com, wrong password
+2024-07-04 21:22:15 ERROR: Can't login email: test@gmail.com, wrong password
+2024-07-04 21:22:15 ERROR: Can't find token
+2024-07-04 21:22:15 ERROR: Can't find token
+2024-07-04 21:22:15 ERROR: Can't get user, JWT fail
+2024-07-04 21:22:15 ERROR: Can't get user, JWT fail
+2024-07-04 21:22:15 ERROR: BlogId: 1 unauthorized, cannot update
+2024-07-04 21:22:15 ERROR: BlogId: 1 not found, cannot update
+2024-07-04 21:22:15 ERROR: BlogId: 1 unauthorized, cannot delete
+2024-07-04 21:22:15 ERROR: BlogId: 1 not found, cannot delete
+2024-07-04 21:22:15 ERROR: Blog not found
+2024-07-04 21:22:29 ERROR: fail to creating blog, Image not found
+2024-07-04 21:22:29 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 21:22:29 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 21:22:38 ERROR: fail to creating blog, Image not found
+2024-07-04 21:22:38 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 21:22:38 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 21:23:34 ERROR: fail to creating blog, Image not found
+2024-07-04 21:23:34 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 21:23:34 ERROR: BlogId: 1 Image not found
+2024-07-04 21:23:34 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 21:23:34 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 21:23:44 ERROR: fail to creating blog, Image not found
+2024-07-04 21:23:44 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 21:23:44 ERROR: BlogId: 1 Image not found
+2024-07-04 21:23:44 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 21:23:44 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 21:24:08 ERROR: fail to creating blog, Image not found
+2024-07-04 21:24:08 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 21:24:08 ERROR: BlogId: 1 Image not found
+2024-07-04 21:24:08 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 21:24:08 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 21:24:12 ERROR: fail to creating blog, Image not found
+2024-07-04 21:24:12 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 21:24:12 ERROR: BlogId: 1 Image not found
+2024-07-04 21:24:12 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 21:24:12 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 21:24:18 ERROR: fail to creating blog, Image not found
+2024-07-04 21:24:18 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 21:24:18 ERROR: BlogId: 1 Image not found
+2024-07-04 21:24:18 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 21:24:18 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 21:26:41 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-04 21:26:41 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-04 21:26:41 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-04 21:26:41 ERROR: NF_001[404] | AppError: User not found
+2024-07-04 21:26:41 ERROR: Token not found
+2024-07-04 21:26:42 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-04 21:26:42 ERROR: fail to creating blog, Image not found
+2024-07-04 21:26:42 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 21:26:42 ERROR: BlogId: 1 Image not found
+2024-07-04 21:26:42 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 21:26:42 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 21:26:42 ERROR: All field are required
+2024-07-04 21:26:42 ERROR: All field are required
+2024-07-04 21:26:42 ERROR: password does not matched
+2024-07-04 21:26:42 ERROR: password does not matched
+2024-07-04 21:26:42 ERROR: Email: test@gmail.com not found, Can't login
+2024-07-04 21:26:42 ERROR: Email: test@gmail.com not found, Can't login
+2024-07-04 21:26:42 ERROR: Can't login email: test@gmail.com, wrong password
+2024-07-04 21:26:42 ERROR: Can't login email: test@gmail.com, wrong password
+2024-07-04 21:26:42 ERROR: Can't find token
+2024-07-04 21:26:42 ERROR: Can't find token
+2024-07-04 21:26:42 ERROR: Can't get user, JWT fail
+2024-07-04 21:26:42 ERROR: Can't get user, JWT fail
+2024-07-04 21:26:43 ERROR: BlogId: 1 unauthorized, cannot update
+2024-07-04 21:26:43 ERROR: BlogId: 1 not found, cannot update
+2024-07-04 21:26:43 ERROR: BlogId: 1 unauthorized, cannot delete
+2024-07-04 21:26:43 ERROR: BlogId: 1 not found, cannot delete
+2024-07-04 21:26:43 ERROR: Blog not found
+2024-07-04 21:31:10 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-04 21:31:10 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-04 21:31:10 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-04 21:31:10 ERROR: NF_001[404] | AppError: User not found
+2024-07-04 21:31:11 ERROR: Token not found
+2024-07-04 21:31:11 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-04 21:31:11 ERROR: All field are required
+2024-07-04 21:31:11 ERROR: All field are required
+2024-07-04 21:31:11 ERROR: password does not matched
+2024-07-04 21:31:11 ERROR: password does not matched
+2024-07-04 21:31:11 ERROR: Email: test@gmail.com not found, Can't login
+2024-07-04 21:31:11 ERROR: Email: test@gmail.com not found, Can't login
+2024-07-04 21:31:11 ERROR: Can't login email: test@gmail.com, wrong password
+2024-07-04 21:31:11 ERROR: Can't login email: test@gmail.com, wrong password
+2024-07-04 21:31:11 ERROR: Can't find token
+2024-07-04 21:31:11 ERROR: Can't find token
+2024-07-04 21:31:11 ERROR: Can't get user, JWT fail
+2024-07-04 21:31:11 ERROR: Can't get user, JWT fail
+2024-07-04 21:31:11 ERROR: BlogId: 1 unauthorized, cannot update
+2024-07-04 21:31:11 ERROR: BlogId: 1 not found, cannot update
+2024-07-04 21:31:11 ERROR: BlogId: 1 unauthorized, cannot delete
+2024-07-04 21:31:11 ERROR: BlogId: 1 not found, cannot delete
+2024-07-04 21:31:11 ERROR: Blog not found
+2024-07-04 21:31:53 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-04 21:31:53 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-04 21:31:53 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-04 21:31:53 ERROR: NF_001[404] | AppError: User not found
+2024-07-04 21:31:53 ERROR: Token not found
+2024-07-04 21:31:53 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-04 21:31:53 ERROR: All field are required
+2024-07-04 21:31:53 ERROR: All field are required
+2024-07-04 21:31:53 ERROR: password does not matched
+2024-07-04 21:31:53 ERROR: password does not matched
+2024-07-04 21:31:54 ERROR: Email: test@gmail.com not found, Can't login
+2024-07-04 21:31:54 ERROR: Email: test@gmail.com not found, Can't login
+2024-07-04 21:31:54 ERROR: Can't login email: test@gmail.com, wrong password
+2024-07-04 21:31:54 ERROR: Can't login email: test@gmail.com, wrong password
+2024-07-04 21:31:54 ERROR: Can't find token
+2024-07-04 21:31:54 ERROR: Can't find token
+2024-07-04 21:31:54 ERROR: Can't get user, JWT fail
+2024-07-04 21:31:54 ERROR: Can't get user, JWT fail
+2024-07-04 21:31:54 ERROR: BlogId: 1 unauthorized, cannot update
+2024-07-04 21:31:54 ERROR: BlogId: 1 not found, cannot update
+2024-07-04 21:31:54 ERROR: BlogId: 1 unauthorized, cannot delete
+2024-07-04 21:31:54 ERROR: BlogId: 1 not found, cannot delete
+2024-07-04 21:31:54 ERROR: Blog not found
+2024-07-04 21:31:54 ERROR: fail to creating blog, Image not found
+2024-07-04 21:31:54 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 21:31:54 ERROR: BlogId: 1 Image not found
+2024-07-04 21:31:54 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 21:31:54 ERROR: BlogId: 1 Image not found
+2024-07-04 21:31:54 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 21:31:55 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 21:32:51 ERROR: fail to creating blog, Image not found
+2024-07-04 21:32:51 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 21:32:51 ERROR: BlogId: 1 Image not found
+2024-07-04 21:32:51 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 21:32:51 ERROR: BlogId: 1 Image not found
+2024-07-04 21:32:51 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 21:32:51 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 21:32:52 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-04 21:32:52 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-04 21:32:52 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-04 21:32:52 ERROR: NF_001[404] | AppError: User not found
+2024-07-04 21:32:52 ERROR: Token not found
+2024-07-04 21:32:52 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-04 21:32:52 ERROR: All field are required
+2024-07-04 21:32:52 ERROR: All field are required
+2024-07-04 21:32:52 ERROR: password does not matched
+2024-07-04 21:32:52 ERROR: password does not matched
+2024-07-04 21:32:52 ERROR: Email: test@gmail.com not found, Can't login
+2024-07-04 21:32:52 ERROR: Email: test@gmail.com not found, Can't login
+2024-07-04 21:32:52 ERROR: Can't login email: test@gmail.com, wrong password
+2024-07-04 21:32:52 ERROR: Can't login email: test@gmail.com, wrong password
+2024-07-04 21:32:52 ERROR: Can't find token
+2024-07-04 21:32:52 ERROR: Can't find token
+2024-07-04 21:32:52 ERROR: Can't get user, JWT fail
+2024-07-04 21:32:52 ERROR: Can't get user, JWT fail
+2024-07-04 21:32:53 ERROR: BlogId: 1 unauthorized, cannot update
+2024-07-04 21:32:53 ERROR: BlogId: 1 not found, cannot update
+2024-07-04 21:32:53 ERROR: BlogId: 1 unauthorized, cannot delete
+2024-07-04 21:32:53 ERROR: BlogId: 1 not found, cannot delete
+2024-07-04 21:32:53 ERROR: Blog not found
+2024-07-04 21:42:50 ERROR: fail to creating blog, Image not found
+2024-07-04 21:42:50 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 21:42:50 ERROR: BlogId: 1 Image not found
+2024-07-04 21:42:50 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 21:42:50 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 21:42:50 ERROR: All field are required
+2024-07-04 21:42:50 ERROR: All field are required
+2024-07-04 21:42:50 ERROR: password does not matched
+2024-07-04 21:42:50 ERROR: password does not matched
+2024-07-04 21:42:50 ERROR: Email: test@gmail.com not found, Can't login
+2024-07-04 21:42:50 ERROR: Email: test@gmail.com not found, Can't login
+2024-07-04 21:42:50 ERROR: Can't login email: test@gmail.com, wrong password
+2024-07-04 21:42:50 ERROR: Can't login email: test@gmail.com, wrong password
+2024-07-04 21:42:50 ERROR: Can't find token
+2024-07-04 21:42:50 ERROR: Can't find token
+2024-07-04 21:42:50 ERROR: Can't get user, JWT fail
+2024-07-04 21:42:50 ERROR: Can't get user, JWT fail
+2024-07-04 21:42:51 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-04 21:42:51 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-04 21:42:51 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-04 21:42:51 ERROR: NF_001[404] | AppError: User not found
+2024-07-04 21:42:51 ERROR: Token not found
+2024-07-04 21:42:51 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-04 21:42:51 ERROR: BlogId: 1 unauthorized, cannot update
+2024-07-04 21:42:51 ERROR: BlogId: 1 not found, cannot update
+2024-07-04 21:42:51 ERROR: BlogId: 1 unauthorized, cannot delete
+2024-07-04 21:42:51 ERROR: BlogId: 1 not found, cannot delete
+2024-07-04 21:42:51 ERROR: Blog not found
+2024-07-04 21:48:56 ERROR: fail to creating blog, Image not found
+2024-07-04 21:48:56 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 21:48:56 ERROR: BlogId: 1 Image not found
+2024-07-04 21:48:56 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 21:48:56 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-04 21:48:56 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 21:48:56 ERROR: All field are required
+2024-07-04 21:48:56 ERROR: All field are required
+2024-07-04 21:48:56 ERROR: password does not matched
+2024-07-04 21:48:56 ERROR: password does not matched
+2024-07-04 21:48:56 ERROR: Email: test@gmail.com not found, Can't login
+2024-07-04 21:48:56 ERROR: Email: test@gmail.com not found, Can't login
+2024-07-04 21:48:56 ERROR: Can't login email: test@gmail.com, wrong password
+2024-07-04 21:48:57 ERROR: Can't login email: test@gmail.com, wrong password
+2024-07-04 21:48:57 ERROR: Can't find token
+2024-07-04 21:48:57 ERROR: Can't find token
+2024-07-04 21:48:57 ERROR: Can't get user, JWT fail
+2024-07-04 21:48:57 ERROR: Can't get user, JWT fail
+2024-07-04 21:48:57 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-04 21:48:57 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-04 21:48:57 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-04 21:48:57 ERROR: NF_001[404] | AppError: User not found
+2024-07-04 21:48:57 ERROR: Token not found
+2024-07-04 21:48:57 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-04 21:48:57 ERROR: BlogId: 1 unauthorized, cannot update
+2024-07-04 21:48:57 ERROR: BlogId: 1 not found, cannot update
+2024-07-04 21:48:57 ERROR: BlogId: 1 unauthorized, cannot delete
+2024-07-04 21:48:57 ERROR: BlogId: 1 not found, cannot delete
+2024-07-04 21:48:57 ERROR: Blog not found
+2024-07-04 22:00:30 ERROR: fail to creating blog, Image not found
+2024-07-04 22:00:30 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 22:00:30 ERROR: BlogId: 1 Image not found
+2024-07-04 22:00:30 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 22:00:31 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-04 22:00:31 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 22:00:31 ERROR: All field are required
+2024-07-04 22:00:31 ERROR: All field are required
+2024-07-04 22:00:31 ERROR: password does not matched
+2024-07-04 22:00:31 ERROR: password does not matched
+2024-07-04 22:00:31 ERROR: Email: test@gmail.com not found, Can't login
+2024-07-04 22:00:31 ERROR: Email: test@gmail.com not found, Can't login
+2024-07-04 22:00:31 ERROR: Can't login email: test@gmail.com, wrong password
+2024-07-04 22:00:31 ERROR: Can't login email: test@gmail.com, wrong password
+2024-07-04 22:00:31 ERROR: Can't find token
+2024-07-04 22:00:31 ERROR: Can't find token
+2024-07-04 22:00:31 ERROR: Can't get user, JWT fail
+2024-07-04 22:00:31 ERROR: Can't get user, JWT fail
+2024-07-04 22:00:31 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-04 22:00:31 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-04 22:00:31 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-04 22:00:31 ERROR: NF_001[404] | AppError: User not found
+2024-07-04 22:00:31 ERROR: Token not found
+2024-07-04 22:00:31 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-04 22:00:32 ERROR: BlogId: 1 unauthorized, cannot update
+2024-07-04 22:00:32 ERROR: BlogId: 1 not found, cannot update
+2024-07-04 22:00:32 ERROR: BlogId: 1 unauthorized, cannot delete
+2024-07-04 22:00:32 ERROR: BlogId: 1 not found, cannot delete
+2024-07-04 22:00:32 ERROR: Blog not found
+2024-07-04 22:00:33 ERROR: fail to creating blog, Image not found
+2024-07-04 22:00:33 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 22:00:33 ERROR: BlogId: 1 Image not found
+2024-07-04 22:00:33 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 22:00:33 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-04 22:00:33 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 22:00:33 ERROR: All field are required
+2024-07-04 22:00:33 ERROR: All field are required
+2024-07-04 22:00:33 ERROR: password does not matched
+2024-07-04 22:00:33 ERROR: password does not matched
+2024-07-04 22:00:33 ERROR: Email: test@gmail.com not found, Can't login
+2024-07-04 22:00:33 ERROR: Email: test@gmail.com not found, Can't login
+2024-07-04 22:00:33 ERROR: Can't login email: test@gmail.com, wrong password
+2024-07-04 22:00:33 ERROR: Can't login email: test@gmail.com, wrong password
+2024-07-04 22:00:33 ERROR: Can't find token
+2024-07-04 22:00:33 ERROR: Can't find token
+2024-07-04 22:00:33 ERROR: Can't get user, JWT fail
+2024-07-04 22:00:33 ERROR: Can't get user, JWT fail
+2024-07-04 22:00:33 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-04 22:00:33 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-04 22:00:33 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-04 22:00:33 ERROR: NF_001[404] | AppError: User not found
+2024-07-04 22:00:33 ERROR: Token not found
+2024-07-04 22:00:33 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-04 22:00:34 ERROR: BlogId: 1 unauthorized, cannot update
+2024-07-04 22:00:34 ERROR: BlogId: 1 not found, cannot update
+2024-07-04 22:00:34 ERROR: BlogId: 1 unauthorized, cannot delete
+2024-07-04 22:00:34 ERROR: BlogId: 1 not found, cannot delete
+2024-07-04 22:00:34 ERROR: Blog not found
+2024-07-04 22:00:35 ERROR: 22P02[500] | error: invalid input syntax for type integer: "user"
+2024-07-04 22:00:57 ERROR: Can't find token
+2024-07-04 22:00:57 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-04 22:03:41 ERROR: BlogId: 2 Image not found
+2024-07-04 22:03:41 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 22:04:37 ERROR: BlogId: 2 Image not found
+2024-07-04 22:04:37 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 22:04:42 ERROR: BlogId: 2 Image not found
+2024-07-04 22:04:42 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 22:22:51 ERROR: BlogId: 2 Image not found
+2024-07-04 22:22:51 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 22:27:57 ERROR: BlogId: id=2 Image not found
+2024-07-04 22:27:57 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 22:33:59 ERROR: fail to creating blog, Image not found
+2024-07-04 22:33:59 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 22:33:59 ERROR: BlogId: 1 Image not found
+2024-07-04 22:33:59 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 22:33:59 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-04 22:33:59 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 22:34:00 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-04 22:34:00 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-04 22:34:00 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-04 22:34:00 ERROR: NF_001[404] | AppError: User not found
+2024-07-04 22:34:00 ERROR: Token not found
+2024-07-04 22:34:00 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-04 22:34:00 ERROR: BlogId: 1 unauthorized, cannot update
+2024-07-04 22:34:00 ERROR: BlogId: 1 not found, cannot update
+2024-07-04 22:34:00 ERROR: BlogId: 1 unauthorized, cannot delete
+2024-07-04 22:34:00 ERROR: BlogId: 1 not found, cannot delete
+2024-07-04 22:34:00 ERROR: Blog not found
+2024-07-04 22:34:28 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 22:34:28 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 22:34:28 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-04 22:34:28 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 22:34:29 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-04 22:34:29 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-04 22:34:29 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-04 22:34:29 ERROR: NF_001[404] | AppError: User not found
+2024-07-04 22:34:29 ERROR: Token not found
+2024-07-04 22:34:29 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-04 22:34:38 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 22:34:45 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 22:35:10 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 22:35:10 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 22:35:10 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-04 22:35:10 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 22:35:10 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-04 22:35:10 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-04 22:35:11 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-04 22:35:11 ERROR: NF_001[404] | AppError: User not found
+2024-07-04 22:35:11 ERROR: Token not found
+2024-07-04 22:35:11 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-04 22:35:14 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 22:37:00 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 22:37:25 ERROR: 08P01[500] | error: bind message supplies 5 parameters, but prepared statement "" requires 6
+2024-07-04 22:37:42 ERROR: 08P01[500] | error: bind message supplies 5 parameters, but prepared statement "" requires 6
+2024-07-04 22:49:39 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 22:49:39 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 22:49:39 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-04 22:49:39 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 22:49:40 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-04 22:49:40 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-04 22:49:40 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-04 22:49:40 ERROR: NF_001[404] | AppError: User not found
+2024-07-04 22:49:40 ERROR: Token not found
+2024-07-04 22:49:40 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-04 22:49:44 ERROR: 08P01[500] | error: bind message supplies 5 parameters, but prepared statement "" requires 6
+2024-07-04 22:50:17 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 22:50:17 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 22:50:17 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-04 22:50:17 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 22:50:17 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-04 22:50:17 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-04 22:50:17 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-04 22:50:17 ERROR: NF_001[404] | AppError: User not found
+2024-07-04 22:50:17 ERROR: Token not found
+2024-07-04 22:50:17 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-04 22:50:20 ERROR: 08P01[500] | error: bind message supplies 5 parameters, but prepared statement "" requires 6
+2024-07-04 23:01:02 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 23:01:02 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 23:01:02 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-04 23:01:02 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 23:01:02 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-04 23:01:02 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-04 23:01:02 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-04 23:01:02 ERROR: NF_001[404] | AppError: User not found
+2024-07-04 23:01:02 ERROR: Token not found
+2024-07-04 23:01:02 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-04 23:01:04 ERROR: 08P01[500] | error: bind message supplies 5 parameters, but prepared statement "" requires 6
+2024-07-04 23:02:13 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 23:02:13 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 23:02:13 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-04 23:02:13 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 23:02:14 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-04 23:02:14 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-04 23:02:14 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-04 23:02:14 ERROR: NF_001[404] | AppError: User not found
+2024-07-04 23:02:14 ERROR: Token not found
+2024-07-04 23:02:14 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-04 23:02:17 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-04 23:03:06 ERROR: 42703[500] | error: column "id" does not exist
+2024-07-04 23:05:36 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 23:05:36 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 23:05:36 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-04 23:05:36 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 23:05:37 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-04 23:05:37 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-04 23:05:37 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-04 23:05:37 ERROR: NF_001[404] | AppError: User not found
+2024-07-04 23:05:37 ERROR: Token not found
+2024-07-04 23:05:37 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-04 23:06:15 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 23:06:15 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 23:06:15 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-04 23:06:15 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 23:06:16 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-04 23:06:16 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-04 23:06:16 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-04 23:06:16 ERROR: NF_001[404] | AppError: User not found
+2024-07-04 23:06:16 ERROR: Token not found
+2024-07-04 23:06:16 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-04 23:10:08 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 23:10:08 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 23:10:08 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-04 23:10:08 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 23:10:08 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-04 23:10:08 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-04 23:10:08 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-04 23:10:08 ERROR: NF_001[404] | AppError: User not found
+2024-07-04 23:10:08 ERROR: Token not found
+2024-07-04 23:10:08 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-04 23:32:25 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 23:32:25 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 23:32:25 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-04 23:32:25 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 23:32:25 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-04 23:32:25 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-04 23:32:25 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-04 23:32:25 ERROR: NF_001[404] | AppError: User not found
+2024-07-04 23:32:25 ERROR: Token not found
+2024-07-04 23:32:25 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-04 23:58:32 ERROR: ER_001[400] | AppError: Image is required
+2024-07-04 23:58:32 ERROR: ER_001[400] | AppError: Image not found
+2024-07-04 23:58:32 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-04 23:58:32 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-04 23:58:32 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-04 23:58:32 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-04 23:58:32 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-04 23:58:32 ERROR: NF_001[404] | AppError: User not found
+2024-07-04 23:58:32 ERROR: Token not found
+2024-07-04 23:58:32 ERROR: ER_002[401] | AppError: Unauthorized
