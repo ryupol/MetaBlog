@@ -26,6 +26,10 @@ describe("Blog Services", () => {
     user_id: "123",
   };
   const mockWrongUserIdBlog = { ...mockOldBlog, user_id: "notFound" };
+  const mockUploadResult = {
+    secure_url:
+      "https://res.cloudinary.com/dxwmjflhh/image/upload/v1720148608/mvhw8pidbeu3qq6wshmi.png",
+  };
 
   beforeEach(jest.clearAllMocks);
 
@@ -39,19 +43,19 @@ describe("Blog Services", () => {
 
   describe("Create", () => {
     test("should create a blog", async () => {
+      (cloudinary.uploader.upload as jest.Mock).mockResolvedValue(mockUploadResult);
       (pool.query as jest.Mock).mockResolvedValue({ rows: [mockBlog] });
-      (cloudinary.uploader.upload as jest.Mock).mockResolvedValue(null);
       const newBlog = await blogService.create(mockBlogData);
       expect(newBlog).toEqual(mockBlog);
     });
   });
   describe("Update", () => {
     test("should update blog", async () => {
+      (cloudinary.uploader.upload as jest.Mock).mockResolvedValue(mockUploadResult);
+      (cloudinary.uploader.destroy as jest.Mock).mockResolvedValue(null);
       (pool.query as jest.Mock)
         .mockResolvedValueOnce({ rows: [mockOldBlog] })
         .mockResolvedValueOnce({ rows: [mockBlog] });
-      (cloudinary.uploader.upload as jest.Mock).mockResolvedValue(null);
-      (cloudinary.uploader.destroy as jest.Mock).mockResolvedValue(null);
       const updatedBlog = await blogService.update(mockBlogId, mockBlogData);
       expect(updatedBlog).toEqual(mockBlog);
     });
@@ -79,10 +83,10 @@ describe("Blog Services", () => {
   });
   describe("Delete", () => {
     test("should delete blog", async () => {
+      (cloudinary.uploader.destroy as jest.Mock).mockResolvedValue(mockUploadResult);
       (pool.query as jest.Mock)
         .mockResolvedValueOnce({ rows: [mockOldBlog] })
         .mockResolvedValueOnce({ rows: [mockBlog] });
-      (cloudinary.uploader.destroy as jest.Mock).mockResolvedValue(null);
       const deletedBlog = await blogService.delete(mockBlogId, mockBlog.user_id);
       expect(deletedBlog).toEqual(mockBlog);
     });

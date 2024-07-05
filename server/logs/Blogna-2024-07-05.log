@@ -330,3 +330,473 @@
 2024-07-05 00:14:56 ERROR: ❌ Error connecting to PostgreSQL
 2024-07-05 00:16:31 ERROR: ❌ Error connecting to PostgreSQL
 2024-07-05 00:16:31 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 09:52:54 DEBUG: Start Creating user
+2024-07-05 09:52:54 DEBUG: Done Creating user
+2024-07-05 09:52:54 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 09:52:54 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 09:52:54 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 09:52:54 DEBUG: Start Creating user
+2024-07-05 09:52:54 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-05 09:52:54 DEBUG: Starting login with email: test@gmail.com
+2024-07-05 09:52:54 DEBUG: Login with email: test@gmail.com Success
+2024-07-05 09:52:54 DEBUG: Starting login with email: test@gmail.com
+2024-07-05 09:52:54 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-05 09:52:54 DEBUG: AuthToken:
+2024-07-05 09:52:54 DEBUG: [Token] Get email: test@gmail.com Success
+2024-07-05 09:52:54 DEBUG: AuthToken:
+2024-07-05 09:52:54 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-05 09:52:54 DEBUG: [ID] Get email: test@gmail.com Success
+2024-07-05 09:52:54 ERROR: NF_001[404] | AppError: User not found
+2024-07-05 09:52:54 DEBUG: Clearing token: mockedToken success
+2024-07-05 09:52:54 ERROR: Token not found
+2024-07-05 09:52:54 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-05 09:52:54 DEBUG: Start getting blogs
+2024-07-05 09:52:54 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 09:52:54 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 09:52:54 DEBUG: Getting all blogs success
+2024-07-05 09:52:54 DEBUG: Start creating blog: mockTitle
+2024-07-05 09:52:54 DEBUG: Blog data: [object Object]
+2024-07-05 09:52:54 DEBUG: Create blog: mockTitle Successfully
+2024-07-05 09:52:54 DEBUG: Start creating blog: mockTitle
+2024-07-05 09:52:54 ERROR: ER_001[400] | AppError: Image is required
+2024-07-05 09:52:54 DEBUG: Start updating blog: mockTitle
+2024-07-05 09:52:54 DEBUG: [Update] Blog id: 1
+2024-07-05 09:52:54 DEBUG: Update blog: mockTitle successfully
+2024-07-05 09:52:54 DEBUG: Start updating blog: mockTitle
+2024-07-05 09:52:54 ERROR: ER_001[400] | AppError: Image not found
+2024-07-05 09:52:54 DEBUG: Start deleting blog
+2024-07-05 09:52:54 DEBUG: Done deleting blog
+2024-07-05 09:52:54 DEBUG: Start deleting blog
+2024-07-05 09:52:54 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-05 09:52:54 DEBUG: [ID] Get blog: 1
+2024-07-05 09:52:54 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-05 09:52:54 DEBUG: Registering email: test@gmail.com
+2024-07-05 09:52:54 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 09:52:55 DEBUG: Register email: test@gmail.com Successfully
+2024-07-05 09:52:55 DEBUG: Registering email: test@gmail.com
+2024-07-05 09:52:55 DEBUG: Registering email: test@gmail.com
+2024-07-05 09:52:55 DEBUG: Using HS256 algorithm to sign token: mockedToken
+2024-07-05 09:52:55 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:01:45 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:01:45 DEBUG: Start Creating user
+2024-07-05 10:01:45 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:01:45 DEBUG: Done Creating user
+2024-07-05 10:01:45 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:01:45 DEBUG: Start Creating user
+2024-07-05 10:01:45 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-05 10:01:45 DEBUG: Starting login with email: test@gmail.com
+2024-07-05 10:01:45 DEBUG: Login with email: test@gmail.com Success
+2024-07-05 10:01:45 DEBUG: Starting login with email: test@gmail.com
+2024-07-05 10:01:45 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-05 10:01:45 DEBUG: AuthToken:
+2024-07-05 10:01:45 DEBUG: [Token] Get email: test@gmail.com Success
+2024-07-05 10:01:45 DEBUG: AuthToken:
+2024-07-05 10:01:45 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-05 10:01:45 DEBUG: [ID] Get email: test@gmail.com Success
+2024-07-05 10:01:45 ERROR: NF_001[404] | AppError: User not found
+2024-07-05 10:01:45 DEBUG: Clearing token: mockedToken success
+2024-07-05 10:01:45 ERROR: Token not found
+2024-07-05 10:01:45 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-05 10:01:45 DEBUG: Start getting blogs
+2024-07-05 10:01:45 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:01:45 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:01:45 DEBUG: Getting all blogs success
+2024-07-05 10:01:45 DEBUG: Start creating blog: mockTitle
+2024-07-05 10:01:45 DEBUG: Blog data: [object Object]
+2024-07-05 10:01:45 DEBUG: Create blog: mockTitle Successfully
+2024-07-05 10:01:45 DEBUG: Start creating blog: mockTitle
+2024-07-05 10:01:45 ERROR: ER_001[400] | AppError: Image is required
+2024-07-05 10:01:45 DEBUG: Start updating blog: mockTitle
+2024-07-05 10:01:45 DEBUG: [Update] Blog id: 1
+2024-07-05 10:01:45 DEBUG: Update blog: mockTitle successfully
+2024-07-05 10:01:45 DEBUG: Start updating blog: mockTitle
+2024-07-05 10:01:45 ERROR: ER_001[400] | AppError: Image not found
+2024-07-05 10:01:45 DEBUG: Start deleting blog
+2024-07-05 10:01:45 DEBUG: Done deleting blog
+2024-07-05 10:01:45 DEBUG: Start deleting blog
+2024-07-05 10:01:45 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-05 10:01:45 DEBUG: [ID] Get blog: 1
+2024-07-05 10:01:45 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-05 10:01:46 DEBUG: Registering email: test@gmail.com
+2024-07-05 10:01:46 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:01:46 DEBUG: Register email: test@gmail.com Successfully
+2024-07-05 10:01:46 DEBUG: Registering email: test@gmail.com
+2024-07-05 10:01:46 DEBUG: Registering email: test@gmail.com
+2024-07-05 10:01:46 DEBUG: Using HS256 algorithm to sign token: mockedToken
+2024-07-05 10:01:46 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:02:23 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:02:23 DEBUG: Start Creating user
+2024-07-05 10:02:23 DEBUG: Done Creating user
+2024-07-05 10:02:23 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:02:23 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:02:23 DEBUG: Start Creating user
+2024-07-05 10:02:23 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-05 10:02:23 DEBUG: Starting login with email: test@gmail.com
+2024-07-05 10:02:23 DEBUG: Login with email: test@gmail.com Success
+2024-07-05 10:02:23 DEBUG: Starting login with email: test@gmail.com
+2024-07-05 10:02:23 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-05 10:02:23 DEBUG: AuthToken:
+2024-07-05 10:02:23 DEBUG: [Token] Get email: test@gmail.com Success
+2024-07-05 10:02:23 DEBUG: AuthToken:
+2024-07-05 10:02:23 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-05 10:02:23 DEBUG: [ID] Get email: test@gmail.com Success
+2024-07-05 10:02:23 ERROR: NF_001[404] | AppError: User not found
+2024-07-05 10:02:23 DEBUG: Clearing token: mockedToken success
+2024-07-05 10:02:23 ERROR: Token not found
+2024-07-05 10:02:23 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-05 10:02:24 DEBUG: Start getting blogs
+2024-07-05 10:02:24 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:02:24 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:02:24 DEBUG: Getting all blogs success
+2024-07-05 10:02:24 DEBUG: Start creating blog: mockTitle
+2024-07-05 10:02:24 DEBUG: Blog data: [object Object]
+2024-07-05 10:02:24 DEBUG: Create blog: mockTitle Successfully
+2024-07-05 10:02:24 DEBUG: Start creating blog: mockTitle
+2024-07-05 10:02:24 ERROR: ER_001[400] | AppError: Image is required
+2024-07-05 10:02:24 DEBUG: Start updating blog: mockTitle
+2024-07-05 10:02:24 DEBUG: [Update] Blog id: 1
+2024-07-05 10:02:24 DEBUG: Update blog: mockTitle successfully
+2024-07-05 10:02:24 DEBUG: Start updating blog: mockTitle
+2024-07-05 10:02:24 ERROR: ER_001[400] | AppError: Image not found
+2024-07-05 10:02:24 DEBUG: Start deleting blog
+2024-07-05 10:02:24 DEBUG: Done deleting blog
+2024-07-05 10:02:24 DEBUG: Start deleting blog
+2024-07-05 10:02:24 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-05 10:02:24 DEBUG: [ID] Get blog: 1
+2024-07-05 10:02:24 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-05 10:02:24 DEBUG: Registering email: test@gmail.com
+2024-07-05 10:02:24 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:02:24 DEBUG: Register email: test@gmail.com Successfully
+2024-07-05 10:02:24 DEBUG: Registering email: test@gmail.com
+2024-07-05 10:02:24 DEBUG: Registering email: test@gmail.com
+2024-07-05 10:02:24 DEBUG: Using HS256 algorithm to sign token: mockedToken
+2024-07-05 10:02:24 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:03:26 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:03:31 DEBUG: Start Creating user
+2024-07-05 10:03:31 DEBUG: Done Creating user
+2024-07-05 10:03:31 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:03:31 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:03:31 DEBUG: Start Creating user
+2024-07-05 10:03:31 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-05 10:03:31 DEBUG: Starting login with email: test@gmail.com
+2024-07-05 10:03:31 DEBUG: Login with email: test@gmail.com Success
+2024-07-05 10:03:31 DEBUG: Starting login with email: test@gmail.com
+2024-07-05 10:03:31 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-05 10:03:31 DEBUG: AuthToken:
+2024-07-05 10:03:31 DEBUG: [Token] Get email: test@gmail.com Success
+2024-07-05 10:03:31 DEBUG: AuthToken:
+2024-07-05 10:03:31 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-05 10:03:31 DEBUG: [ID] Get email: test@gmail.com Success
+2024-07-05 10:03:31 ERROR: NF_001[404] | AppError: User not found
+2024-07-05 10:03:31 DEBUG: Clearing token: mockedToken success
+2024-07-05 10:03:31 ERROR: Token not found
+2024-07-05 10:03:31 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-05 10:03:31 DEBUG: Start getting blogs
+2024-07-05 10:03:31 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:03:31 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:03:31 DEBUG: Getting all blogs success
+2024-07-05 10:03:31 DEBUG: Start creating blog: mockTitle
+2024-07-05 10:03:31 DEBUG: Blog data: [object Object]
+2024-07-05 10:03:31 DEBUG: Create blog: mockTitle Successfully
+2024-07-05 10:03:31 DEBUG: Start creating blog: mockTitle
+2024-07-05 10:03:31 ERROR: ER_001[400] | AppError: Image is required
+2024-07-05 10:03:31 DEBUG: Start updating blog: mockTitle
+2024-07-05 10:03:31 DEBUG: [Update] Blog id: 1
+2024-07-05 10:03:31 DEBUG: Update blog: mockTitle successfully
+2024-07-05 10:03:31 DEBUG: Start updating blog: mockTitle
+2024-07-05 10:03:31 ERROR: ER_001[400] | AppError: Image not found
+2024-07-05 10:03:31 DEBUG: Start deleting blog
+2024-07-05 10:03:31 DEBUG: Done deleting blog
+2024-07-05 10:03:31 DEBUG: Start deleting blog
+2024-07-05 10:03:31 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-05 10:03:31 DEBUG: [ID] Get blog: 1
+2024-07-05 10:03:31 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-05 10:03:31 DEBUG: Registering email: test@gmail.com
+2024-07-05 10:03:31 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:03:31 DEBUG: Register email: test@gmail.com Successfully
+2024-07-05 10:03:31 DEBUG: Registering email: test@gmail.com
+2024-07-05 10:03:31 DEBUG: Registering email: test@gmail.com
+2024-07-05 10:03:31 DEBUG: Using HS256 algorithm to sign token: mockedToken
+2024-07-05 10:03:32 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:06:07 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:06:12 DEBUG: Start Creating user
+2024-07-05 10:06:12 DEBUG: Done Creating user
+2024-07-05 10:06:12 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:06:12 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:06:12 DEBUG: Start Creating user
+2024-07-05 10:06:12 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-05 10:06:12 DEBUG: Starting login with email: test@gmail.com
+2024-07-05 10:06:12 DEBUG: Login with email: test@gmail.com Success
+2024-07-05 10:06:12 DEBUG: Starting login with email: test@gmail.com
+2024-07-05 10:06:12 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-05 10:06:12 DEBUG: AuthToken:
+2024-07-05 10:06:12 DEBUG: [Token] Get email: test@gmail.com Success
+2024-07-05 10:06:12 DEBUG: AuthToken:
+2024-07-05 10:06:12 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-05 10:06:12 DEBUG: [ID] Get email: test@gmail.com Success
+2024-07-05 10:06:12 ERROR: NF_001[404] | AppError: User not found
+2024-07-05 10:06:12 DEBUG: Clearing token: mockedToken success
+2024-07-05 10:06:12 ERROR: Token not found
+2024-07-05 10:06:12 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-05 10:06:12 DEBUG: Start getting blogs
+2024-07-05 10:06:12 DEBUG: Getting all blogs success
+2024-07-05 10:06:12 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:06:12 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:06:12 DEBUG: Start creating blog: mockTitle
+2024-07-05 10:06:12 DEBUG: Blog data: [object Object]
+2024-07-05 10:06:12 DEBUG: Create blog: mockTitle Successfully
+2024-07-05 10:06:12 DEBUG: Start creating blog: mockTitle
+2024-07-05 10:06:12 ERROR: ER_001[400] | AppError: Image is required
+2024-07-05 10:06:12 DEBUG: Start updating blog: mockTitle
+2024-07-05 10:06:12 DEBUG: [Update] Blog id: 1
+2024-07-05 10:06:12 DEBUG: Update blog: mockTitle successfully
+2024-07-05 10:06:12 DEBUG: Start updating blog: mockTitle
+2024-07-05 10:06:12 ERROR: ER_001[400] | AppError: Image not found
+2024-07-05 10:06:12 DEBUG: Start deleting blog
+2024-07-05 10:06:12 DEBUG: Done deleting blog
+2024-07-05 10:06:12 DEBUG: Start deleting blog
+2024-07-05 10:06:12 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-05 10:06:12 DEBUG: [ID] Get blog: 1
+2024-07-05 10:06:12 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-05 10:06:12 DEBUG: Registering email: test@gmail.com
+2024-07-05 10:06:13 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:06:13 DEBUG: Register email: test@gmail.com Successfully
+2024-07-05 10:06:13 DEBUG: Registering email: test@gmail.com
+2024-07-05 10:06:13 DEBUG: Registering email: test@gmail.com
+2024-07-05 10:06:13 DEBUG: Using HS256 algorithm to sign token: mockedToken
+2024-07-05 10:06:13 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:07:53 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:07:53 DEBUG: Start Creating user
+2024-07-05 10:07:53 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:07:53 DEBUG: Done Creating user
+2024-07-05 10:07:53 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:07:53 DEBUG: Start Creating user
+2024-07-05 10:07:53 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-05 10:07:53 DEBUG: Starting login with email: test@gmail.com
+2024-07-05 10:07:53 DEBUG: Login with email: test@gmail.com Success
+2024-07-05 10:07:53 DEBUG: Starting login with email: test@gmail.com
+2024-07-05 10:07:53 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-05 10:07:53 DEBUG: AuthToken:
+2024-07-05 10:07:53 DEBUG: [Token] Get email: test@gmail.com Success
+2024-07-05 10:07:53 DEBUG: AuthToken:
+2024-07-05 10:07:53 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-05 10:07:53 DEBUG: [ID] Get email: test@gmail.com Success
+2024-07-05 10:07:53 ERROR: NF_001[404] | AppError: User not found
+2024-07-05 10:07:53 DEBUG: Clearing token: mockedToken success
+2024-07-05 10:07:53 ERROR: Token not found
+2024-07-05 10:07:53 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-05 10:07:53 DEBUG: Start getting blogs
+2024-07-05 10:07:53 DEBUG: Getting all blogs success
+2024-07-05 10:07:53 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:07:53 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:07:53 DEBUG: Start creating blog: mockTitle
+2024-07-05 10:07:53 DEBUG: Blog data: [object Object]
+2024-07-05 10:07:53 DEBUG: Create blog: mockTitle Successfully
+2024-07-05 10:07:53 DEBUG: Start creating blog: mockTitle
+2024-07-05 10:07:53 ERROR: ER_001[400] | AppError: Image is required
+2024-07-05 10:07:53 DEBUG: Start updating blog: mockTitle
+2024-07-05 10:07:53 DEBUG: [Update] Blog id: 1
+2024-07-05 10:07:53 DEBUG: Update blog: mockTitle successfully
+2024-07-05 10:07:53 DEBUG: Start updating blog: mockTitle
+2024-07-05 10:07:53 ERROR: ER_001[400] | AppError: Image not found
+2024-07-05 10:07:53 DEBUG: Start deleting blog
+2024-07-05 10:07:53 DEBUG: Done deleting blog
+2024-07-05 10:07:53 DEBUG: Start deleting blog
+2024-07-05 10:07:53 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-05 10:07:53 DEBUG: [ID] Get blog: 1
+2024-07-05 10:07:53 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-05 10:07:54 DEBUG: Registering email: test@gmail.com
+2024-07-05 10:07:54 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:07:54 DEBUG: Register email: test@gmail.com Successfully
+2024-07-05 10:07:54 DEBUG: Registering email: test@gmail.com
+2024-07-05 10:07:54 DEBUG: Registering email: test@gmail.com
+2024-07-05 10:07:54 DEBUG: Using HS256 algorithm to sign token: mockedToken
+2024-07-05 10:07:54 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:08:06 DEBUG: Start Creating user
+2024-07-05 10:08:06 DEBUG: Done Creating user
+2024-07-05 10:08:06 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:08:06 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:08:06 DEBUG: Start Creating user
+2024-07-05 10:08:06 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-05 10:08:06 DEBUG: Starting login with email: test@gmail.com
+2024-07-05 10:08:06 DEBUG: Login with email: test@gmail.com Success
+2024-07-05 10:08:06 DEBUG: Starting login with email: test@gmail.com
+2024-07-05 10:08:06 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-05 10:08:06 DEBUG: AuthToken:
+2024-07-05 10:08:06 DEBUG: [Token] Get email: test@gmail.com Success
+2024-07-05 10:08:06 DEBUG: AuthToken:
+2024-07-05 10:08:06 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-05 10:08:06 DEBUG: [ID] Get email: test@gmail.com Success
+2024-07-05 10:08:06 ERROR: NF_001[404] | AppError: User not found
+2024-07-05 10:08:06 DEBUG: Clearing token: mockedToken success
+2024-07-05 10:08:06 ERROR: Token not found
+2024-07-05 10:08:06 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-05 10:08:06 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:08:06 DEBUG: Start getting blogs
+2024-07-05 10:08:06 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:08:06 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:08:06 DEBUG: Getting all blogs success
+2024-07-05 10:08:06 DEBUG: Start creating blog: mockTitle
+2024-07-05 10:08:06 DEBUG: Blog data: [object Object]
+2024-07-05 10:08:06 DEBUG: Create blog: mockTitle Successfully
+2024-07-05 10:08:06 DEBUG: Start creating blog: mockTitle
+2024-07-05 10:08:06 ERROR: ER_001[400] | AppError: Image is required
+2024-07-05 10:08:06 DEBUG: Start updating blog: mockTitle
+2024-07-05 10:08:06 DEBUG: [Update] Blog id: 1
+2024-07-05 10:08:06 DEBUG: Update blog: mockTitle successfully
+2024-07-05 10:08:06 DEBUG: Start updating blog: mockTitle
+2024-07-05 10:08:06 ERROR: ER_001[400] | AppError: Image not found
+2024-07-05 10:08:06 DEBUG: Start deleting blog
+2024-07-05 10:08:06 DEBUG: Done deleting blog
+2024-07-05 10:08:06 DEBUG: Start deleting blog
+2024-07-05 10:08:06 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-05 10:08:06 DEBUG: [ID] Get blog: 1
+2024-07-05 10:08:06 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-05 10:08:06 DEBUG: Registering email: test@gmail.com
+2024-07-05 10:08:06 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:08:06 DEBUG: Register email: test@gmail.com Successfully
+2024-07-05 10:08:06 DEBUG: Registering email: test@gmail.com
+2024-07-05 10:08:06 DEBUG: Registering email: test@gmail.com
+2024-07-05 10:08:07 DEBUG: Using HS256 algorithm to sign token: mockedToken
+2024-07-05 10:08:07 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:08:18 DEBUG: Start Creating user
+2024-07-05 10:08:18 DEBUG: Done Creating user
+2024-07-05 10:08:18 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:08:18 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:08:18 DEBUG: Start Creating user
+2024-07-05 10:08:18 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-05 10:08:18 DEBUG: Starting login with email: test@gmail.com
+2024-07-05 10:08:18 DEBUG: Login with email: test@gmail.com Success
+2024-07-05 10:08:18 DEBUG: Starting login with email: test@gmail.com
+2024-07-05 10:08:18 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-05 10:08:18 DEBUG: AuthToken:
+2024-07-05 10:08:18 DEBUG: [Token] Get email: test@gmail.com Success
+2024-07-05 10:08:18 DEBUG: AuthToken:
+2024-07-05 10:08:18 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-05 10:08:18 DEBUG: [ID] Get email: test@gmail.com Success
+2024-07-05 10:08:18 ERROR: NF_001[404] | AppError: User not found
+2024-07-05 10:08:18 DEBUG: Clearing token: mockedToken success
+2024-07-05 10:08:19 ERROR: Token not found
+2024-07-05 10:08:19 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-05 10:08:19 DEBUG: Registering email: test@gmail.com
+2024-07-05 10:08:19 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:08:19 DEBUG: Register email: test@gmail.com Successfully
+2024-07-05 10:08:19 DEBUG: Registering email: test@gmail.com
+2024-07-05 10:08:19 DEBUG: Registering email: test@gmail.com
+2024-07-05 10:08:19 DEBUG: Using HS256 algorithm to sign token: mockedToken
+2024-07-05 10:08:19 DEBUG: Start getting blogs
+2024-07-05 10:08:19 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:08:19 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:08:19 DEBUG: Getting all blogs success
+2024-07-05 10:08:19 DEBUG: Start creating blog: mockTitle
+2024-07-05 10:08:19 DEBUG: Blog data: [object Object]
+2024-07-05 10:08:19 DEBUG: Create blog: mockTitle Successfully
+2024-07-05 10:08:19 DEBUG: Start creating blog: mockTitle
+2024-07-05 10:08:19 ERROR: ER_001[400] | AppError: Image is required
+2024-07-05 10:08:19 DEBUG: Start updating blog: mockTitle
+2024-07-05 10:08:19 DEBUG: [Update] Blog id: 1
+2024-07-05 10:08:19 DEBUG: Update blog: mockTitle successfully
+2024-07-05 10:08:19 DEBUG: Start updating blog: mockTitle
+2024-07-05 10:08:19 ERROR: ER_001[400] | AppError: Image not found
+2024-07-05 10:08:19 DEBUG: Start deleting blog
+2024-07-05 10:08:19 DEBUG: Done deleting blog
+2024-07-05 10:08:19 DEBUG: Start deleting blog
+2024-07-05 10:08:19 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-05 10:08:19 DEBUG: [ID] Get blog: 1
+2024-07-05 10:08:19 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-05 10:08:19 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:08:20 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:08:20 DEBUG: Start Creating user
+2024-07-05 10:08:20 DEBUG: Done Creating user
+2024-07-05 10:08:20 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:08:20 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:08:20 DEBUG: Start Creating user
+2024-07-05 10:08:20 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-05 10:08:20 DEBUG: Starting login with email: test@gmail.com
+2024-07-05 10:08:20 DEBUG: Login with email: test@gmail.com Success
+2024-07-05 10:08:20 DEBUG: Starting login with email: test@gmail.com
+2024-07-05 10:08:20 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-05 10:08:20 DEBUG: AuthToken:
+2024-07-05 10:08:20 DEBUG: [Token] Get email: test@gmail.com Success
+2024-07-05 10:08:20 DEBUG: AuthToken:
+2024-07-05 10:08:20 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-05 10:08:20 DEBUG: [ID] Get email: test@gmail.com Success
+2024-07-05 10:08:20 ERROR: NF_001[404] | AppError: User not found
+2024-07-05 10:08:20 DEBUG: Clearing token: mockedToken success
+2024-07-05 10:08:20 ERROR: Token not found
+2024-07-05 10:08:20 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-05 10:08:21 DEBUG: Start getting blogs
+2024-07-05 10:08:21 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:08:21 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:08:21 DEBUG: Getting all blogs success
+2024-07-05 10:08:21 DEBUG: Start creating blog: mockTitle
+2024-07-05 10:08:21 DEBUG: Blog data: [object Object]
+2024-07-05 10:08:21 DEBUG: Create blog: mockTitle Successfully
+2024-07-05 10:08:21 DEBUG: Start creating blog: mockTitle
+2024-07-05 10:08:21 ERROR: ER_001[400] | AppError: Image is required
+2024-07-05 10:08:21 DEBUG: Start updating blog: mockTitle
+2024-07-05 10:08:21 DEBUG: [Update] Blog id: 1
+2024-07-05 10:08:21 DEBUG: Update blog: mockTitle successfully
+2024-07-05 10:08:21 DEBUG: Start updating blog: mockTitle
+2024-07-05 10:08:21 ERROR: ER_001[400] | AppError: Image not found
+2024-07-05 10:08:21 DEBUG: Start deleting blog
+2024-07-05 10:08:21 DEBUG: Done deleting blog
+2024-07-05 10:08:21 DEBUG: Start deleting blog
+2024-07-05 10:08:21 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-05 10:08:21 DEBUG: [ID] Get blog: 1
+2024-07-05 10:08:21 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-05 10:08:21 DEBUG: Registering email: test@gmail.com
+2024-07-05 10:08:21 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:08:21 DEBUG: Register email: test@gmail.com Successfully
+2024-07-05 10:08:21 DEBUG: Registering email: test@gmail.com
+2024-07-05 10:08:21 DEBUG: Registering email: test@gmail.com
+2024-07-05 10:08:21 DEBUG: Using HS256 algorithm to sign token: mockedToken
+2024-07-05 10:08:21 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:08:22 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:09:46 DEBUG: Start Creating user
+2024-07-05 10:09:46 DEBUG: Done Creating user
+2024-07-05 10:09:46 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:09:46 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:09:46 DEBUG: Start Creating user
+2024-07-05 10:09:46 ERROR: ER_001[400] | AppError: All fields are required
+2024-07-05 10:09:46 DEBUG: Starting login with email: test@gmail.com
+2024-07-05 10:09:46 DEBUG: Login with email: test@gmail.com Success
+2024-07-05 10:09:46 DEBUG: Starting login with email: test@gmail.com
+2024-07-05 10:09:46 ERROR: ER_001[400] | AppError: Login fail (wrong email or password)
+2024-07-05 10:09:46 DEBUG: AuthToken:
+2024-07-05 10:09:46 DEBUG: [Token] Get email: test@gmail.com Success
+2024-07-05 10:09:46 DEBUG: AuthToken:
+2024-07-05 10:09:46 ERROR: ER_002[401] | AppError: User did not login yet
+2024-07-05 10:09:46 DEBUG: [ID] Get email: test@gmail.com Success
+2024-07-05 10:09:46 ERROR: NF_001[404] | AppError: User not found
+2024-07-05 10:09:46 DEBUG: Clearing token: mockedToken success
+2024-07-05 10:09:46 ERROR: Token not found
+2024-07-05 10:09:46 ERROR: ER_002[401] | AppError: Unauthorized
+2024-07-05 10:09:46 DEBUG: Registering email: test@gmail.com
+2024-07-05 10:09:46 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:09:46 DEBUG: Register email: test@gmail.com Successfully
+2024-07-05 10:09:46 DEBUG: Registering email: test@gmail.com
+2024-07-05 10:09:46 DEBUG: Registering email: test@gmail.com
+2024-07-05 10:09:46 DEBUG: Using HS256 algorithm to sign token: mockedToken
+2024-07-05 10:09:46 DEBUG: Start getting blogs
+2024-07-05 10:09:46 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:09:46 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:09:46 DEBUG: Getting all blogs success
+2024-07-05 10:09:46 DEBUG: Start creating blog: mockTitle
+2024-07-05 10:09:46 DEBUG: Blog data: [object Object]
+2024-07-05 10:09:46 DEBUG: Create blog: mockTitle Successfully
+2024-07-05 10:09:46 DEBUG: Start creating blog: mockTitle
+2024-07-05 10:09:46 ERROR: ER_001[400] | AppError: Image is required
+2024-07-05 10:09:46 DEBUG: Start updating blog: mockTitle
+2024-07-05 10:09:46 DEBUG: [Update] Blog id: 1
+2024-07-05 10:09:46 DEBUG: Update blog: mockTitle successfully
+2024-07-05 10:09:46 DEBUG: Start updating blog: mockTitle
+2024-07-05 10:09:46 ERROR: ER_001[400] | AppError: Image not found
+2024-07-05 10:09:46 DEBUG: Start deleting blog
+2024-07-05 10:09:46 DEBUG: Done deleting blog
+2024-07-05 10:09:46 DEBUG: Start deleting blog
+2024-07-05 10:09:46 ERROR: ER_003[403] | AppError: Unauthorized to delete this blog
+2024-07-05 10:09:46 DEBUG: [ID] Get blog: 1
+2024-07-05 10:09:46 ERROR: NF_002[404] | AppError: Blog not found
+2024-07-05 10:09:47 ERROR: ❌ Error connecting to PostgreSQL
+2024-07-05 10:09:47 ERROR: ❌ Error connecting to PostgreSQL

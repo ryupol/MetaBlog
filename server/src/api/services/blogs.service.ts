@@ -1,6 +1,5 @@
 import cloudinary from "../../configs/cloudinary";
 import pool from "../../configs/database";
-import logger from "../../configs/log";
 import AppError from "../../errors/AppError";
 import errorCodes from "../../errors/errorCodes";
 import { BlogCreated } from "../types/blogs.type";
@@ -19,6 +18,7 @@ class BlogService {
     RETURNING *;
     `;
     const uploadResult = await cloudinary.uploader.upload(blogData.image_url);
+    console.log(uploadResult);
     const imageUrl = uploadResult.secure_url;
     blogData["image_url"] = imageUrl;
     const values = Object.values(blogData);

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1720113066792" clover="3.2.0">
-  <project timestamp="1720113066792" name="All files">
-    <metrics statements="341" coveredstatements="322" conditionals="50" coveredconditionals="43" methods="40" coveredmethods="39" elements="431" coveredelements="404" complexity="0" loc="341" ncloc="341" packages="6" files="15" classes="15"/>
+<coverage generated="1720148987376" clover="3.2.0">
+  <project timestamp="1720148987376" name="All files">
+    <metrics statements="342" coveredstatements="341" conditionals="50" coveredconditionals="45" methods="40" coveredmethods="40" elements="432" coveredelements="426" complexity="0" loc="342" ncloc="342" packages="6" files="15" classes="15"/>
     <package name="src">
       <metrics statements="20" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="app.ts" path="C:\Users\ryupo\Documents\Projects\Blogna\server\src\app.ts">
@@ -181,58 +181,59 @@
       </file>
     </package>
     <package name="src.api.services">
-      <metrics statements="94" coveredstatements="76" conditionals="18" coveredconditionals="16" methods="12" coveredmethods="11"/>
+      <metrics statements="95" coveredstatements="95" conditionals="18" coveredconditionals="18" methods="12" coveredmethods="12"/>
       <file name="blogs.service.ts" path="C:\Users\ryupo\Documents\Projects\Blogna\server\src\api\services\blogs.service.ts">
-        <metrics statements="50" coveredstatements="32" conditionals="5" coveredconditionals="3" methods="6" coveredmethods="5"/>
+        <metrics statements="51" coveredstatements="51" conditionals="5" coveredconditionals="5" methods="6" coveredmethods="6"/>
         <line num="1" count="4" type="stmt"/>
         <line num="2" count="4" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
         <line num="4" count="4" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
         <line num="21" count="1" type="stmt"/>
         <line num="22" count="1" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
         <line num="31" count="3" type="stmt"/>
         <line num="32" count="3" type="cond" truecount="1" falsecount="0"/>
         <line num="33" count="1" type="stmt"/>
         <line num="35" count="2" type="stmt"/>
         <line num="36" count="2" type="stmt"/>
         <line num="40" count="2" type="stmt"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
-        <line num="44" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="51" count="0" type="stmt"/>
-        <line num="52" count="0" type="stmt"/>
-        <line num="53" count="0" type="stmt"/>
-        <line num="54" count="0" type="stmt"/>
-        <line num="55" count="0" type="stmt"/>
-        <line num="56" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="57" count="0" type="stmt"/>
-        <line num="59" count="0" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="43" count="2" type="stmt"/>
+        <line num="44" count="10" type="stmt"/>
+        <line num="45" count="2" type="stmt"/>
+        <line num="51" count="2" type="stmt"/>
+        <line num="52" count="2" type="stmt"/>
+        <line num="53" count="2" type="stmt"/>
+        <line num="54" count="2" type="stmt"/>
+        <line num="55" count="2" type="stmt"/>
+        <line num="56" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="57" count="1" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
         <line num="63" count="3" type="stmt"/>
-        <line num="64" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="64" count="3" type="cond" truecount="1" falsecount="0"/>
         <line num="65" count="1" type="stmt"/>
-        <line num="67" count="1" type="stmt"/>
-        <line num="68" count="1" type="stmt"/>
-        <line num="69" count="1" type="stmt"/>
-        <line num="74" count="1" type="stmt"/>
-        <line num="75" count="1" type="stmt"/>
-        <line num="76" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="77" count="0" type="stmt"/>
+        <line num="67" count="2" type="stmt"/>
+        <line num="68" count="2" type="stmt"/>
+        <line num="69" count="2" type="stmt"/>
+        <line num="74" count="2" type="stmt"/>
+        <line num="75" count="2" type="stmt"/>
+        <line num="76" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="77" count="1" type="stmt"/>
         <line num="79" count="1" type="stmt"/>
         <line num="83" count="8" type="stmt"/>
         <line num="84" count="8" type="stmt"/>
         <line num="85" count="8" type="cond" truecount="1" falsecount="0"/>
-        <line num="86" count="3" type="stmt"/>
-        <line num="88" count="5" type="stmt"/>
+        <line num="86" count="1" type="stmt"/>
+        <line num="88" count="7" type="stmt"/>
         <line num="92" count="4" type="stmt"/>
       </file>
       <file name="users.service.ts" path="C:\Users\ryupo\Documents\Projects\Blogna\server\src\api\services\users.service.ts">
@@ -301,8 +302,8 @@
         <line num="14" count="7" type="stmt"/>
         <line num="15" count="7" type="stmt"/>
         <line num="16" count="7" type="stmt"/>
-        <line num="17" count="5" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="19" count="5" type="stmt"/>
         <line num="23" count="7" type="stmt"/>
         <line num="25" count="7" type="stmt"/>
       </file>
