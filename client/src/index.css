@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Open Sans", sans-serif;
+  /* outline: 1px solid red; */
+}
+
+@layer components {
+  .max-container {
+    max-width: 1060px;
+    margin: 0 auto;
+  }
+
+  .input {
+    @apply h-[40px] w-full rounded-[8px] border-2 border-transparent bg-[#F4F4F5] px-4 pl-10 text-[#0d0c22] outline-none transition-all duration-300 ease-in-out hover:border-[rgba(0,48,73,0.4)] hover:bg-white focus:border-[rgba(0,48,73,0.4)] focus:bg-white focus:ring-4 focus:ring-[rgba(0,48,73,0.1)];
+  }
+}
+
+@layer utilities {
+  .info-text {
+    @apply font-serif text-lg leading-7 text-slate-gray;
+  }
+}
