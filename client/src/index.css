@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,13 +9,20 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  font-family: "Open Sans", sans-serif;
-  /* outline: 1px solid red; */
+  font-family: "Montserrat", sans-serif;
+  outline: 1px solid red;
 }
 
 @layer components {
   .max-container {
     max-width: 1060px;
+    padding: 0.5rem;
+    margin: 0 auto;
+  }
+
+  .max-container-blog {
+    max-width: 640px;
+    padding: 0.5rem;
     margin: 0 auto;
   }
 
@@ -27,5 +34,8 @@
 @layer utilities {
   .info-text {
     @apply font-serif text-lg leading-7 text-slate-gray;
+  }
+  .footer-header {
+    @apply text-lg font-semibold;
   }
 }

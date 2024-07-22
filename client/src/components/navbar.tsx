@@ -4,11 +4,14 @@ import Button from "./button";
 
 function Navbar() {
   return (
-    <section className="max-container flex flex-1 justify-between items-center p-2 gap-16">
-      <a href="/" className="max-w-[160px]">
+    <section className="max-container flex flex-1 items-center justify-between gap-16">
+      <a href="/" className="flex items-center gap-2">
         <img src={logo} alt="Blogna Logo" />
+        <h1 className="text-2xl">
+          Meta<b>Blog</b>
+        </h1>
       </a>
-      <div className="flex flex-shrink-0 flex-row gap-6 item-center justify-center">
+      <div className="item-center flex flex-shrink-0 flex-row justify-center gap-6">
         <SearchInput />
         <Button content="Login" />
       </div>
@@ -18,7 +21,7 @@ function Navbar() {
 
 function SearchInput() {
   return (
-    <div className="flex items-center relative max-w-[190px]">
+    <div className="relative flex max-w-[190px] items-center">
       <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
         <img src={search} alt="Search Logo" />
       </div>
