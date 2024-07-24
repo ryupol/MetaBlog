@@ -1,5 +1,4 @@
-import logo from "../assets/logo.svg";
-
+import Logo from "./logo";
 function Footer() {
   const quickLink = ["Home", "About", "Blog", "Contact"];
   const category = [
@@ -54,15 +53,7 @@ function Footer() {
         </div>
       </div>
       <div className="max-container flex w-[100%] justify-between gap-6 border-t border-slate-300 py-8 max-md:flex-col max-md:items-center">
-        <div className="flex items-center gap-2">
-          <img src={logo} alt="MetaBlog icon" width={42} height={4} />
-          <div>
-            <h1 className="text-lg">
-              Meta<b>Blog</b>
-            </h1>
-            <p>&copy; JS Template 2023. All Right Reserved.</p>
-          </div>
-        </div>
+        <Logo footer={true} />
         <ul className="flex items-center gap-4">
           <li>Terms of Use</li>
           <li>Privacy Policy</li>

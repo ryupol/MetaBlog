@@ -1,19 +1,14 @@
-import logo from "../assets/logo.svg";
 import search from "../assets/search.svg";
 import Button from "./button";
+import Logo from "./logo";
 
 function Navbar() {
   return (
     <section className="max-container flex flex-1 items-center justify-between gap-16">
-      <a href="/" className="flex items-center gap-2">
-        <img src={logo} alt="Blogna Logo" />
-        <h1 className="text-2xl">
-          Meta<b>Blog</b>
-        </h1>
-      </a>
+      <Logo />
       <div className="item-center flex flex-shrink-0 flex-row justify-center gap-6">
         <SearchInput />
-        <Button content="Login" />
+        <Button> Login</Button>
       </div>
     </section>
   );

@@ -18,8 +18,11 @@ export default {
         open: ["Open Sans", "sans-serif"],
       },
       colors: {
-        primary: "#3B5BDB",
-        "dark-primary": "#364FC7",
+        blue: {
+          400: "#2589FE",
+          500: "#0070F3",
+          600: "#2F6FEB",
+        },
         secondary: "#F2F2F2",
         "slate-gray": "#6D6D6D",
       },

@@ -1,6 +1,7 @@
 import Navbar from "../components/navbar";
 import Tag from "../components/tag";
 import Profile from "../components/profile";
+import Footer from "../components/footer";
 
 function Blog() {
   const data = {
@@ -32,7 +33,96 @@ function Blog() {
             className="h-[400px] w-[100%] object-cover"
           />
         </div>
+        <div className="content my-10 flex flex-col gap-4">
+          <p>
+            Something's enriching, important, even a bit spiritual happens when
+            we take time to disconnect from the demands of daily life and
+            immerse ourselves in a new place. It is during these escapes that we
+            discover the world's hidden gems, broadening our understanding of
+            different cultures, traditions, and lifestyles.
+          </p>
+
+          <p>
+            One of the most rewarding aspects of traveling is connecting with
+            the locals. Their warmth, welcoming smiles, and storytelling often
+            reveal hidden treasures, enhancing the destination's charm ten-fold.
+          </p>
+
+          <h2 className="text-md font-bold">Embrace the Unknown</h2>
+          <p>
+            Dare to step outside your comfort zone, for travel thrives on
+            spontaneity. The best memories are often unscripted, born from
+            unexpected detours and unplanned encounters. Let go of itineraries,
+            surrender to the rhythm of the place, and allow yourself to be
+            surprised by its unique offerings.
+          </p>
+
+          <h2 className="text-md font-bold">Plan Your Itinerary</h2>
+          <p>
+            While spontaneity has its merits, a carefully crafted itinerary sets
+            the stage for a smooth and enjoyable journey. Research your desired
+            destination, outline key attractions, and factor in travel time
+            between locations. This strategic approach ensures you make the most
+            of your valuable time while still leaving room for spontaneous
+            adventures.
+          </p>
+
+          <blockquote>
+            "Traveling is a state of mind. It has to do with curiosity and
+            courage. It is about leaving your comfort zone to meet the unknown
+            and unfamiliar." - Christina Tan
+          </blockquote>
+
+          <h2 className="text-md font-bold">Pack Light and Smartly</h2>
+          <p>
+            Prioritize essentials, favoring versatile clothing for efficiency
+            and space-saving. Remember, experiences outweigh material
+            possessions. Embrace minimalism and revel in the freedom it brings.
+          </p>
+
+          <h2 className="text-md font-bold">Stay Safe and Healthy</h2>
+          <p>
+            Research your destination's health and safety guidelines, adhere to
+            local regulations, and exercise caution in unfamiliar territories.
+            This ensures a secure and enjoyable travel experience.
+          </p>
+
+          <h2>Immerse Yourself in the Local Culture</h2>
+          <p>
+            Engage with locals, respect their customs, and participate in
+            cultural activities. This enriches your journey and fosters a deeper
+            appreciation for the destination's unique heritage.
+          </p>
+
+          <h2 className="text-md font-bold">Capture Memories</h2>
+          <p>
+            Keep a journal, take photos, and collect mementos. These tangible
+            reminders serve as a time capsule, allowing you to revisit and
+            relive your travel experiences for years to come.
+          </p>
+
+          <h2 className="text-md font-bold">
+            Travel for the Exchange of Economic Benefits
+          </h2>
+          <p>
+            Tourism plays a crucial role in bolstering local economies. When we
+            travel, we contribute to the livelihoods of communities, supporting
+            businesses and individuals who rely on the tourism industry for
+            sustenance.
+          </p>
+
+          <h2 className="text-md font-bold">Cultivate Open-Mindedness</h2>
+          <p>
+            Travel fosters a broader perspective on life. Embrace the diversity
+            of cultures and belief systems you encounter. This open-mindedness
+            cultivates tolerance and empathy, enriching both your personal
+            growth and your interactions with others.
+          </p>
+
+          <p>You can plan safe.</p>
+        </div>
       </section>
+      <Footer />
     </main>
   );
 }
