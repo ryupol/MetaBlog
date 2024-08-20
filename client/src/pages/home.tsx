@@ -58,9 +58,7 @@ function Home() {
     <main>
       <Navbar />
       <Header />
-      <h3 className="max-container mb-2 mt-20 text-xl font-bold">
-        Latest Post
-      </h3>
+      <h2 className="max-container mb-2 mt-20">Latest Post</h2>
       <div className="max-container grid grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 md:grid-cols-3">
         {data.map((d) => (
           <BlogCard

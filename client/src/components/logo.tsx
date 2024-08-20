@@ -12,9 +12,9 @@ function Logo({
     <div className="flex items-center gap-2">
       <img src={color == "black" ? blackLogo : whiteLogo} alt="Blogna Logo" />
       <div className={`${color == "black" ? "" : "text-white"}`}>
-        <h1 className={`${footer ? "text-lg" : "text-2xl"}`}>
+        <h4 className={`${footer ? "text-lg" : "text-2xl"}`}>
           Meta<b>Blog</b>
-        </h1>
+        </h4>
         {footer ? <p>&copy; JS Template 2024. All Right Reserved.</p> : ""}
       </div>
     </div>

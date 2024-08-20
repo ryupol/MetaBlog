@@ -10,7 +10,6 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-family: "Montserrat", sans-serif;
-  outline: 1px solid red;
 }
 
 .content p,
@@ -43,4 +42,19 @@
   .footer-header {
     @apply text-lg font-semibold;
   }
+}
+
+@layer base {
+  h1 {
+    @apply text-2xl font-bold;
+  }
+  h2 {
+    @apply text-xl font-bold;
+  }
+  h3 {
+    @apply text-lg font-bold;
+  }
+  /* a {
+    @apply text-blue-400 underline hover:text-blue-300;
+  } */
 }

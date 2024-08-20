@@ -48,7 +48,7 @@ function Blog() {
             reveal hidden treasures, enhancing the destination's charm ten-fold.
           </p>
 
-          <h2 className="text-md font-bold">Embrace the Unknown</h2>
+          <h3>Embrace the Unknown</h3>
           <p>
             Dare to step outside your comfort zone, for travel thrives on
             spontaneity. The best memories are often unscripted, born from
@@ -57,7 +57,7 @@ function Blog() {
             surprised by its unique offerings.
           </p>
 
-          <h2 className="text-md font-bold">Plan Your Itinerary</h2>
+          <h3>Plan Your Itinerary</h3>
           <p>
             While spontaneity has its merits, a carefully crafted itinerary sets
             the stage for a smooth and enjoyable journey. Research your desired
@@ -73,37 +73,35 @@ function Blog() {
             and unfamiliar." - Christina Tan
           </blockquote>
 
-          <h2 className="text-md font-bold">Pack Light and Smartly</h2>
+          <h3>Pack Light and Smartly</h3>
           <p>
             Prioritize essentials, favoring versatile clothing for efficiency
             and space-saving. Remember, experiences outweigh material
             possessions. Embrace minimalism and revel in the freedom it brings.
           </p>
 
-          <h2 className="text-md font-bold">Stay Safe and Healthy</h2>
+          <h3>Stay Safe and Healthy</h3>
           <p>
             Research your destination's health and safety guidelines, adhere to
             local regulations, and exercise caution in unfamiliar territories.
             This ensures a secure and enjoyable travel experience.
           </p>
 
-          <h2>Immerse Yourself in the Local Culture</h2>
+          <h3>Immerse Yourself in the Local Culture</h3>
           <p>
             Engage with locals, respect their customs, and participate in
             cultural activities. This enriches your journey and fosters a deeper
             appreciation for the destination's unique heritage.
           </p>
 
-          <h2 className="text-md font-bold">Capture Memories</h2>
+          <h3>Capture Memories</h3>
           <p>
             Keep a journal, take photos, and collect mementos. These tangible
             reminders serve as a time capsule, allowing you to revisit and
             relive your travel experiences for years to come.
           </p>
 
-          <h2 className="text-md font-bold">
-            Travel for the Exchange of Economic Benefits
-          </h2>
+          <h3>Travel for the Exchange of Economic Benefits</h3>
           <p>
             Tourism plays a crucial role in bolstering local economies. When we
             travel, we contribute to the livelihoods of communities, supporting
@@ -111,7 +109,7 @@ function Blog() {
             sustenance.
           </p>
 
-          <h2 className="text-md font-bold">Cultivate Open-Mindedness</h2>
+          <h3>Cultivate Open-Mindedness</h3>
           <p>
             Travel fosters a broader perspective on life. Embrace the diversity
             of cultures and belief systems you encounter. This open-mindedness

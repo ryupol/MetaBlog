@@ -18,7 +18,7 @@ function BlogCard({ image, title, profile, name, date }: BlogCardType) {
       <div className="mt-2">
         <Tag cat="Technology" />
       </div>
-      <h2 className="line-clamp-3 text-xl font-bold leading-8">{title}</h2>
+      <h2 className="line-clamp-3 leading-8">{title}</h2>
       <div className="flex flex-1 items-center gap-3 text-sm text-slate-gray">
         <Profile src={profile} />
         <span className="line-clamp-2 max-w-[120px]">{name}</span>

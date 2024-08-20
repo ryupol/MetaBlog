@@ -1,14 +1,43 @@
 import search from "../assets/search.svg";
-import Button from "./button";
+import { ArrowRightStartOnRectangleIcon as SignoutIcon } from "@heroicons/react/24/outline";
 import Logo from "./logo";
+import { useRef, useState } from "react";
+import useClickOutside from "../hooks/useClickOutside";
+import { Link } from "react-router-dom";
 
 function Navbar() {
+  const menuRef = useRef(null);
+  const [openMenu, setOpenMenu] = useState(false);
   return (
     <section className="max-container flex flex-1 items-center justify-between gap-16">
-      <Logo />
+      <Link to="/">
+        <Logo />
+      </Link>
+      <ul className="flex flex-row gap-6">
+        {["Home", "About", "Blog", "Contract"].map((x) => (
+          <li>
+            <Link to={`#${x}`}>{x}</Link>
+          </li>
+        ))}
+      </ul>
       <div className="item-center flex flex-shrink-0 flex-row justify-center gap-6">
         <SearchInput />
-        <Button> Login</Button>
+        {/* <a href="/signin">
+          <Button>Login</Button>
+        </a> */}
+        <div className="relative" ref={menuRef}>
+          <button
+            className="rounded-full border border-blue-500"
+            onClick={() => setOpenMenu(!openMenu)}
+          >
+            <Profile />
+          </button>
+          <UserMenu
+            openMenu={openMenu}
+            setOpenMenu={setOpenMenu}
+            menuRef={menuRef}
+          />
+        </div>
       </div>
     </section>
   );
@@ -25,16 +54,40 @@ function SearchInput() {
   );
 }
 
-// function Profile() {
-//   return (
-//     <div className="rounded-full overflow-hidden w-10 h-10">
-//       <img
-//         src="https://res.cloudinary.com/dxwmjflhh/image/upload/profile.webp"
-//         alt="Profile Image"
-//         className=" w-full h-full object-cover"
-//       />
-//     </div>
-//   );
-// }
+function Profile() {
+  return (
+    <div className="h-10 w-10 overflow-hidden rounded-full">
+      <img
+        src="https://res.cloudinary.com/dxwmjflhh/image/upload/profile.webp"
+        alt="Profile Image"
+        className="h-full w-full object-cover"
+      />
+    </div>
+  );
+}
+
+function UserMenu({ openMenu, setOpenMenu, menuRef }) {
+  useClickOutside(menuRef, () => setOpenMenu(false));
+  return (
+    <section
+      className={`absolute right-0 z-10 mt-2 rounded-md bg-white shadow-md ${openMenu ? `block` : `hidden`}`}
+    >
+      <header className="border-b-1-slate-300 flex gap-3 p-4">
+        <Profile />
+        <div>
+          <p>Name</p>
+          <p>name@gmail.com</p>
+          <a href="/edit/profile">Edit profile</a>
+        </div>
+      </header>
+      <footer>
+        <button className="flex w-[100%] gap-3 px-4 py-2 hover:bg-slate-400">
+          <SignoutIcon className="w-6" />
+          <p>Sign out</p>
+        </button>
+      </footer>
+    </section>
+  );
+}
 
 export default Navbar;
