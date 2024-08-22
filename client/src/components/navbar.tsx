@@ -13,7 +13,7 @@ function Navbar() {
       <Link to="/">
         <Logo />
       </Link>
-      <ul className="flex flex-row gap-6">
+      <ul className="flex flex-row gap-6 max-md:hidden">
         {["Home", "About", "Blog", "Contract"].map((x) => (
           <li>
             <Link to={`#${x}`}>{x}</Link>

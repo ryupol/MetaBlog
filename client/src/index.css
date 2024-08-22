@@ -17,6 +17,13 @@
   margin-bottom: 1rem;
 }
 
+.ql-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: white;
+}
+
 @layer components {
   .max-container {
     max-width: 1060px;
@@ -54,6 +61,7 @@
   h3 {
     @apply text-lg font-bold;
   }
+
   /* a {
     @apply text-blue-400 underline hover:text-blue-300;
   } */
