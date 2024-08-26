@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Logo from "./logo";
 function Footer() {
   const quickLink = ["Home", "About", "Blog", "Contact"];
@@ -12,8 +13,10 @@ function Footer() {
   return (
     <section className="flex flex-col border-t border-slate-200 bg-gray-100 pt-12">
       <div className="max-container text-sans flex w-[100%] justify-between gap-12 max-md:flex-col max-md:text-center">
-        <div className="max-w-[300px] max-md:max-w-[100%]">
-          <h3 className="footer-header">About</h3>
+        <div id="contract" className="max-w-[300px] max-md:max-w-[100%]">
+          <h3 id="about" className="footer-header">
+            About
+          </h3>
           <p className="my-4">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima
             iure qui doloremque deserunt expedita non ipsa nihil ipsam, ex
@@ -32,8 +35,12 @@ function Footer() {
           <ul>
             <h3 className="footer-header mb-6">Quick Link</h3>
             {quickLink.map((link) => (
-              <li className="leading-8">
-                <a href="/">{link}</a>
+              <li className="leading-8" key={link}>
+                {link === "Home" ? (
+                  <Link to="/">{link}</Link>
+                ) : (
+                  <a href={`#${link.toLowerCase()}`}>{link}</a>
+                )}
               </li>
             ))}
           </ul>
@@ -42,7 +49,7 @@ function Footer() {
           <ul>
             <h3 className="footer-header mb-6">Category</h3>
             {category.map((cat) => (
-              <li className="leading-8">
+              <li className="leading-8" key={cat}>
                 <a href="/">{cat}</a>
               </li>
             ))}

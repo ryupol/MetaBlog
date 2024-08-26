@@ -10,6 +10,7 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-family: "Montserrat", sans-serif;
+  /* outline: 1px solid red; */
 }
 
 .content p,
@@ -22,6 +23,12 @@
   top: 0;
   z-index: 999;
   background: white;
+}
+
+.image-custom {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
 }
 
 @layer components {
@@ -48,6 +55,9 @@
   }
   .footer-header {
     @apply text-lg font-semibold;
+  }
+  .card-hover {
+    @apply transform cursor-pointer transition-transform duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-lg;
   }
 }
 

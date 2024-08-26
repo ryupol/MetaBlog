@@ -9,7 +9,7 @@ function Header() {
           src="https://picsum.photos/seed/picsum/1060/500"
           alt="Header Blog image"
         />
-        <div className="absolute bottom-[-46px] left-[48px] max-w-[420px] rounded-lg bg-white p-8 shadow-2xl">
+        <div className="card-hover absolute bottom-[-46px] left-[48px] max-w-[420px] rounded-lg bg-white p-8 shadow-2xl">
           <Tag cat="Technology" header={true} />
           <h1 className="py-4 text-2xl font-bold leading-8">
             The Impact of Technology on the Workplace: How Technology is

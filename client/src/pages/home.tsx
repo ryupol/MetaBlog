@@ -59,7 +59,10 @@ function Home() {
       <Navbar />
       <Header />
       <h2 className="max-container mb-2 mt-20">Latest Post</h2>
-      <div className="max-container grid grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 md:grid-cols-3">
+      <div
+        id="blog"
+        className="max-container mb-20 grid grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 md:grid-cols-3"
+      >
         {data.map((d) => (
           <BlogCard
             image={d.image}

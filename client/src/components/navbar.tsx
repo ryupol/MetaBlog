@@ -1,7 +1,7 @@
 import search from "../assets/search.svg";
 import { ArrowRightStartOnRectangleIcon as SignoutIcon } from "@heroicons/react/24/outline";
 import Logo from "./logo";
-import { useRef, useState } from "react";
+import { Dispatch, RefObject, SetStateAction, useRef, useState } from "react";
 import useClickOutside from "../hooks/useClickOutside";
 import { Link } from "react-router-dom";
 
@@ -15,8 +15,12 @@ function Navbar() {
       </Link>
       <ul className="flex flex-row gap-6 max-md:hidden">
         {["Home", "About", "Blog", "Contract"].map((x) => (
-          <li>
-            <Link to={`#${x}`}>{x}</Link>
+          <li key={x}>
+            {x === "Home" ? (
+              <Link to="/">{x}</Link>
+            ) : (
+              <a href={`#${x.toLowerCase()}`}>{x}</a>
+            )}
           </li>
         ))}
       </ul>
@@ -66,7 +70,13 @@ function Profile() {
   );
 }
 
-function UserMenu({ openMenu, setOpenMenu, menuRef }) {
+interface UserMenuProps {
+  openMenu: boolean;
+  setOpenMenu: Dispatch<SetStateAction<boolean>>;
+  menuRef: RefObject<HTMLDivElement>;
+}
+
+function UserMenu({ openMenu, setOpenMenu, menuRef }: UserMenuProps) {
   useClickOutside(menuRef, () => setOpenMenu(false));
   return (
     <section
@@ -77,11 +87,17 @@ function UserMenu({ openMenu, setOpenMenu, menuRef }) {
         <div>
           <p>Name</p>
           <p>name@gmail.com</p>
-          <a href="/edit/profile">Edit profile</a>
+          <a
+            href="/edit/profile"
+            className="text-blue-400 underline hover:text-blue-300"
+          >
+            Edit profile
+          </a>
         </div>
       </header>
+      <hr />
       <footer>
-        <button className="flex w-[100%] gap-3 px-4 py-2 hover:bg-slate-400">
+        <button className="flex w-[100%] gap-3 rounded-b-md px-4 py-2 hover:bg-gray-50">
           <SignoutIcon className="w-6" />
           <p>Sign out</p>
         </button>
