@@ -4,7 +4,6 @@ import Button from "../components/button";
 import { PlusIcon } from "@heroicons/react/24/outline";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import Quill from "quill";
 
 function BlogCreate() {
   const [content, setContent] = useState<string>("");
