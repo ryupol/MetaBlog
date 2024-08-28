@@ -7,10 +7,9 @@ type BlogCardType = {
   profile: string;
   name: string;
   date: string;
-  header?: boolean;
 };
 
-function BlogCard({ image, title, profile, name, date, header }: BlogCardType) {
+function BlogCard({ image, title, profile, name, date }: BlogCardType) {
   return (
     <div className="card-hover flex max-w-[330px] flex-col gap-4 rounded-[12px] border border-slate-200 p-[12px] shadow-sm">
       <div className="overflow-hidden rounded-[6px]">

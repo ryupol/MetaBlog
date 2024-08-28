@@ -1,4 +1,4 @@
-import BlogCard from "../components/card";
+import BlogCard from "../components/blog-card";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import Navbar from "../components/navbar";
@@ -6,6 +6,7 @@ import Navbar from "../components/navbar";
 function Home() {
   const data = [
     {
+      blog_id: 1,
       title:
         "The Impact of Technology on the Workplace: How Technology is Changing",
       image: "https://picsum.photos/600/400",
@@ -14,6 +15,7 @@ function Home() {
       date: "May 20, 2022",
     },
     {
+      blog_id: 2,
       title:
         "The Impact of Technology on the Workplace: How Technology is Changing",
       image: "https://picsum.photos/600/400",
@@ -22,6 +24,7 @@ function Home() {
       date: "August 20, 2022",
     },
     {
+      blog_id: 3,
       title:
         "The Impact of Technology on the Workplace: How Technology is Changing",
       image: "https://picsum.photos/600/400",
@@ -30,6 +33,7 @@ function Home() {
       date: "June 20, 2022",
     },
     {
+      blog_id: 4,
       title:
         "The Impact of Technology on the Workplace: How Technology is Changing",
       image: "https://picsum.photos/600/400",
@@ -38,6 +42,7 @@ function Home() {
       date: "August 20, 2022",
     },
     {
+      blog_id: 5,
       title:
         "The Impact of Technology on the Workplace: How Technology is Changing",
       image: "https://picsum.photos/600/400",
@@ -46,6 +51,7 @@ function Home() {
       date: "December 20, 2022",
     },
     {
+      blog_id: 6,
       title:
         "The Impact of Technology on the Workplace: How Technology is Changing",
       image: "https://picsum.photos/600/400",
@@ -70,6 +76,7 @@ function Home() {
             profile={d.profile}
             name={d.name}
             date={d.date}
+            key={d.blog_id}
           />
         ))}
       </div>

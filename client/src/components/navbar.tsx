@@ -2,10 +2,10 @@ import { Dispatch, RefObject, SetStateAction, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   SunIcon,
-  MoonIcon,
+  // MoonIcon,
   ArrowRightStartOnRectangleIcon as SignoutIcon,
 } from "@heroicons/react/24/outline";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { toggleTheme } from "../redux/theme/themeSlice";
 import search from "../assets/search.svg";
 import useClickOutside from "../hooks/useClickOutside";
@@ -20,7 +20,7 @@ function Navbar() {
         <Logo />
       </Link>
       <ul className="flex flex-row gap-6 max-md:hidden">
-        {["Home", "Blog", "Single Post", "Contact"].map((x) => (
+        {["Home", "Blog", "Single Post", "Contract"].map((x) => (
           <li key={x}>
             {x === "Home" ? (
               <Link to="/">{x}</Link>
@@ -83,6 +83,7 @@ interface UserMenuProps {
 }
 
 function UserMenu({ openMenu, setOpenMenu, menuRef }: UserMenuProps) {
+  const dispatch = useDispatch();
   useClickOutside(menuRef, () => setOpenMenu(false));
   return (
     <section
@@ -103,7 +104,10 @@ function UserMenu({ openMenu, setOpenMenu, menuRef }: UserMenuProps) {
       </header>
       <hr />
       <footer>
-        <button className="flex w-[100%] gap-3 px-4 py-2 hover:bg-gray-50">
+        <button
+          onClick={() => dispatch(toggleTheme())}
+          className="flex w-[100%] gap-3 px-4 py-2 hover:bg-gray-50"
+        >
           <SunIcon className="w-6" />
           <p>Appearance: {"Light"}</p>
         </button>
