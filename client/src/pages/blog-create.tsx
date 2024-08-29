@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import Navbar from "../components/navbar";
-import Button from "../components/button";
+import Button from "../components/ui/button";
 import { PlusIcon } from "@heroicons/react/24/outline";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";

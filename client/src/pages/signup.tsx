@@ -1,4 +1,4 @@
-import Logo from "../components/logo";
+import Logo from "../components/ui/logo";
 import SignupForm from "../components/signup-form";
 
 function Signup() {

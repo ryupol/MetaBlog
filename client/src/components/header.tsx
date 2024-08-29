@@ -1,5 +1,5 @@
-import Profile from "./profile";
-import Tag from "./tag";
+import Profile from "./ui/profile";
+import Tag from "./ui/tag";
 
 function Header() {
   return (

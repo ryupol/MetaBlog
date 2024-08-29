@@ -1,5 +1,5 @@
-import blackLogo from "../assets/black-logo.svg";
-import whiteLogo from "../assets/white-logo.svg";
+import blackLogo from "../../assets/black-logo.svg";
+import whiteLogo from "../../assets/white-logo.svg";
 
 function Logo({
   color = "black",

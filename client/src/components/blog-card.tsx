@@ -1,5 +1,5 @@
-import Profile from "./profile";
-import Tag from "./tag";
+import Profile from "./ui/profile";
+import Tag from "./ui/tag";
 
 type BlogCardType = {
   image: string;
@@ -13,7 +13,11 @@ function BlogCard({ image, title, profile, name, date }: BlogCardType) {
   return (
     <div className="card-hover flex max-w-[330px] flex-col gap-4 rounded-[12px] border border-slate-200 p-[12px] shadow-sm">
       <div className="overflow-hidden rounded-[6px]">
-        <img src={image} alt="Card Image" />
+        <img
+          src={image}
+          alt="Card Image"
+          className="h-[200px] w-[100%] object-cover"
+        />
       </div>
       <div className="mt-2">
         <Tag cat="Technology" />

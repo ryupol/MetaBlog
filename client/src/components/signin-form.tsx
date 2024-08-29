@@ -1,4 +1,4 @@
-import Button from "./button";
+import Button from "./ui/button";
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
 import { AtSymbolIcon, KeyIcon } from "@heroicons/react/24/outline";
 

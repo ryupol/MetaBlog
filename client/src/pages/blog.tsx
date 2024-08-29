@@ -1,6 +1,6 @@
 import Navbar from "../components/navbar";
-import Tag from "../components/tag";
-import Profile from "../components/profile";
+import Tag from "../components/ui/tag";
+import Profile from "../components/ui/profile";
 import Footer from "../components/footer";
 
 function Blog() {

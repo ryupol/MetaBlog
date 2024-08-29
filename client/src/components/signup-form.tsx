@@ -1,6 +1,6 @@
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
 import { AtSymbolIcon, LockClosedIcon } from "@heroicons/react/24/outline";
-import Button from "./button";
+import Button from "./ui/button";
 
 function SignupForm() {
   return (

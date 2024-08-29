@@ -9,7 +9,7 @@ import { useDispatch } from "react-redux";
 import { toggleTheme } from "../redux/theme/themeSlice";
 import search from "../assets/search.svg";
 import useClickOutside from "../hooks/useClickOutside";
-import Logo from "./logo";
+import Logo from "./ui/logo";
 
 function Navbar() {
   const menuRef = useRef(null);
