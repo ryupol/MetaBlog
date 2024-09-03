@@ -5,22 +5,22 @@ interface ShimmerProp {
 // Loading animation
 const Shimmer = ({ className }: ShimmerProp) => (
   <div
-    className={`relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_1.5s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/60 before:to-transparent ${className}`}
+    className={`${className} bg-theme-skeleton before:via-theme-loading/60 relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_1.5s_infinite] before:bg-gradient-to-r before:from-transparent before:to-transparent`}
   ></div>
 );
 
 export function CardSkeleton() {
   return (
     <div
-      className={`flex w-full max-w-[330px] flex-col gap-4 rounded-[12px] border border-slate-200 p-[12px] shadow-sm`}
+      className={`flex w-full max-w-[392px] flex-col gap-4 rounded-[12px] border border-theme-border p-[12px] shadow-sm`}
     >
-      <Shimmer className="h-[200px] w-full rounded-[6px] bg-gray-200" />
-      <Shimmer className="mt-2 h-6 w-24 rounded-md bg-gray-200" />
-      <Shimmer className="h-6 w-full rounded-md bg-gray-200" />
-      <div className="flex items-center gap-3">
-        <Shimmer className="h-8 w-8 rounded-full bg-gray-200" />
-        <Shimmer className="h-6 w-20 rounded-md bg-gray-200" />
-        <Shimmer className="h-6 w-16 rounded-md bg-gray-200" />
+      <Shimmer className="h-[240px] w-full rounded-[6px]" />
+      <Shimmer className="mt-2 h-6 w-24 rounded-md" />
+      <Shimmer className="h-6 w-full rounded-md" />
+      <div className="flex items-center gap-3 rounded-md">
+        <Shimmer className="h-8 w-8 rounded-full" />
+        <Shimmer className="h-6 w-20 rounded-md" />
+        <Shimmer className="h-6 w-16 rounded-md" />
       </div>
     </div>
   );

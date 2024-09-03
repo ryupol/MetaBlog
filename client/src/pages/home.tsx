@@ -2,7 +2,7 @@ import BlogCard from "../components/blog-card";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import Navbar from "../components/navbar";
-import { CardSkeleton, CardsSkeleton } from "../components/ui/skeleton";
+import { CardsSkeleton } from "../components/ui/skeleton";
 
 function Home() {
   const data = [
@@ -62,25 +62,23 @@ function Home() {
     },
   ];
   return (
-    <main>
+    <main className="theme-base transition duration-300">
       <Navbar />
       <Header />
-      <h2 className="max-container mb-2 mt-20">Latest Post</h2>
+      <h1 className="max-container mb-8 mt-36">Latest Post</h1>
       <div
         id="blog"
-        className="max-container mb-20 grid grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 md:grid-cols-3"
+        className="max-container mb-20 grid grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 lg:grid-cols-3"
       >
         {data.map((d) => (
-          <>
-            <BlogCard
-              image={d.image}
-              title={d.title}
-              profile={d.profile}
-              name={d.name}
-              date={d.date}
-              key={d.blog_id}
-            />
-          </>
+          <BlogCard
+            image={d.image}
+            title={d.title}
+            profile={d.profile}
+            name={d.name}
+            date={d.date}
+            key={d.blog_id}
+          />
         ))}
         <CardsSkeleton />
       </div>

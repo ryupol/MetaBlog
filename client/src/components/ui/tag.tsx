@@ -1,11 +1,11 @@
 function Tag({ cat, header }: { cat: string; header?: boolean }) {
-  const color = header
-    ? "bg-blue-500 text-white"
-    : "bg-secondary text-blue-500";
+  const color = header ? "bg-primary text-white" : "bg-primary-5 text-primary";
   return (
-    <span className={`${color} rounded-md px-2 py-1 text-xs font-semibold`}>
+    <div
+      className={`${color} inline-block rounded-md px-[10px] py-1 text-sm font-medium`}
+    >
       {cat}
-    </span>
+    </div>
   );
 }
 

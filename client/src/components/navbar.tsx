@@ -4,10 +4,12 @@ import {
   SunIcon,
   // MoonIcon,
   ArrowRightStartOnRectangleIcon as SignoutIcon,
+  MagnifyingGlassIcon as SearchIcon,
+  MoonIcon,
 } from "@heroicons/react/24/outline";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../redux/theme/themeSlice";
-import search from "../assets/search.svg";
+import { RootState } from "../redux/store";
 import useClickOutside from "../hooks/useClickOutside";
 import Logo from "./ui/logo";
 
@@ -31,13 +33,19 @@ function Navbar() {
         ))}
       </ul>
       <div className="item-center flex flex-shrink-0 flex-row justify-center gap-6">
-        <SearchInput />
+        <div className="relative flex items-center">
+          <input className="nav-input" placeholder="Search" />
+          <SearchIcon
+            strokeWidth={2}
+            className="pointer-events-none absolute inset-y-0 right-2 top-1/2 flex h-5 w-5 -translate-y-1/2 text-[#52525B]"
+          />
+        </div>
         {/* <a href="/signin">
           <Button>Login</Button>
         </a> */}
         <div className="relative" ref={menuRef}>
           <button
-            className="rounded-full border border-blue-500"
+            className="rounded-full border border-primary"
             onClick={() => setOpenMenu(!openMenu)}
           >
             <Profile />
@@ -50,17 +58,6 @@ function Navbar() {
         </div>
       </div>
     </section>
-  );
-}
-
-function SearchInput() {
-  return (
-    <div className="relative flex max-w-[190px] items-center">
-      <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-        <img src={search} alt="Search Logo" />
-      </div>
-      <input className="input" placeholder="Search" />
-    </div>
   );
 }
 
@@ -84,10 +81,11 @@ interface UserMenuProps {
 
 function UserMenu({ openMenu, setOpenMenu, menuRef }: UserMenuProps) {
   const dispatch = useDispatch();
+  const { theme } = useSelector((state: RootState) => state.theme);
   useClickOutside(menuRef, () => setOpenMenu(false));
   return (
     <section
-      className={`absolute right-0 z-10 mt-2 rounded-md bg-white shadow-md ${openMenu ? `block` : `hidden`}`}
+      className={`theme-base absolute right-0 z-10 mt-2 rounded-md shadow-md ${openMenu ? `block` : `hidden`}`}
     >
       <header className="border-b-1-slate-300 flex gap-3 p-4">
         <Profile />
@@ -96,22 +94,26 @@ function UserMenu({ openMenu, setOpenMenu, menuRef }: UserMenuProps) {
           <p>name@gmail.com</p>
           <a
             href="/edit/profile"
-            className="text-blue-400 underline hover:text-blue-300"
+            className="text-primary underline hover:text-primary/80"
           >
             Edit profile
           </a>
         </div>
       </header>
-      <hr />
+      <hr className="border-theme-skeleton" />
       <footer>
         <button
           onClick={() => dispatch(toggleTheme())}
-          className="flex w-[100%] gap-3 px-4 py-2 hover:bg-gray-50"
+          className="flex w-[100%] gap-3 px-4 py-2 hover:bg-theme-border"
         >
-          <SunIcon className="w-6" />
-          <p>Appearance: {"Light"}</p>
+          {theme === "light" ? (
+            <SunIcon className="w-6" />
+          ) : (
+            <MoonIcon className="w-6" />
+          )}
+          <p>Appearance: {theme === "light" ? "Light" : "Dark"}</p>
         </button>
-        <button className="flex w-[100%] gap-3 rounded-b-md px-4 py-2 hover:bg-gray-50">
+        <button className="flex w-[100%] gap-3 rounded-b-md px-4 py-2 hover:bg-theme-border">
           <SignoutIcon className="w-6" />
           <p>Sign out</p>
         </button>

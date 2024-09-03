@@ -7,19 +7,7 @@ interface ThemeProviderProps {
 }
 function ThemeProvider({ children }: ThemeProviderProps) {
   const { theme } = useSelector((state: RootState) => state.theme);
-  return (
-    <div className={theme}>
-      <div
-        className={`${
-          theme === "light"
-            ? "bg-white text-gray-700"
-            : "bg-[rgb(16,23,42)] text-gray-200"
-        }`}
-      >
-        {children}
-      </div>
-    </div>
-  );
+  return <div className={`${theme}`}>{children}</div>;
 }
 
 export default ThemeProvider;

@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,11 +6,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
-  font-family: "Montserrat", sans-serif;
   /* outline: 1px solid red; */
 }
 
+body {
+  font-family: "Work Sans", sans-serif;
+  scroll-behavior: smooth;
+}
 .content p,
 .content blockquote {
   margin-bottom: 1rem;
@@ -31,9 +31,54 @@
   image-rendering: crisp-edges;
 }
 
+.light {
+  --theme-bg: 255 255 255;
+  --theme-fbg: 246 246 247;
+  --theme-fcard: 255 255 255;
+  --theme-border: 232 232 234;
+  --theme-fborder: 220 221 223;
+
+  --theme-maintext: 24 26 42;
+  --theme-subtext1: 59 60 74;
+  --theme-subtext2: 105 106 117;
+  --theme-subtext3: 151 152 159;
+
+  --theme-skeleton: 232 232 234;
+  --theme-loading: 255 255 255;
+  background: rgb(var(--theme-footer-bg));
+  transition: all 0.3s;
+}
+.dark {
+  --theme-bg: 24 26 42;
+  --theme-fbg: 20 22 36;
+  --theme-fcard: 36 37 53;
+  --theme-border: 36 37 53;
+  --theme-fborder: 36 37 53;
+
+  --theme-maintext: 255 255 255;
+  --theme-subtext1: 186 186 191;
+  --theme-subtext2: 151 152 159;
+  --theme-subtext3: 151 152 159;
+
+  --theme-skeleton: 59 60 74;
+  --theme-loading: 105 106 117;
+  background: rgb(var(--theme-footer-bg));
+  transition: all 0.3s;
+}
+
+h1 {
+  @apply text-2xl font-bold;
+}
+h2 {
+  @apply text-xl font-bold;
+}
+h3 {
+  @apply text-lg font-bold;
+}
+
 @layer components {
   .max-container {
-    max-width: 1060px;
+    max-width: 1216px;
     padding: 0.5rem;
     margin: 0 auto;
   }
@@ -43,36 +88,34 @@
     padding: 0.5rem;
     margin: 0 auto;
   }
-
-  .input {
-    @apply h-[40px] w-full rounded-[8px] border-2 border-transparent bg-[#F4F4F5] px-4 pl-10 text-[#0d0c22] outline-none transition-all duration-300 ease-in-out hover:border-[rgba(0,48,73,0.4)] hover:bg-white focus:border-[rgba(0,48,73,0.4)] focus:bg-white focus:ring-4 focus:ring-[rgba(0,48,73,0.1)];
-  }
 }
 
 @layer utilities {
-  .info-text {
-    @apply font-serif text-lg leading-7 text-slate-gray;
+  .theme-base {
+    @apply bg-theme-bg text-theme-maintext;
   }
-  .footer-header {
-    @apply text-lg font-semibold;
+
+  .input-effect {
+    @apply transition-all duration-300 ease-in-out hover:border-primary/50 focus:border-primary/60 focus:ring-4 focus:ring-primary/10;
   }
+
+  .light .footer-input {
+    @apply input-effect w-full rounded-md border border-secondary-200 bg-white py-3 pl-4 pr-9 outline-none;
+  }
+
+  .dark .footer-input {
+    @apply input-effect w-full rounded-md border border-secondary-600 bg-secondary-800 py-3 pl-4 pr-9 outline-none;
+  }
+
+  .light .nav-input {
+    @apply w-[166px] rounded-md bg-secondary py-2 pl-4 pr-8 outline-none placeholder:text-[#A1A1AA];
+  }
+
+  .dark .nav-input {
+    @apply w-[166px] rounded-md bg-secondary-700 py-2 pl-4 pr-8 outline-none placeholder:text-[#A1A1AA];
+  }
+
   .card-hover {
-    @apply transform cursor-pointer transition-transform duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-lg;
+    @apply transform cursor-pointer border transition duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-lg;
   }
-}
-
-@layer base {
-  h1 {
-    @apply text-2xl font-bold;
-  }
-  h2 {
-    @apply text-xl font-bold;
-  }
-  h3 {
-    @apply text-lg font-bold;
-  }
-
-  /* a {
-    @apply text-blue-400 underline hover:text-blue-300;
-  } */
 }

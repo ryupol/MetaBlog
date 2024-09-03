@@ -15,18 +15,39 @@ export default {
     },
     extend: {
       fontFamily: {
-        open: ["Open Sans", "sans-serif"],
+        work: ["Work Sans", "sans-serif"],
+        jakarta: ["Plus Jakarta Sans", "sans-serif"],
       },
       colors: {
-        blue: {
-          400: "#2589FE",
-          500: "#0070F3",
-          600: "#2F6FEB",
-        },
-        secondary: "#F2F2F2",
-        "slate-gray": "#6D6D6D",
+        primary: "rgb(75, 107, 251)", // #4B6BFB
+        "primary-5": "rgba(75, 107, 251, 0.05)", // #4B6BFB0D
+        lightprimary: "rgb(95, 127, 255)", // #5F7FFF
+        darkprimary: "rgb(55, 87, 231)", // #3757E7
+        secondary: "rgb(244, 244, 245)", // #F4F4F5
+        "secondary-100": "rgb(232, 232, 234)", // #E8E8EA
+        "secondary-200": "rgb(220, 221, 223)", // #DCDDDF
+        "secondary-300": "rgb(186, 186, 191)", // #BABABF
+        "secondary-400": "rgb(151, 152, 159)", // #97989F
+        "secondary-500": "rgb(105, 106, 117)", // #696A75
+        "secondary-600": "rgb(59, 60, 74)", // #3B3C4A
+        "secondary-700": "rgb(36, 37, 53)", // #242535
+        "secondary-800": "rgb(24, 26, 42)", // #181A2A
+        "secondary-900": "rgb(20, 22, 36)", // #141624
+
+        "theme-bg": "rgb(var(--theme-bg) / <alpha-value>)",
+        "theme-fbg": "rgb(var(--theme-fbg) / <alpha-value>)",
+        "theme-fcard": "rgb(var(--theme-fcard) / <alpha-value>)",
+        "theme-border": "rgb(var(--theme-border) / <alpha-value>)",
+        "theme-fborder": "rgb(var(--theme-fborder) / <alpha-value>)",
+        "theme-maintext": "rgb(var(--theme-maintext) / <alpha-value>)",
+        "theme-subtext1": "rgb(var(--theme-subtext1) / <alpha-value>)",
+        "theme-subtext2": "rgb(var(--theme-subtext2) / <alpha-value>)",
+        "theme-subtext3": "rgb(var(--theme-subtext3) / <alpha-value>)",
+        "theme-skeleton": "rgb(var(--theme-skeleton) / <alpha-value>)",
+        "theme-loading": "rgb(var(--theme-loading) / <alpha-value>)",
       },
       boxShadow: {
+        base: "0px 12px 24px -6px rgba(24, 26, 42, 0.12)",
         "2xl": "0 5px 20px rgba(0, 0, 0, 0.1)",
       },
       screens: {
