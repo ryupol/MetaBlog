@@ -14,12 +14,12 @@ function Blog() {
   };
 
   return (
-    <main>
+    <main className="theme-base">
       <Navbar />
       <section className="max-container px-56 py-12">
         <Tag cat="Technology" header={true} />
         <h1 className="mt-4 text-2xl font-bold">{data.title}</h1>
-        <div className="my-4 flex flex-1 items-center gap-3 text-xs text-slate-gray">
+        <div className="text-slate-gray my-4 flex flex-1 items-center gap-3 text-xs">
           <Profile src={data.profile} />
           <span className="line-clamp-2 max-w-[120px] font-semibold">
             {data.name}

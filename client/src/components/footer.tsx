@@ -65,7 +65,10 @@ function Footer() {
             Get blog articles and offers via email
           </p>
           <div className="relative flex items-center">
-            <input className="footer-input" placeholder="Your Email" />
+            <input
+              className="form-input py-3 pl-4 pr-9"
+              placeholder="Your Email"
+            />
             <EnvelopeIcon className="pointer-events-none absolute inset-y-0 right-4 top-1/2 flex h-5 w-5 -translate-y-1/2 text-[#696A75]" />
           </div>
           <Button className="bg-blue w-full text-center" aria-disabled>
@@ -73,7 +76,7 @@ function Footer() {
           </Button>
         </div>
       </div>
-      <div className="max-container border-theme-fborder flex w-[100%] justify-between gap-6 border-t py-8 max-md:flex-col max-md:items-center">
+      <div className="max-container flex w-[100%] justify-between gap-6 border-t border-theme-fborder py-8 max-md:flex-col max-md:items-center">
         <Logo footer={true} />
         <ul className="flex items-center gap-4 text-theme-subtext1">
           {policys.map((policy, index) => (

@@ -13,6 +13,7 @@ body {
   font-family: "Work Sans", sans-serif;
   scroll-behavior: smooth;
 }
+
 .content p,
 .content blockquote {
   margin-bottom: 1rem;
@@ -22,7 +23,19 @@ body {
   position: sticky;
   top: 0;
   z-index: 999;
-  background: white;
+  background: rgb(var(--theme-bg));
+  border: 1px solid rgb(var(--theme-skeleton)) !important;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  transition: all 0.3s;
+}
+
+.ql-container {
+  border: 1px solid rgb(var(--theme-skeleton)) !important;
+  border-top: none !important;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transition: all 0.3s;
 }
 
 .image-custom {
@@ -92,19 +105,19 @@ h3 {
 
 @layer utilities {
   .theme-base {
-    @apply bg-theme-bg text-theme-maintext;
+    @apply bg-theme-bg text-theme-maintext transition-all duration-300 ease-in-out;
   }
 
   .input-effect {
     @apply transition-all duration-300 ease-in-out hover:border-primary/50 focus:border-primary/60 focus:ring-4 focus:ring-primary/10;
   }
 
-  .light .footer-input {
-    @apply input-effect w-full rounded-md border border-secondary-200 bg-white py-3 pl-4 pr-9 outline-none;
+  .light .form-input {
+    @apply input-effect w-full rounded-md border border-secondary-200 bg-white outline-none placeholder:text-[#696A75];
   }
 
-  .dark .footer-input {
-    @apply input-effect w-full rounded-md border border-secondary-600 bg-secondary-800 py-3 pl-4 pr-9 outline-none;
+  .dark .form-input {
+    @apply input-effect w-full rounded-md border border-secondary-600 bg-secondary-800 outline-none placeholder:text-[#696A75];
   }
 
   .light .nav-input {

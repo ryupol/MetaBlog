@@ -1,17 +1,17 @@
 import Profile from "./ui/profile";
 import Tag from "./ui/tag";
 
-type BlogCardType = {
+interface BlogCardProps {
   image: string;
   title: string;
   profile: string;
   name: string;
   date: string;
-};
+}
 
-function BlogCard({ image, title, profile, name, date }: BlogCardType) {
+function BlogCard({ image, title, profile, name, date }: BlogCardProps) {
   return (
-    <section className="card-hover border-theme-border shadow-base flex max-w-[392px] flex-col gap-4 rounded-xl border p-[16px]">
+    <section className="card-hover flex max-w-[392px] flex-col gap-4 rounded-xl border border-theme-border p-[16px] shadow-base">
       <div className="overflow-hidden rounded-md">
         <img
           src={image}
@@ -24,7 +24,7 @@ function BlogCard({ image, title, profile, name, date }: BlogCardType) {
           <Tag cat="Technology" />
         </div>
         <h1 className="mb-1 line-clamp-3 font-semibold">{title}</h1>
-        <div className="text-theme-subtext3 flex flex-1 items-center gap-3">
+        <div className="flex flex-1 items-center gap-3 text-theme-subtext3">
           <Profile src={profile} />
           <p className="mr-2 line-clamp-2 max-w-[120px] font-medium">{name}</p>
           <p className="whitespace-wrap">{date}</p>

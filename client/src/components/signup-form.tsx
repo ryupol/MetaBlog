@@ -36,7 +36,7 @@ function SignupForm() {
             </label>
             <div className="relative">
               <input
-                className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500"
+                className="form-input py-2 pl-10 text-sm"
                 id="create-password"
                 type="password"
                 name="create-password"
@@ -49,14 +49,14 @@ function SignupForm() {
           </div>
           <div className="mt-4">
             <label
-              className="mb-3 mt-5 block text-xs font-medium text-gray-900"
+              className="mb-3 mt-5 block text-xs font-medium text-theme-maintext"
               htmlFor="password"
             >
               Confirm Password
             </label>
             <div className="relative">
               <input
-                className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500"
+                className="form-input py-2 pl-10 text-sm"
                 id="confirm-password"
                 type="password"
                 name="confirm-password"
@@ -68,7 +68,7 @@ function SignupForm() {
             </div>
           </div>
         </div>
-        <Button className="mt-4 w-full">
+        <Button className="mt-8 w-full bg-primary">
           Signup <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
         </Button>
         <div
@@ -83,6 +83,15 @@ function SignupForm() {
             </>
           )} */}
         </div>
+        <p className="text-sm">
+          Already have an account?{" "}
+          <a
+            href="/signup"
+            className="font-semibold text-lightprimary underline hover:text-darkprimary"
+          >
+            Login
+          </a>
+        </p>
       </div>
     </form>
   );

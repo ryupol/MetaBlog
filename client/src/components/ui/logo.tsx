@@ -3,8 +3,13 @@ import blackLogo from "../../assets/black-logo.svg";
 import whiteLogo from "../../assets/white-logo.svg";
 import { useSelector } from "react-redux";
 
-function Logo({ footer = false }: { footer?: boolean }) {
-  const { theme } = useSelector((state: RootState) => state.theme);
+interface LogoProps {
+  footer?: boolean;
+  signForm?: boolean;
+}
+function Logo({ footer = false, signForm = false }: LogoProps) {
+  let { theme } = useSelector((state: RootState) => state.theme);
+  theme = signForm ? "dark" : theme;
   return (
     <div className="flex items-center gap-2 font-jakarta">
       <img src={theme === "light" ? blackLogo : whiteLogo} alt="Blogna Logo" />

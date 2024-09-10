@@ -1,6 +1,6 @@
 function NotFound() {
   return (
-    <section className="flex h-[100vh] flex-col justify-center gap-3 text-base">
+    <main className="theme-base flex h-[100vh] flex-col justify-center gap-3 text-base">
       <div className="mx-auto">
         <img
           src="https://www.gstatic.com/youtube/src/web/htdocs/img/monkey.png"
@@ -10,7 +10,7 @@ function NotFound() {
       <p className="text-center">
         This page isn't available. Sorry about that.
       </p>
-    </section>
+    </main>
   );
 }
 

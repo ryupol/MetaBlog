@@ -27,17 +27,17 @@ function BlogCreate() {
     console.log(contentInput.current?.value);
   };
   return (
-    <main>
+    <main className="theme-base h-screen">
       <Navbar />
       <section className="max-container-blog my-auto p-12">
         <form onSubmit={handleSubmit}>
           <h1 className="mb-2">Blog Editor</h1>
-          <hr />
+          <hr className="border border-theme-border" />
           <p className="mt-6 py-2 font-semibold">Blog Title</p>
           <input
             ref={titleInput}
             placeholder="Type Blog title"
-            className="mb-4 w-full rounded border border-gray-300 p-2 placeholder:text-sm focus:outline-blue-200"
+            className="form-input mb-4 p-2"
           />
           <p className="py-2 font-semibold">Blog Content</p>
           <ReactQuill
