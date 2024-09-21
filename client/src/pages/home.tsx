@@ -2,7 +2,7 @@ import BlogCard from "../components/blog-card";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import Navbar from "../components/navbar";
-import { CardsSkeleton } from "../components/ui/skeleton";
+import { CardsSkeleton, HeaderSkeleton } from "../components/ui/skeleton";
 
 function Home() {
   const data = [
@@ -62,9 +62,14 @@ function Home() {
     },
   ];
   return (
-    <main className="theme-base transition duration-300">
+    <main className="theme-base">
       <Navbar />
       <Header />
+      <br />
+      <br />
+      <br />
+      <HeaderSkeleton />
+
       <h1 className="max-container mb-8 mt-36">Latest Post</h1>
       <div
         id="blog"

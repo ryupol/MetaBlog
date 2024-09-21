@@ -18,15 +18,15 @@ function Header() {
 
 function HeaderCard() {
   return (
-    <div className="theme-base border-theme-border card-hover shadow-base absolute bottom-[-64px] left-[64px] flex max-w-[598px] flex-col gap-4 rounded-xl border p-10">
+    <div className="theme-base card-hover absolute bottom-[-64px] left-[64px] flex max-w-[598px] flex-col gap-4 rounded-xl border border-theme-border p-10 shadow-base">
       <div>
         <Tag cat="Technology" header={true} />
       </div>
       <h1 className="mb-2 text-[36px] font-semibold leading-10">
         The Impact of Technology on the Workplace: How Technology is Changing
       </h1>
-      <div className="text-theme-subtext3 flex items-center gap-3">
-        <Profile src={"https://picsum.photos/200/200"} />
+      <div className="flex items-center gap-3 text-theme-subtext3">
+        <Profile src={"https://picsum.photos/200/200"} className="h-9 w-9" />
         <p className="mr-2 font-medium">Jason Francisco</p>
         <p className="whitespace-wrap px-2">August 20, 2022</p>
       </div>

@@ -11,7 +11,7 @@ interface BlogCardProps {
 
 function BlogCard({ image, title, profile, name, date }: BlogCardProps) {
   return (
-    <section className="card-hover flex max-w-[392px] flex-col gap-4 rounded-xl border border-theme-border p-[16px] shadow-base">
+    <section className="card-hover flex max-w-[392px] flex-col gap-4 rounded-xl border border-theme-border p-4 shadow-base">
       <div className="overflow-hidden rounded-md">
         <img
           src={image}
@@ -25,7 +25,7 @@ function BlogCard({ image, title, profile, name, date }: BlogCardProps) {
         </div>
         <h1 className="mb-1 line-clamp-3 font-semibold">{title}</h1>
         <div className="flex flex-1 items-center gap-3 text-theme-subtext3">
-          <Profile src={profile} />
+          <Profile src={profile} className="h-9 w-9" />
           <p className="mr-2 line-clamp-2 max-w-[120px] font-medium">{name}</p>
           <p className="whitespace-wrap">{date}</p>
         </div>

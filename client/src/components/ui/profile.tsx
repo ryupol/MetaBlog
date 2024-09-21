@@ -1,6 +1,6 @@
-function Profile({ src }: { src: string }) {
+function Profile({ src, className }: { src: string; className?: string }) {
   return (
-    <div className="h-9 w-9 flex-shrink-0 overflow-hidden rounded-full">
+    <div className={`flex-shrink-0 overflow-hidden rounded-full ${className}`}>
       <img src={src} alt="Profile" className="h-[100%] w-[100%] object-cover" />
     </div>
   );
