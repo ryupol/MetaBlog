@@ -1,6 +1,6 @@
 import pool from "../configs/database";
 import cloudinary from "../configs/cloudinary";
-import { BlogCreated, BlogModel } from "../api/types/blogs.type";
+import { AllBlogInfo, BlogCreated, BlogModel } from "../api/types/blogs.type";
 import blogService from "../api/services/blogs.service";
 import errorCodes from "../errors/errorCodes";
 
@@ -12,7 +12,7 @@ describe("Blog Services", () => {
   const mockBlogData: BlogCreated = {
     title: "mockTitle",
     image_url: "https://dummyimage.com/300x200/000/fff",
-    description: "mockDescription",
+    tag: "mockTag",
     content: "mockContent",
     user_id: "123",
   };
@@ -21,9 +21,14 @@ describe("Blog Services", () => {
     blog_id: mockBlogId,
     title: "oldMockTitle",
     image_url: "https://dummyimage.com/150x150/fff/000",
-    description: "oldMockDescription",
+    tag: "oldMockTag",
     content: "oldMockContent",
     user_id: "123",
+  };
+  const mockBlogInfo: AllBlogInfo = {
+    name: "Test1",
+    profile_url: "https://dummyimage.com/150x150/fff/000",
+    ...mockBlog,
   };
   const mockWrongUserIdBlog = { ...mockOldBlog, user_id: "notFound" };
   const mockUploadResult = {
@@ -35,9 +40,9 @@ describe("Blog Services", () => {
 
   describe("Get all", () => {
     test("should get all blog in database", async () => {
-      (pool.query as jest.Mock).mockResolvedValue({ rows: [mockBlog] });
+      (pool.query as jest.Mock).mockResolvedValue({ rows: [mockBlogInfo] });
       const blogs = await blogService.getAll();
-      expect(blogs).toEqual([mockBlog]);
+      expect(blogs).toEqual([mockBlogInfo]);
     });
   });
 
@@ -115,9 +120,9 @@ describe("Blog Services", () => {
 
   describe("Get by Id", () => {
     test("should get blog", async () => {
-      (pool.query as jest.Mock).mockReturnValue({ rows: [mockBlog] });
+      (pool.query as jest.Mock).mockReturnValue({ rows: [mockBlogInfo] });
       const newBlog = await blogService.getById(mockBlogId);
-      expect(newBlog).toEqual(mockBlog);
+      expect(newBlog).toEqual(mockBlogInfo);
     });
 
     test("should throw AppError if blog_id does not exists", async () => {

@@ -92,7 +92,7 @@ describe("User Controller", () => {
         .set("Cookie", [`${cookieName}=${mockToken}`]);
 
       expect(response.status).toEqual(200);
-      expect(response.body.message).toEqual("Login with cookie Success");
+      expect(response.body).toEqual(mockUser);
     });
 
     test("should handle error if token is missing", async () => {

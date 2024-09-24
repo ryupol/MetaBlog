@@ -6,19 +6,22 @@ import { BlogCreated } from "../types/blogs.type";
 
 class BlogService {
   async getAll() {
-    const result = await pool.query("SELECT * FROM blogs");
+    const result = await pool.query(`
+      SELECT b.*, u.name, u.profile_url
+      FROM blogs b
+      JOIN users u ON b.user_id = u.user_id
+  `);
     const blogs = result.rows;
     return blogs;
   }
 
   async create(blogData: BlogCreated) {
     const query = `
-    INSERT INTO blogs (title, image_url, description, content, user_id)
+    INSERT INTO blogs (title, image_url, tag, content, user_id)
     VALUES ($1, $2, $3, $4, $5)
     RETURNING *;
     `;
     const uploadResult = await cloudinary.uploader.upload(blogData.image_url);
-    console.log(uploadResult);
     const imageUrl = uploadResult.secure_url;
     blogData["image_url"] = imageUrl;
     const values = Object.values(blogData);
@@ -80,7 +83,15 @@ class BlogService {
   }
 
   async getById(blogId: string) {
-    const result = await pool.query("SELECT * FROM blogs WHERE blog_id = $1", [blogId]);
+    const result = await pool.query(
+      `
+      SELECT b.*, u.name, u.profile_url
+      FROM blogs b
+      JOIN users u ON b.user_id = u.user_id
+      WHERE blog_id = $1
+    `,
+      [blogId]
+    );
     const blog = result.rows[0];
     if (!blog) {
       throw new AppError(404, errorCodes.BLOG_NOT_FOUND, "Blog not found");

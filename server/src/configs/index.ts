@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 dotenv.config();
 
-const APP_NAME = "Blogna";
+const APP_NAME = "MetaBlog";
 const BASE_PATH = process.cwd();
 const LOG_SAVE_LEVEL = process.env.LOG_SAVE_LEVEL || "debug";
 
@@ -10,7 +10,7 @@ const CLIENT_URL = process.env.CLIENT_URL || "http://localhost:5173";
 const POSTGRES_HOST = process.env.POSTGRES_HOST || "localhost";
 const POSTGRES_USER = process.env.POSTGRES_USER || "root";
 const POSTGRES_PASSWORD = process.env.POSTGRES_PASSWORD || "123";
-const DB_NAME = process.env.DB_NAME || "blogna";
+const DB_NAME = process.env.DB_NAME || "metablog";
 
 const PRIVATE_KEY_BASE64 = process.env.PRIVATE_KEY_BASE64 || "mysecret";
 const PUBLIC_KEY_BASE64 = process.env.PRIVATE_KEY_BASE64 || "mysecret";

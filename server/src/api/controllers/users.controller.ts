@@ -8,10 +8,10 @@ import logger from "../../configs/log";
 export const register = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const userData = req.body;
-    logger.debug("Start Creating user");
+    logger.debug("Start Creating user.");
     const newUser = await userService.register(userData);
     const { user_id: userId, name } = newUser;
-    logger.debug("Done Creating user");
+    logger.debug(`User: "${name}" created successfully.`);
     return res.status(201).json({ userId, name });
   } catch (error) {
     next(error);
@@ -21,6 +21,7 @@ export const register = async (req: Request, res: Response, next: NextFunction) 
 export const login = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const userData = req.body;
+    console.log(userData);
     logger.debug(`Starting login with email: ${userData.email}`);
     const user = await userService.login(userData);
     const token = await userService.signToken(user);
@@ -30,7 +31,7 @@ export const login = async (req: Request, res: Response, next: NextFunction) => 
       httpOnly: true,
       sameSite: "none",
     });
-    logger.debug(`Login with email: ${user.email} Success`);
+    logger.debug(`Login with email: ${user.email} successful.`);
     return res.status(200).json({ message: `Login Success` });
   } catch (error) {
     next(error);
@@ -43,8 +44,8 @@ export const getUserByToken = async (req: Request, res: Response, next: NextFunc
     const authToken: string = req.cookies[token];
     logger.debug("AuthToken:", authToken);
     const user = await userService.findByToken(authToken);
-    logger.debug(`[Token] Get email: ${user.email} Success`);
-    return res.status(200).json({ message: `Login with cookie Success` });
+    logger.debug(`[Token] Get email: "${user.email}" successful.`);
+    return res.status(200).json(user);
   } catch (error) {
     next(error);
   }
@@ -54,7 +55,7 @@ export const getUserById = async (req: Request, res: Response, next: NextFunctio
   try {
     const userId: string = req.params.id;
     const user = await userService.findById(userId);
-    logger.debug(`[ID] Get email: ${user.email} Success`);
+    logger.debug(`[ID] Get email: "${user.email}" successful.`);
     return res.status(200).json(user);
   } catch (error) {
     next(error);

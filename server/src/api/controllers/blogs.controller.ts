@@ -15,8 +15,8 @@ export const getAllBlogs = async (req: Request, res: Response) => {
 
 export const createBlog = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const { title, description, content } = req.body;
-    logger.debug(`Start creating blog: ${title}`);
+    const { title, tag, content } = req.body;
+    logger.debug(`Start creating blog: "${title}"`);
     if (!req.file) {
       throw new AppError(400, errorCodes.BAD_REQUEST, "Image is required");
     }
@@ -26,10 +26,10 @@ export const createBlog = async (req: Request, res: Response, next: NextFunction
     const user = await userService.findByToken(authToken);
 
     const { id: user_id } = user;
-    const blogData = { title, image_url, description, content, user_id };
+    const blogData = { title, image_url, tag, content, user_id };
     logger.debug(`Blog data: ${blogData}`);
     const newBlog = await blogService.create(blogData);
-    logger.debug(`Create blog: ${newBlog.title} Successfully`);
+    logger.debug(`Blog "${newBlog.title}" created successfully.`);
     res.status(201).json(newBlog);
   } catch (error) {
     next(error);
@@ -39,7 +39,7 @@ export const createBlog = async (req: Request, res: Response, next: NextFunction
 export const updateBlog = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const blogId = req.params.id;
-    const { title, description, content } = req.body;
+    const { title, tag, content } = req.body;
     logger.debug(`Start updating blog: ${title}`);
     if (!req.file) {
       throw new AppError(400, errorCodes.BAD_REQUEST, "Image not found");
@@ -50,7 +50,7 @@ export const updateBlog = async (req: Request, res: Response, next: NextFunction
     const user = await userService.findByToken(authToken);
 
     const { id: user_id } = user;
-    const blogData = { title, image_url, description, content, user_id };
+    const blogData = { title, image_url, tag, content, user_id };
     logger.debug(`[Update] Blog id: ${blogId}`);
     const updatedBlog = await blogService.update(blogId, blogData);
     logger.debug(`Update blog: ${updatedBlog.title} successfully`);

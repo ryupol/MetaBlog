@@ -12,7 +12,7 @@ jest.mock("../api/services/users.service");
 describe("Blog Controller", () => {
   const mockBlogData: BlogData = {
     title: "mockTitle",
-    description: "mockDescription",
+    tag: "mockTag",
     content: "mockContent",
   };
 
@@ -53,7 +53,7 @@ describe("Blog Controller", () => {
       const response = await request(app)
         .post("/api/blogs/create")
         .field("title", mockBlogData.title)
-        .field("description", mockBlogData.description)
+        .field("tag", mockBlogData.tag)
         .field("content", mockBlogData.content)
         .attach("image", buffer, "image.jpg");
       expect(response.body).toEqual(mockBlog);
@@ -64,7 +64,7 @@ describe("Blog Controller", () => {
       const response = await request(app)
         .post("/api/blogs/create")
         .field("title", mockBlogData.title)
-        .field("description", mockBlogData.description)
+        .field("tag", mockBlogData.tag)
         .field("content", mockBlogData.content)
         .attach("image", buffer, "fakeimage.txt");
       expect(response.status).toEqual(400);
@@ -81,7 +81,7 @@ describe("Blog Controller", () => {
       const response = await request(app)
         .post(`/api/blogs/update/${mockBlog.blog_id}`)
         .field("title", mockBlogData.title)
-        .field("description", mockBlogData.description)
+        .field("tag", mockBlogData.tag)
         .field("content", mockBlogData.content)
         .attach("image", buffer, "image.jpg");
       expect(response.body.message).not.toBeNull();
@@ -92,7 +92,7 @@ describe("Blog Controller", () => {
       const response = await request(app)
         .post(`/api/blogs/update/${mockBlog.blog_id}`)
         .field("title", mockBlogData.title)
-        .field("description", mockBlogData.description)
+        .field("tag", mockBlogData.tag)
         .field("content", mockBlogData.content)
         .attach("image", buffer, "fakeimage.txt");
       expect(response.status).toEqual(400);
