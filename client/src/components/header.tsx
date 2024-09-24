@@ -1,34 +1,62 @@
+import { useEffect, useState } from "react";
 import Profile from "./ui/profile";
 import Tag from "./ui/tag";
+import axios from "axios";
+import { BlogProps } from "../types/blog.type";
+import { advertiseId } from "../global";
+import { HeaderSkeleton } from "./ui/skeleton";
+import formatDate from "../utils/formatDate";
 
 function Header() {
-  return (
+  const [loading, setLoading] = useState<boolean>(true);
+  const [blog, setBlog] = useState<BlogProps | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`/api/blogs/${advertiseId}`);
+        setBlog(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  return loading ? (
+    <HeaderSkeleton />
+  ) : (
     <header className="max-container relative">
       <div className="max-h-[600px] w-full overflow-hidden rounded-xl">
         <img
-          src="https://picsum.photos/seed/picsum/1060/500"
+          src={blog?.image_url}
           alt="Header Blog image"
           className="w-full object-cover"
         />
-        <HeaderCard />
+        <a href={`blog/${blog?.blog_id}`}>
+          <HeaderCard blogData={blog} />
+        </a>
       </div>
     </header>
   );
 }
 
-function HeaderCard() {
+function HeaderCard({ blogData }: { blogData: BlogProps | null }) {
   return (
     <div className="theme-base card-hover absolute bottom-[-64px] left-[64px] flex max-w-[598px] flex-col gap-4 rounded-xl border border-theme-border p-10 shadow-base">
       <div>
-        <Tag cat="Technology" header={true} />
+        <Tag cat={blogData?.tag} header={true} />
       </div>
       <h1 className="mb-2 text-[36px] font-semibold leading-10">
-        The Impact of Technology on the Workplace: How Technology is Changing
+        {blogData?.title}
       </h1>
       <div className="flex items-center gap-3 text-theme-subtext3">
-        <Profile src={"https://picsum.photos/200/200"} className="h-9 w-9" />
-        <p className="mr-2 font-medium">Jason Francisco</p>
-        <p className="whitespace-wrap px-2">August 20, 2022</p>
+        <Profile src={blogData?.profile_url} className="h-9 w-9" />
+        <p className="mr-2 font-medium">{blogData?.name}</p>
+        <p className="whitespace-wrap px-2">
+          {formatDate(blogData?.update_at)}
+        </p>
       </div>
     </div>
   );

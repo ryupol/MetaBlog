@@ -2,9 +2,16 @@ import Button from "../components/ui/button";
 import { CameraIcon } from "@heroicons/react/24/outline";
 import { useRef, useState } from "react";
 import handleFileChange from "../hooks/handleFileChange";
+import { useLocation, useNavigate } from "react-router-dom";
 import { EditProfileSkeleton } from "../components/ui/skeleton";
 
 function EditProfile() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const previousUrl: string = location.state.previousUrl
+    ? location.state.previousUrl
+    : "/";
   const data = {
     name: "Tracey Wilson",
     profile_url:
@@ -63,10 +70,16 @@ function EditProfile() {
             placeholder={data.email}
           />
           <div className="mt-8 flex gap-4">
-            <Button secondary={true} onClick={(e) => e.preventDefault}>
+            <Button
+              secondary={true}
+              onClick={(e) => {
+                e.preventDefault;
+                navigate(previousUrl);
+              }}
+            >
               Cancel
             </Button>
-            <Button>Save</Button>
+            <Button onClick={() => navigate(previousUrl)}>Save</Button>
           </div>
         </form>
       </section>

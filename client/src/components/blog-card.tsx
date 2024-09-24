@@ -1,33 +1,34 @@
+import { BlogProps } from "../types/blog.type";
+import formatDate from "../utils/formatDate";
 import Profile from "./ui/profile";
 import Tag from "./ui/tag";
 
-interface BlogCardProps {
-  image: string;
-  title: string;
-  profile: string;
-  name: string;
-  date: string;
-}
-
-function BlogCard({ image, title, profile, name, date }: BlogCardProps) {
+function BlogCard({
+  tag,
+  title,
+  profile_url,
+  name,
+  update_at,
+  image_url,
+}: Omit<BlogProps, "blog_id" | "content">) {
   return (
     <section className="card-hover flex max-w-[392px] flex-col gap-4 rounded-xl border border-theme-border p-4 shadow-base">
       <div className="overflow-hidden rounded-md">
         <img
-          src={image}
+          src={image_url}
           alt="Card Image"
           className="h-[240px] w-[100%] object-cover"
         />
       </div>
       <div className="flex flex-col gap-4 p-2">
         <div>
-          <Tag cat="Technology" />
+          <Tag cat={tag} />
         </div>
         <h1 className="mb-1 line-clamp-3 font-semibold">{title}</h1>
         <div className="flex flex-1 items-center gap-3 text-theme-subtext3">
-          <Profile src={profile} className="h-9 w-9" />
+          <Profile src={profile_url} className="h-9 w-9" />
           <p className="mr-2 line-clamp-2 max-w-[120px] font-medium">{name}</p>
-          <p className="whitespace-wrap">{date}</p>
+          <p className="whitespace-wrap">{formatDate(update_at)}</p>
         </div>
       </div>
     </section>

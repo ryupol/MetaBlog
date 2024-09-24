@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import {
   SunIcon,
   // MoonIcon,
@@ -54,6 +54,9 @@ function Navbar() {
 
 function UserMenu() {
   const dispatch = useDispatch();
+  const nagivate = useNavigate();
+  const location = useLocation();
+
   const menuRef = useRef(null);
   const [openMenu, setOpenMenu] = useState(false);
   const { theme } = useSelector((state: RootState) => state.theme);
@@ -81,12 +84,18 @@ function UserMenu() {
           <div>
             <p>Name</p>
             <p>name@gmail.com</p>
-            <a
-              href="/edit/profile"
+            <button
               className="text-primary underline hover:text-lightprimary active:text-darkprimary"
+              onClick={() =>
+                nagivate("/edit/profile", {
+                  state: {
+                    previousUrl: location.pathname,
+                  },
+                })
+              }
             >
               Edit profile
-            </a>
+            </button>
           </div>
         </div>
         <hr className="border-theme-skeleton" />
