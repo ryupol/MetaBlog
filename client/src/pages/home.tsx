@@ -6,23 +6,14 @@ import Navbar from "../components/navbar";
 import { CardsSkeleton } from "../components/ui/skeleton";
 import axios from "axios";
 import { BlogProps } from "../types/blog.type";
+import { useQuery } from "react-query";
 
 function Home() {
-  const [loading, setLoading] = useState<boolean>(true);
-  const [blogs, setBlogs] = useState<BlogProps[]>([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("/api/blogs");
-        setBlogs(response.data.data);
-        setLoading(false);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchData();
-  }, []);
+  const fetchBlogs = async () => {
+    const response = await axios.get("/api/blogs");
+    return response?.data;
+  };
+  const { data, isLoading } = useQuery("blogs", () => fetchBlogs());
 
   return (
     <main className="theme-base">
@@ -33,18 +24,18 @@ function Home() {
         id="blog"
         className="max-container mb-20 grid grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 lg:grid-cols-3"
       >
-        {loading ? (
+        {isLoading ? (
           <CardsSkeleton />
         ) : (
-          blogs.map((b) => (
-            <a key={b.blog_id} href={`/blog/${b.blog_id}`}>
+          data.map((d: BlogProps) => (
+            <a key={d.blog_id} href={`/blog/${d.blog_id}`}>
               <BlogCard
-                tag={b.tag}
-                image_url={b.image_url}
-                title={b.title}
-                profile_url={b.profile_url}
-                name={b.name}
-                update_at={b.update_at}
+                tag={d.tag}
+                image_url={d.image_url}
+                title={d.title}
+                profile_url={d.profile_url}
+                name={d.name}
+                update_at={d.update_at}
               />
             </a>
           ))

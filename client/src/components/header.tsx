@@ -6,36 +6,27 @@ import { BlogProps } from "../types/blog.type";
 import { advertiseId } from "../global";
 import { HeaderSkeleton } from "./ui/skeleton";
 import formatDate from "../utils/formatDate";
+import { useQuery } from "react-query";
 
 function Header() {
-  const [loading, setLoading] = useState<boolean>(true);
-  const [blog, setBlog] = useState<BlogProps | null>(null);
+  const fetchBlogHeader = async () => {
+    const response = await axios.get(`/api/blogs/${advertiseId}`);
+    return response?.data;
+  };
+  const { data, isLoading } = useQuery("blogHeader", () => fetchBlogHeader());
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(`/api/blogs/${advertiseId}`);
-        setBlog(response.data);
-        setLoading(false);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchData();
-  }, []);
+  if (isLoading) return <HeaderSkeleton />;
 
-  return loading ? (
-    <HeaderSkeleton />
-  ) : (
+  return (
     <header className="max-container relative">
       <div className="max-h-[600px] w-full overflow-hidden rounded-xl">
         <img
-          src={blog?.image_url}
+          src={data?.image_url}
           alt="Header Blog image"
           className="w-full object-cover"
         />
-        <a href={`blog/${blog?.blog_id}`}>
-          <HeaderCard blogData={blog} />
+        <a href={`blog/${data?.blog_id}`}>
+          <HeaderCard blogData={data} />
         </a>
       </div>
     </header>
@@ -61,4 +52,5 @@ function HeaderCard({ blogData }: { blogData: BlogProps | null }) {
     </div>
   );
 }
+
 export default Header;
