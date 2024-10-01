@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Profile from "./ui/profile";
 import Tag from "./ui/tag";
 import axios from "axios";
@@ -13,9 +12,14 @@ function Header() {
     const response = await axios.get(`/api/blogs/${advertiseId}`);
     return response?.data;
   };
-  const { data, isLoading } = useQuery("blogHeader", () => fetchBlogHeader());
+  const { data, isLoading, error } = useQuery<BlogProps, Error>(
+    "blogHeader",
+    () => fetchBlogHeader(),
+  );
 
   if (isLoading) return <HeaderSkeleton />;
+
+  if (error) return <p className="max-container">{error.message}</p>;
 
   return (
     <header className="max-container relative">
@@ -25,31 +29,26 @@ function Header() {
           alt="Header Blog image"
           className="w-full object-cover"
         />
+        {/* Blog Header Card */}
         <a href={`blog/${data?.blog_id}`}>
-          <HeaderCard blogData={data} />
+          <div className="theme-base card-hover absolute bottom-[-64px] left-[64px] flex max-w-[598px] flex-col gap-4 rounded-xl border border-theme-border p-10 shadow-base">
+            <div>
+              <Tag cat={data?.tag} header={true} />
+            </div>
+            <h1 className="mb-2 text-[36px] font-semibold leading-10">
+              {data?.title}
+            </h1>
+            <div className="flex items-center gap-3 text-theme-subtext3">
+              <Profile src={data?.profile_url} className="h-9 w-9" />
+              <p className="mr-2 font-medium">{data?.name}</p>
+              <p className="whitespace-wrap px-2">
+                {formatDate(data?.update_at)}
+              </p>
+            </div>
+          </div>
         </a>
       </div>
     </header>
-  );
-}
-
-function HeaderCard({ blogData }: { blogData: BlogProps | null }) {
-  return (
-    <div className="theme-base card-hover absolute bottom-[-64px] left-[64px] flex max-w-[598px] flex-col gap-4 rounded-xl border border-theme-border p-10 shadow-base">
-      <div>
-        <Tag cat={blogData?.tag} header={true} />
-      </div>
-      <h1 className="mb-2 text-[36px] font-semibold leading-10">
-        {blogData?.title}
-      </h1>
-      <div className="flex items-center gap-3 text-theme-subtext3">
-        <Profile src={blogData?.profile_url} className="h-9 w-9" />
-        <p className="mr-2 font-medium">{blogData?.name}</p>
-        <p className="whitespace-wrap px-2">
-          {formatDate(blogData?.update_at)}
-        </p>
-      </div>
-    </div>
   );
 }
 

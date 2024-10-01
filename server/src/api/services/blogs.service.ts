@@ -30,32 +30,61 @@ class BlogService {
     return newBlog;
   }
 
-  async update(blogId: string, blog: BlogCreated) {
+  async update(blogId: string, newBlog: BlogCreated) {
     const oldBlog = await this.getById(blogId);
-    if (oldBlog.user_id !== blog.user_id) {
+    const oldPublicId = oldBlog.image_url.split("/").pop().split(".")[0];
+    if (oldBlog.user_id !== newBlog.user_id) {
       throw new AppError(403, errorCodes.FORBIDDEN, "Unauthorized to update this blog");
     }
-    const oldPublicId = oldBlog.image_url.split("/").pop().split(".")[0];
-    const [uploadResult, destroyResult] = await Promise.all([
-      cloudinary.uploader.upload(blog.image_url),
-      cloudinary.uploader.destroy(oldPublicId),
-    ]);
-    const imageUrl = uploadResult.secure_url;
-    blog["image_url"] = imageUrl;
 
-    const colsToUpdate = Object.keys(blog);
-    const setClause = colsToUpdate.map((col, index) => `${col} = $${index + 1}`).join(", ");
+    const colsToUpdate = [];
+    const values = [];
+
+    if (newBlog.title && newBlog.title !== oldBlog.title) {
+      colsToUpdate.push("title = $" + (colsToUpdate.length + 1));
+      values.push(newBlog.title);
+    }
+    if (newBlog.tag && newBlog.tag !== oldBlog.tag) {
+      colsToUpdate.push("tag = $" + (colsToUpdate.length + 1));
+      values.push(newBlog.tag);
+    }
+    if (newBlog.content && newBlog.content !== oldBlog.content) {
+      colsToUpdate.push("content = $" + (colsToUpdate.length + 1));
+      values.push(newBlog.content);
+    }
+
+    if (
+      newBlog.image_url &&
+      oldPublicId !== "happy" && // Add default blog Image later on (write date: 10/2/2024)
+      oldPublicId !== newBlog.image_url?.split("/")?.pop()?.split(".")?.[0]
+    ) {
+      const [uploadResult, destroyResult] = await Promise.all([
+        cloudinary.uploader.upload(newBlog.image_url),
+        oldPublicId !== "happy"
+          ? await cloudinary.uploader.destroy(oldPublicId)
+          : Promise.resolve("No destroy operation"),
+      ]);
+      const imageUrl = uploadResult.secure_url;
+      newBlog["image_url"] = imageUrl || "";
+      colsToUpdate.push("image_url = $" + (colsToUpdate.length + 1));
+      values.push(imageUrl);
+    }
+
+    if (colsToUpdate.length === 0) {
+      throw new AppError(400, errorCodes.FORBIDDEN, "No valid fields to update");
+    }
+
+    const setClause = colsToUpdate.join(", ");
     const query = `
-      UPDATE blogs
-      SET ${setClause}
-      WHERE blog_id = $${colsToUpdate.length + 1}
-      RETURNING *;
+    UPDATE blogs
+    SET ${setClause}
+    WHERE blog_id = $${colsToUpdate.length + 1}
+    RETURNING *;
     `;
-    colsToUpdate.push(blogId);
-    const values = Object.values(blog);
     values.push(blogId);
     const result = await pool.query(query, values);
     const updatedBlog = result.rows[0];
+
     if (!updatedBlog) {
       throw new AppError(404, errorCodes.BLOG_NOT_FOUND, "Can't update, blog not found");
     }

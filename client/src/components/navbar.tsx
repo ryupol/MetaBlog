@@ -2,10 +2,9 @@ import { useRef, useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import {
   SunIcon,
-  // MoonIcon,
+  MoonIcon,
   ArrowRightStartOnRectangleIcon as SignoutIcon,
   MagnifyingGlassIcon as SearchIcon,
-  MoonIcon,
 } from "@heroicons/react/24/outline";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../redux/theme/themeSlice";
@@ -14,6 +13,10 @@ import useClickOutside from "../hooks/useClickOutside";
 import Logo from "./ui/logo";
 import { UserMenuSkeleton } from "./ui/skeleton";
 import Profile from "./ui/profile";
+import axios from "axios";
+import { useQuery } from "react-query";
+import Button from "./ui/button";
+import { UserTokenProps } from "../types/user.type";
 
 function Navbar() {
   return (
@@ -43,9 +46,6 @@ function Navbar() {
             className="pointer-events-none absolute inset-y-0 right-2 top-1/2 flex h-5 w-5 -translate-y-1/2 text-[#52525B]"
           />
         </div>
-        {/* <a href="/signin">
-          <Button>Login</Button>
-        </a> */}
         <UserMenu />
       </div>
     </section>
@@ -54,40 +54,63 @@ function Navbar() {
 
 function UserMenu() {
   const dispatch = useDispatch();
-  const nagivate = useNavigate();
+  const navigate = useNavigate();
   const location = useLocation();
 
   const menuRef = useRef(null);
   const [openMenu, setOpenMenu] = useState(false);
   const { theme } = useSelector((state: RootState) => state.theme);
   useClickOutside(menuRef, () => setOpenMenu(false));
+
+  const signOut = async () => {
+    await axios.post("/api/users/logout");
+  };
+
+  const fetchMe = async () => {
+    const response = await axios.get("/api/users/me");
+    return response.data;
+  };
+
+  const { data, isLoading } = useQuery<UserTokenProps | null>(
+    "getMe",
+    () => fetchMe(),
+    { retry: false }, // find a way to make data update when edit profile
+  );
+
+  if (isLoading) return <UserMenuSkeleton />;
+
+  if (!data)
+    return (
+      <Button
+        onClick={() =>
+          navigate("/signin", { state: { previousUrl: location.pathname } })
+        }
+      >
+        Login
+      </Button>
+    );
+
   return (
     <section className="relative" ref={menuRef}>
       <div
         className="cursor-pointer rounded-full border border-primary"
         onClick={() => setOpenMenu(!openMenu)}
       >
-        <Profile
-          src="https://res.cloudinary.com/dxwmjflhh/image/upload/profile.webp"
-          className="h-10 w-10"
-        />
+        <Profile src={data?.profile_url} className="h-10 w-10" />
       </div>
       {/* Menu */}
       <div
         className={`theme-base absolute right-0 z-10 mt-2 rounded-md shadow-md ${openMenu ? `block` : `hidden`}`}
       >
         <div className="border-b-1-slate-300 flex gap-3 p-4">
-          <Profile
-            src="https://res.cloudinary.com/dxwmjflhh/image/upload/profile.webp"
-            className="h-10 w-10"
-          />
+          <Profile src={data?.profile_url} className="h-10 w-10" />
           <div>
-            <p>Name</p>
-            <p>name@gmail.com</p>
+            <p>{data?.name}</p>
+            <p>{data?.email}</p>
             <button
               className="text-primary underline hover:text-lightprimary active:text-darkprimary"
               onClick={() =>
-                nagivate("/edit/profile", {
+                navigate("/edit/profile", {
                   state: {
                     previousUrl: location.pathname,
                   },
@@ -111,7 +134,13 @@ function UserMenu() {
             )}
             <p>Appearance: {theme === "light" ? "Light" : "Dark"}</p>
           </li>
-          <li className="flex w-[100%] cursor-pointer gap-3 rounded-b-md px-4 py-2 hover:bg-theme-border">
+          <li
+            onClick={() => {
+              signOut();
+              window.location.reload();
+            }}
+            className="flex w-[100%] cursor-pointer gap-3 rounded-b-md px-4 py-2 hover:bg-theme-border"
+          >
             <SignoutIcon className="w-6" />
             <p>Sign out</p>
           </li>

@@ -42,7 +42,7 @@ export const getUserByToken = async (req: Request, res: Response, next: NextFunc
   try {
     const token: string = JWT_OPTIONS.jwtCookieName;
     const authToken: string = req.cookies[token];
-    logger.debug("AuthToken:", authToken);
+    logger.debug(`get User with Token: ${authToken.substring(0, 8)}...`);
     const user = await userService.findByToken(authToken);
     logger.debug(`[Token] Get email: "${user.email}" successful.`);
     return res.status(200).json(user);
@@ -62,6 +62,24 @@ export const getUserById = async (req: Request, res: Response, next: NextFunctio
   }
 };
 
+export const updateUser = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const { name, email } = req.body;
+    const profile_url = req.file?.path || "";
+
+    const token: string = JWT_OPTIONS.jwtCookieName;
+    const authToken: string = req.cookies[token];
+
+    const newUserData = { name, email, profile_url };
+    logger.debug(`Start updating user token: ${authToken.substring(0, 8)}...`);
+    const updatedUser = await userService.update(authToken, newUserData);
+    logger.debug(`Updated user ID: "${updatedUser.user_id}" successful`);
+    res.status(200).json({ message: "Updated user successful" });
+  } catch (error) {
+    next(error);
+  }
+};
+
 export const logout = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const token: string = JWT_OPTIONS.jwtCookieName;
@@ -70,7 +88,7 @@ export const logout = async (req: Request, res: Response, next: NextFunction) =>
       logger.error(`Token not found`);
       throw new AppError(401, errorCodes.UNAUTHORIZED, `Unauthorized`);
     }
-    logger.debug(`Clearing token: ${authToken} success`);
+    logger.debug(`Clearing token: ${authToken.substring(0, 8)}... success`);
     return res.clearCookie(token).json({
       message: "You have logged out!",
     });

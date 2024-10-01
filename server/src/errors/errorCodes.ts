@@ -11,6 +11,7 @@ const errorCodes = {
   BLOG_NOT_FOUND: "NF_002",
 
   // Custom Errors
+  UNIQUE_CONSTRAINT_VIOLATION: "UC_001",
 };
 
 export default errorCodes;

@@ -3,9 +3,10 @@ import jwt from "jsonwebtoken";
 import AppError from "../../errors/AppError";
 import errorCodes from "../../errors/errorCodes";
 import pool from "../../configs/database";
-import type { ValidatePassword, UserLogin, UserModel } from "../types/users.type";
+import type { ValidatePassword, UserLogin, UserModel, updateUser } from "../types/users.type";
 import { PRIVATE_KEY_BASE64, PUBLIC_KEY_BASE64, JWT_OPTIONS } from "../../configs";
 import logger from "../../configs/log";
+import cloudinary from "../../configs/cloudinary";
 
 class UserService {
   // Register
@@ -42,14 +43,14 @@ class UserService {
   // HS256 -> Symmetric -> Same key or secret text
   // RS256 -> Asymetric -> 2 keys -> private (sign) / public (varify)
   async signToken(user: UserModel) {
-    const { user_id: id, email } = user;
+    const { user_id: id, email, name, profile_url } = user;
     const { algorithm, issuer } = JWT_OPTIONS;
-    const token = jwt.sign({ id, email }, PRIVATE_KEY_BASE64, {
+    const token = jwt.sign({ id, email, name, profile_url }, PRIVATE_KEY_BASE64, {
       expiresIn: "1h",
       algorithm,
       issuer,
     } as jwt.SignOptions);
-    logger.debug(`Using ${algorithm} algorithm to sign token: ${token}`);
+    logger.debug(`Using ${algorithm} algorithm to sign token: ${token.substring(0, 8)}...`);
     return token;
   }
 
@@ -85,6 +86,64 @@ class UserService {
       throw new AppError(404, errorCodes.USER_NOT_FOUND, "User not found");
     }
     return user;
+  }
+
+  async update(authToken: string, newUser: updateUser) {
+    const oldUser = await this.findByToken(authToken);
+    const oldPublicId = oldUser.profile_url.split("/").pop().split(".")[0];
+
+    console.log(oldUser.profile_url);
+    const colsToUpdate = [];
+    const values = [];
+
+    if (newUser.name && newUser.name !== oldUser.name) {
+      colsToUpdate.push("name = $" + (colsToUpdate.length + 1));
+      values.push(newUser.name);
+    }
+
+    if (newUser.email && newUser.email !== oldUser.email) {
+      colsToUpdate.push("email = $" + (colsToUpdate.length + 1));
+      values.push(newUser.email);
+    }
+
+    if (
+      newUser.profile_url &&
+      oldPublicId !== newUser.profile_url?.split("/")?.pop()?.split(".")?.[0]
+    ) {
+      const [uploadResult, destroyResult] = await Promise.all([
+        await cloudinary.uploader.upload(newUser.profile_url),
+        oldPublicId !== "happy"
+          ? await cloudinary.uploader.destroy(oldPublicId)
+          : Promise.resolve("No destroy operation"),
+      ]);
+      const profileUrl = uploadResult.secure_url;
+      newUser["profile_url"] = profileUrl || "";
+      colsToUpdate.push("profile_url = $" + (colsToUpdate.length + 1));
+      values.push(profileUrl);
+    }
+
+    if (colsToUpdate.length === 0) {
+      throw new AppError(400, errorCodes.FORBIDDEN, "No valid fields to update");
+    }
+
+    const setClause = colsToUpdate.join(", ");
+    const query = `
+      UPDATE users
+      SET ${setClause}
+      WHERE user_id = $${colsToUpdate.length + 1}
+      RETURNING *;
+    `;
+
+    values.push(oldUser.id);
+
+    const result = await pool.query(query, values);
+    const updatedUser = result.rows[0];
+
+    if (!updatedUser) {
+      throw new AppError(404, errorCodes.USER_NOT_FOUND, "Can't update, user not found");
+    }
+
+    return updatedUser;
   }
 }
 

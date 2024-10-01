@@ -7,10 +7,11 @@ import {
 } from "@heroicons/react/24/outline";
 import axios, { AxiosError } from "axios";
 import { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function SigninForm() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [errorMessage, setErrorMessage] = useState<string>("");
   const emailInput = useRef<HTMLInputElement>(null);
   const passInput = useRef<HTMLInputElement>(null);
@@ -22,6 +23,10 @@ function SigninForm() {
     formData.set("email", emailInput.current?.value || "");
     formData.set("password", passInput.current?.value || "");
 
+    const previousUrl: string = location.state.previousUrl
+      ? location.state.previousUrl
+      : "/";
+
     try {
       const response = await axios.post(
         "/api/users/login",
@@ -29,7 +34,7 @@ function SigninForm() {
       );
       const message = response.data.message;
       if (message.toLowerCase().includes("success")) {
-        navigate("/", { replace: true });
+        navigate(previousUrl, { replace: true });
       }
     } catch (error) {
       if (error instanceof AxiosError && error.response) {
@@ -40,6 +45,7 @@ function SigninForm() {
       }
     }
   };
+
   return (
     <form className="space-y-3" onSubmit={handleSubmit}>
       <div className="flex-1 rounded-lg px-6 pb-4 pt-8">

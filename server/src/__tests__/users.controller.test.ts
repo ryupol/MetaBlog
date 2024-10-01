@@ -131,6 +131,12 @@ describe("User Controller", () => {
     });
   });
 
+  describe("POST /api/users/update", () => {
+    test("should update username and email successfully", async () => {});
+
+    test("should fail to update if user name or email already exists", async () => {});
+  });
+
   describe("POST /api/users/logout", () => {
     test("should clear cookie and return success message", async () => {
       const response = await request(app)

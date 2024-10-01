@@ -28,13 +28,13 @@ export function CardSkeleton() {
   );
 }
 
-export function CardsSkeleton() {
+export function HomeContentSkeleton() {
   return (
-    <>
+    <div className="max-container mb-20 grid grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {Array.from({ length: 6 }).map((_, index) => (
         <CardSkeleton key={index} />
       ))}
-    </>
+    </div>
   );
 }
 
@@ -62,7 +62,7 @@ export function UserMenuSkeleton() {
   return <Shimmer className="relative h-11 w-11 rounded-full" />;
 }
 
-export function EditProfileSkeleton() {
+export function EditCardSkeleton() {
   return (
     <div className="w-[40%] max-w-[600px] rounded-xl border border-theme-skeleton bg-theme-fbg p-10 text-theme-maintext">
       <div className="flex items-center justify-between">
@@ -81,7 +81,7 @@ export function EditProfileSkeleton() {
   );
 }
 
-export function BlogPageSkeleton() {
+export function BlogContentSkeleton() {
   return (
     <div className="max-container-blog flex flex-col gap-4 py-12">
       <Shimmer className="h-6 w-24 rounded-md px-2" />

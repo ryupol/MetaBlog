@@ -27,7 +27,6 @@ export const createBlog = async (req: Request, res: Response, next: NextFunction
 
     const { id: user_id } = user;
     const blogData = { title, image_url, tag, content, user_id };
-    logger.debug(`Blog data: ${blogData}`);
     const newBlog = await blogService.create(blogData);
     logger.debug(`Blog "${newBlog.title}" created successfully.`);
     res.status(201).json(newBlog);
@@ -41,20 +40,18 @@ export const updateBlog = async (req: Request, res: Response, next: NextFunction
     const blogId = req.params.id;
     const { title, tag, content } = req.body;
     logger.debug(`Start updating blog: ${title}`);
-    if (!req.file) {
-      throw new AppError(400, errorCodes.BAD_REQUEST, "Image not found");
-    }
-    const image_url = req.file.path;
+    const image_url = req.file?.path || "";
+
     const token: string = JWT_OPTIONS.jwtCookieName;
     const authToken: string = req.cookies[token];
     const user = await userService.findByToken(authToken);
 
     const { id: user_id } = user;
-    const blogData = { title, image_url, tag, content, user_id };
+    const newBlogData = { title, image_url, tag, content, user_id };
     logger.debug(`[Update] Blog id: ${blogId}`);
-    const updatedBlog = await blogService.update(blogId, blogData);
-    logger.debug(`Update blog: ${updatedBlog.title} successfully`);
-    res.status(200).json({ message: "Update blog successfully" });
+    const updatedBlog = await blogService.update(blogId, newBlogData);
+    logger.debug(`Updated blog: "${updatedBlog.title}" successful`);
+    res.status(200).json({ message: "Updated blog successful" });
   } catch (error) {
     next(error);
   }

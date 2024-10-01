@@ -1,6 +1,6 @@
 export interface User {
   name: string;
-  profile_url?: string;
+  profile_url: string;
   email: string;
   password: string;
 }
@@ -12,3 +12,9 @@ export type ShowUser = Omit<User, "password">;
 export type ValidatePassword = User & { passwordConfirm: string };
 
 export type UserLogin = Pick<User, "email" | "password">;
+
+export type updateUser = {
+  name?: string;
+  email?: string;
+  profile_url?: string;
+};

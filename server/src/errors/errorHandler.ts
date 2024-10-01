@@ -10,6 +10,13 @@ const errorHandler = (error: AppError, req: Request, res: Response, next: NextFu
 
   logger.error(`${code}[${status}] | ${error}`);
 
+  if (error.code === "23505")
+    return res.status(409).json({
+      status: "error",
+      code: errorCodes.UNIQUE_CONSTRAINT_VIOLATION,
+      message: "The provided email is already taken",
+    });
+
   return res.status(status).json({
     status: "error",
     code: code,

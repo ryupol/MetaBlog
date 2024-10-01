@@ -104,6 +104,8 @@ describe("User Services", () => {
     const mockTokenPayload = {
       id: "1",
       email: "test1@gmail.com",
+      name: "Test 1",
+      profile_url: "https://dummyimage.com/300x200/000/fff",
       iat: 1719414506,
       exp: 1719418106,
       iss: "ryupol",
