@@ -133,6 +133,7 @@ function EditCard() {
         type="email"
         placeholder={data?.email}
         ref={emailInput}
+        maxLength={16}
       />
       <div className="mt-8 flex gap-4">
         <Button secondary={true} onClick={handleCancel}>

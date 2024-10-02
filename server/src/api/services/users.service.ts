@@ -3,16 +3,16 @@ import jwt from "jsonwebtoken";
 import AppError from "../../errors/AppError";
 import errorCodes from "../../errors/errorCodes";
 import pool from "../../configs/database";
-import type { ValidatePassword, UserLogin, UserModel, updateUser } from "../types/users.type";
+import type { UserLogin, UserModel, updateUser, UserRegister } from "../types/users.type";
 import { PRIVATE_KEY_BASE64, PUBLIC_KEY_BASE64, JWT_OPTIONS } from "../../configs";
 import logger from "../../configs/log";
 import cloudinary from "../../configs/cloudinary";
 
 class UserService {
   // Register
-  async register(userData: ValidatePassword) {
-    const { name, email, password, passwordConfirm } = userData;
-    if (!name || !email || !password || !passwordConfirm) {
+  async register(userData: UserRegister) {
+    const { email, password, passwordConfirm } = userData;
+    if (!email || !password || !passwordConfirm) {
       throw new AppError(400, errorCodes.BAD_REQUEST, "All field are required");
     }
     logger.debug(`Registering email: ${email}`);
@@ -25,6 +25,7 @@ class UserService {
       );
     }
 
+    const name = email.split("@")[0];
     const hashed = await bcrypt.hash(password, 10);
 
     const result = await pool.query(
@@ -50,7 +51,9 @@ class UserService {
       algorithm,
       issuer,
     } as jwt.SignOptions);
-    logger.debug(`Using ${algorithm} algorithm to sign token: ${token.substring(0, 8)}...`);
+    logger.debug(
+      `Using ${algorithm} algorithm to sign token: ${token.substring(0, 8)}...`
+    );
     return token;
   }
 
@@ -59,11 +62,19 @@ class UserService {
     const result = await pool.query("SELECT * FROM users WHERE email = $1", [email]);
     const user = result.rows[0];
     if (!user) {
-      throw new AppError(404, errorCodes.USER_NOT_FOUND, `Email: ${email} doesn't exists`);
+      throw new AppError(
+        404,
+        errorCodes.USER_NOT_FOUND,
+        `Email: ${email} doesn't exists`
+      );
     }
     const match: boolean = await bcrypt.compare(password, user.password);
     if (!match) {
-      throw new AppError(403, errorCodes.FORBIDDEN, "Login fail (wrong email or password)");
+      throw new AppError(
+        403,
+        errorCodes.FORBIDDEN,
+        "Login fail (wrong email or password)"
+      );
     }
     return user;
   }

@@ -9,7 +9,7 @@ export type UserModel = User & { user_id: string };
 
 export type ShowUser = Omit<User, "password">;
 
-export type ValidatePassword = User & { passwordConfirm: string };
+export type UserRegister = { email: string; password: string; passwordConfirm: string };
 
 export type UserLogin = Pick<User, "email" | "password">;
 

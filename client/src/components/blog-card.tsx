@@ -27,7 +27,7 @@ function BlogCard({
         <h1 className="mb-1 line-clamp-3 font-semibold">{title}</h1>
         <div className="flex flex-1 items-center gap-3 text-theme-subtext3">
           <Profile src={profile_url} className="h-9 w-9" />
-          <p className="mr-2 line-clamp-2 max-w-[120px] font-medium">{name}</p>
+          <p className="mr-2 max-w-[120px] font-medium">{name}</p>
           <p className="whitespace-wrap">{formatDate(update_at)}</p>
         </div>
       </div>

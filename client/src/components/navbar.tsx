@@ -98,15 +98,16 @@ function UserMenu() {
       >
         <Profile src={data?.profile_url} className="h-10 w-10" />
       </div>
+
       {/* Menu */}
       <div
         className={`theme-base absolute right-0 z-10 mt-2 rounded-md shadow-md ${openMenu ? `block` : `hidden`}`}
       >
-        <div className="border-b-1-slate-300 flex gap-3 p-4">
+        <div className="flex min-w-[240px] gap-3 p-4">
           <Profile src={data?.profile_url} className="h-10 w-10" />
-          <div>
-            <p>{data?.name}</p>
-            <p>{data?.email}</p>
+          <div className="w-[200px]">
+            <p className="overflow-hidden">{data?.name}</p>
+            <p className="overflow-hidden">{data?.email}</p>
             <button
               className="text-primary underline hover:text-lightprimary active:text-darkprimary"
               onClick={() =>

@@ -1,16 +1,51 @@
+import { useLocation, useNavigate } from "react-router-dom";
+import { useRef, useState } from "react";
+import axios, { AxiosError } from "axios";
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
-import { AtSymbolIcon, LockClosedIcon } from "@heroicons/react/24/outline";
+import {
+  AtSymbolIcon,
+  ExclamationCircleIcon,
+  LockClosedIcon,
+} from "@heroicons/react/24/outline";
 import Button from "./ui/button";
 
 function SignupForm() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [errorMessage, setErrorMessage] = useState<string>("");
+  const emailInput = useRef<HTMLInputElement>(null);
+  const passInput = useRef<HTMLInputElement>(null);
+  const passConInput = useRef<HTMLInputElement>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.set("email", emailInput.current?.value || "");
+    formData.set("password", passInput.current?.value || "");
+    formData.set("passwordConfirm", passConInput.current?.value || "");
+
+    try {
+      await axios.post("/api/users/register", Object.fromEntries(formData));
+      navigate("/", { replace: true });
+    } catch (error) {
+      if (error instanceof AxiosError && error.response) {
+        // Safely access error.response.data.message
+        setErrorMessage(error.response.data.message || "An error occurred");
+      } else {
+        setErrorMessage("Failed to sign up. Please try again.");
+      }
+    }
+  };
+
   return (
-    <form action="" className="space-y-3">
-      <div className="flex-1 rounded-lg bg-gray-50 px-6 pb-4 pt-8">
+    <form onSubmit={handleSubmit} className="space-y-3">
+      <div className="flex-1 rounded-lg px-6 pb-4 pt-8">
         <h1 className="mb-3 text-2xl font-semibold">Signup</h1>
         <div className="w-full">
           <div>
             <label
-              className="mb-3 mt-5 block text-xs font-medium text-gray-900"
+              className="mb-3 mt-5 block text-xs font-medium"
               htmlFor="email"
             >
               Email
@@ -23,13 +58,15 @@ function SignupForm() {
                 name="email"
                 placeholder="Enter your email address"
                 required
+                ref={emailInput}
+                maxLength={16}
               />
               <AtSymbolIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
             </div>
           </div>
           <div className="mt-4">
             <label
-              className="mb-3 mt-5 block text-xs font-medium text-gray-900"
+              className="mb-3 mt-5 block text-xs font-medium"
               htmlFor="password"
             >
               Create Password
@@ -43,6 +80,7 @@ function SignupForm() {
                 placeholder="Enter password"
                 required
                 minLength={6}
+                ref={passInput}
               />
               <LockClosedIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
             </div>
@@ -63,6 +101,7 @@ function SignupForm() {
                 placeholder="Enter confirm password"
                 required
                 minLength={6}
+                ref={passConInput}
               />
               <LockClosedIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
             </div>
@@ -71,19 +110,17 @@ function SignupForm() {
         <Button className="mt-8 w-full bg-primary">
           Signup <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
         </Button>
-        <div
-          className="flex h-8 items-end space-x-1"
-          aria-live="polite"
-          aria-atomic="true"
-        >
-          {/* {errorMessage && (
-            <>
-              <ExclamationCircleIcon className="h-5 w-5 text-red-500" />
-              <p className="text-sm text-red-500">{errorMessage}</p>
-            </>
-          )} */}
-        </div>
-        <p className="text-sm">
+        {errorMessage && (
+          <div
+            className="flex h-8 items-end space-x-1 text-sm text-red-500"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            <ExclamationCircleIcon className="h-5 w-5" />
+            <p>{errorMessage}</p>
+          </div>
+        )}
+        <p className="mt-4 text-sm">
           Already have an account?{" "}
           <a
             href="/signup"

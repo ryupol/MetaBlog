@@ -10,9 +10,15 @@ export const register = async (req: Request, res: Response, next: NextFunction) 
     const userData = req.body;
     logger.debug("Start Creating user.");
     const newUser = await userService.register(userData);
-    const { user_id: userId, name } = newUser;
-    logger.debug(`User: "${name}" created successfully.`);
-    return res.status(201).json({ userId, name });
+    const token = await userService.signToken(newUser);
+    res.cookie(JWT_OPTIONS.jwtCookieName, token, {
+      maxAge: 3600000, // cookie expire in 1 hour
+      secure: true,
+      httpOnly: true,
+      sameSite: "none",
+    });
+    logger.debug(`Create User Email: "${newUser.email}"  successful.`);
+    return res.status(201).json({ message: `Register Success` });
   } catch (error) {
     next(error);
   }
@@ -53,8 +59,8 @@ export const getUserByToken = async (req: Request, res: Response, next: NextFunc
 
 export const getUserById = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const userId: string = req.params.id;
-    const user = await userService.findById(userId);
+    const user_id: string = req.params.id;
+    const user = await userService.findById(user_id);
     logger.debug(`[ID] Get email: "${user.email}" successful.`);
     return res.status(200).json(user);
   } catch (error) {
