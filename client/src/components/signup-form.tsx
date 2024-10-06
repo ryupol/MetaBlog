@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useRef, useState } from "react";
 import axios, { AxiosError } from "axios";
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
@@ -11,7 +11,6 @@ import Button from "./ui/button";
 
 function SignupForm() {
   const navigate = useNavigate();
-  const location = useLocation();
   const [errorMessage, setErrorMessage] = useState<string>("");
   const emailInput = useRef<HTMLInputElement>(null);
   const passInput = useRef<HTMLInputElement>(null);

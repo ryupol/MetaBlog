@@ -1,19 +1,37 @@
 import { useRef, useState } from "react";
-import Navbar from "../components/navbar";
-import Button from "../components/ui/button";
+import { useLocation, useNavigate } from "react-router-dom";
+import axios, { AxiosError } from "axios";
+import { useQuery } from "react-query";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 import {
   CameraIcon,
   FolderPlusIcon,
   PlusIcon,
 } from "@heroicons/react/24/outline";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
-import DropDown from "../components/ui/dropdown";
 import handleFileChange from "../hooks/handleFileChange";
+import Navbar from "../components/navbar";
+import Button from "../components/ui/button";
+import DropDown from "../components/ui/dropdown";
+import ErrorMessage from "../components/ui/error-message";
+import Forbidden from "./forbidden";
 
 function BlogCreate() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const [imgPreview, setImgPreview] = useState<string>("");
   const [content, setContent] = useState<string>("");
+  const [selectedTag, setSelectedTag] = useState<string>("Select Tag");
+  const [errorMessage, setErrorMessage] = useState<string>("");
+  const tags = [
+    "Technology",
+    "Lifestyle",
+    "Travel",
+    "Business",
+    "Economy",
+    "Sports",
+  ];
 
   const titleInput = useRef<HTMLInputElement>(null);
   const fileInput = useRef<HTMLInputElement>(null);
@@ -30,20 +48,53 @@ function BlogCreate() {
     ],
   };
 
-  const tags = [
-    "Technology",
-    "Lifestyle",
-    "Travel",
-    "Business",
-    "Economy",
-    "Sports",
-  ];
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(titleInput.current?.value);
-    console.log(contentInput.current?.value);
+
+    const title = titleInput.current?.value || "";
+    const tag = selectedTag || "Select Tag";
+    const image = fileInput?.current?.files?.[0] || "";
+    const content = contentInput.current?.value || "";
+
+    if (!title || tag === "Select Tag" || !image || !content) {
+      setErrorMessage("Please fill in all fields and select a valid tag.");
+      return; // Return early if validation fails
+    }
+
+    const formData = new FormData();
+    formData.set("title", title);
+    formData.set("tag", tag);
+    formData.set("image", image);
+    formData.set("content", content);
+
+    const previousUrl: string = location.state?.previousUrl || "/";
+
+    try {
+      const config = { headers: { "Content-Type": "multipart/form-data" } };
+      const objectformData = Object.fromEntries(formData);
+      await axios.post("/api/blogs/create", objectformData, config);
+      navigate(previousUrl, { replace: true });
+    } catch (error) {
+      if (error instanceof AxiosError && error.response) {
+        // Safely access error.response.data.message
+        setErrorMessage(error.response.data.message || "An error occurred");
+      } else {
+        setErrorMessage("Failed to create blog. Please try again.");
+      }
+    }
   };
+
+  const { isLoading, isError } = useQuery(
+    "checkAuthentication",
+    async () => {
+      await axios.get("/api/users/me");
+      return;
+    },
+    { retry: false },
+  );
+  if (isLoading) return <div className="theme-base h-full w-full"></div>;
+
+  if (isError) return <Forbidden />;
   return (
     <main className="theme-base min-h-screen">
       <Navbar />
@@ -58,7 +109,11 @@ function BlogCreate() {
             className="form-input p-2"
           />
           <p className="mt-4 py-2 font-semibold">Blog Tag</p>
-          <DropDown defaultValue="Select Tag" allValues={tags} />
+          <DropDown
+            defaultValue={selectedTag}
+            allValues={tags}
+            onSelect={(value: string) => setSelectedTag(value)}
+          />
           <p className="mt-4 py-2 font-semibold">Blog Image</p>
           {imgPreview ? (
             <label htmlFor="file-input" className="group">
@@ -108,7 +163,7 @@ function BlogCreate() {
             <PlusIcon className="w-5" />
             <p>Create Blog Post</p>
           </Button>
-          <p className="mt-2 text-red-500">Please fill all information</p>
+          <ErrorMessage text={errorMessage} />
         </form>
       </section>
     </main>

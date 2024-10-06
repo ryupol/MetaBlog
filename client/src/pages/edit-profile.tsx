@@ -53,9 +53,6 @@ function EditCard() {
     );
 
     try {
-      // const response =
-      console.log(formData);
-      console.log(profileInput?.current?.files?.[0]);
       const config = { headers: { "Content-Type": "multipart/form-data" } };
       const objectformData = Object.fromEntries(formData);
 

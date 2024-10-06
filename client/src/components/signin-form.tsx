@@ -23,9 +23,7 @@ function SigninForm() {
     formData.set("email", emailInput.current?.value || "");
     formData.set("password", passInput.current?.value || "");
 
-    const previousUrl: string = location.state.previousUrl
-      ? location.state.previousUrl
-      : "/";
+    const previousUrl: string = location.state?.previousUrl || "/";
 
     try {
       await axios.post("/api/users/login", Object.fromEntries(formData));

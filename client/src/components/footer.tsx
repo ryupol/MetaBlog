@@ -15,9 +15,10 @@ function Footer() {
   ];
   const policys = ["Terms of Use", "Privary Policy", "Cookie Policy"];
   return (
-    <section className="flex flex-col items-center justify-center gap-16 border-t border-theme-border bg-theme-fbg pt-12 font-jakarta">
+    <footer className="flex flex-col items-center justify-center gap-16 border-t border-theme-border bg-theme-fbg pt-12 font-jakarta">
       <div className="max-container text-sans flex w-[100%] justify-between gap-12 max-md:flex-col max-md:items-center max-md:text-center">
-        <div id="contract" className="max-w-[300px] max-md:max-w-[100%]">
+        {/* About Section */}
+        <section id="contract" className="max-w-[300px] max-md:max-w-[100%]">
           <h3 id="about" className="font-semibold">
             About
           </h3>
@@ -34,8 +35,10 @@ function Footer() {
             <b className="font-semibold">Phone : </b>
             <span className="text-theme-subtext1">088 123 4567</span>
           </p>
-        </div>
-        <div>
+        </section>
+
+        {/* Quick Links Section */}
+        <nav aria-label="Quick Links">
           <ul>
             <h3 className="mb-6 font-semibold">Quick Link</h3>
             {quickLink.map((link) => (
@@ -48,8 +51,10 @@ function Footer() {
               </li>
             ))}
           </ul>
-        </div>
-        <div>
+        </nav>
+
+        {/* Categories Section */}
+        <nav aria-label="Categories">
           <ul>
             <h3 className="mb-6 font-semibold">Category</h3>
             {category.map((cat) => (
@@ -58,8 +63,10 @@ function Footer() {
               </li>
             ))}
           </ul>
-        </div>
-        <div className="flex w-[392px] flex-col gap-2 rounded-xl bg-theme-fcard px-[30px] py-8 text-center font-work">
+        </nav>
+
+        {/* Newsletter Section */}
+        <section className="flex w-[392px] flex-col gap-2 rounded-xl bg-theme-fcard px-[30px] py-8 text-center font-work">
           <h2 className="font-semibold">Weekly Newsletter</h2>
           <p className="mb-[22px] text-theme-subtext2">
             Get blog articles and offers via email
@@ -68,17 +75,24 @@ function Footer() {
             <input
               className="form-input py-3 pl-4 pr-9"
               placeholder="Your Email"
+              type="email"
+              aria-label="Enter your email"
             />
             <EnvelopeIcon className="pointer-events-none absolute inset-y-0 right-4 top-1/2 flex h-5 w-5 -translate-y-1/2 text-[#696A75]" />
           </div>
           <Button className="bg-blue w-full text-center" aria-disabled>
             Subscribe
           </Button>
-        </div>
+        </section>
       </div>
+
+      {/* Footer Bottom Section */}
       <div className="max-container flex w-[100%] justify-between gap-6 border-t border-theme-fborder py-8 max-md:flex-col max-md:items-center">
         <Logo footer={true} />
-        <ul className="flex items-center gap-4 text-theme-subtext1">
+        <nav
+          aria-label="Policies"
+          className="flex items-center gap-4 text-theme-subtext1"
+        >
           {policys.map((policy, index) => (
             <Fragment key={index}>
               <li>{policy}</li>
@@ -87,9 +101,9 @@ function Footer() {
               )}
             </Fragment>
           ))}
-        </ul>
+        </nav>
       </div>
-    </section>
+    </footer>
   );
 }
 

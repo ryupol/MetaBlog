@@ -5,6 +5,7 @@ import {
   MoonIcon,
   ArrowRightStartOnRectangleIcon as SignoutIcon,
   MagnifyingGlassIcon as SearchIcon,
+  PlusCircleIcon,
 } from "@heroicons/react/24/outline";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../redux/theme/themeSlice";
@@ -98,16 +99,15 @@ function UserMenu() {
       >
         <Profile src={data?.profile_url} className="h-10 w-10" />
       </div>
-
       {/* Menu */}
       <div
         className={`theme-base absolute right-0 z-10 mt-2 rounded-md shadow-md ${openMenu ? `block` : `hidden`}`}
       >
-        <div className="flex min-w-[240px] gap-3 p-4">
+        <div className="border-b-1-slate-300 flex gap-3 p-4">
           <Profile src={data?.profile_url} className="h-10 w-10" />
-          <div className="w-[200px]">
-            <p className="overflow-hidden">{data?.name}</p>
-            <p className="overflow-hidden">{data?.email}</p>
+          <div>
+            <p>{data?.name}</p>
+            <p>{data?.email}</p>
             <button
               className="text-primary underline hover:text-lightprimary active:text-darkprimary"
               onClick={() =>
@@ -124,6 +124,15 @@ function UserMenu() {
         </div>
         <hr className="border-theme-skeleton" />
         <ul className="my-1 flex flex-col gap-1">
+          {/* Create Menu */}
+          <li
+            onClick={() => navigate("/blog/create")}
+            className="flex w-[100%] cursor-pointer gap-3 px-4 py-2 hover:bg-theme-border"
+          >
+            <PlusCircleIcon className="w-6" />
+            <p>Create Blog</p>
+          </li>
+          {/* Switch Theme Menu */}
           <li
             onClick={() => dispatch(toggleTheme())}
             className="flex w-[100%] cursor-pointer gap-3 px-4 py-2 hover:bg-theme-border"
@@ -135,6 +144,7 @@ function UserMenu() {
             )}
             <p>Appearance: {theme === "light" ? "Light" : "Dark"}</p>
           </li>
+          {/* Logout Menu */}
           <li
             onClick={() => {
               signOut();

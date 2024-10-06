@@ -5,13 +5,21 @@ import { useRef, useState } from "react";
 type DropDownProps = {
   defaultValue: string;
   allValues: string[];
+  onSelect: (value: string) => void;
 };
-function DropDown({ defaultValue, allValues }: DropDownProps) {
+function DropDown({ defaultValue, allValues, onSelect }: DropDownProps) {
   const [select, setSelect] = useState(defaultValue);
   const [openMenu, setOpenMenu] = useState(false);
   const menuRef = useRef(null);
 
   useClickOutside(menuRef, () => setOpenMenu(false));
+
+  const handleSelect = (value: string) => {
+    setSelect(value);
+    setOpenMenu(false);
+    onSelect(value); // Notify the parent of the selected value
+  };
+
   return (
     <div ref={menuRef} className="relative w-64">
       <button
@@ -27,16 +35,13 @@ function DropDown({ defaultValue, allValues }: DropDownProps) {
         {allValues.map((value) => (
           <li
             onClick={() => {
-              setSelect(value);
-              setOpenMenu(false);
+              handleSelect(value);
             }}
             className={`${select === value ? "bg-lightprimary/10 hover:bg-lightprimary/15" : "hover:bg-lightprimary/5"} my-1 w-full cursor-pointer px-4 py-1 transition-all duration-100`}
           >
             {value}
           </li>
         ))}
-        {/* <li>Lifestyle</li>
-        <li>E</li> */}
       </ul>
     </div>
   );

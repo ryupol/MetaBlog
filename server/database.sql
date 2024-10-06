@@ -1,7 +1,7 @@
 CREATE TABLE users (
     user_id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    profile_url TEXT DEFAULT 'https://res.cloudinary.com/dxwmjflhh/image/upload/happy.jpg' NOT NULL,
+    profile_url TEXT DEFAULT 'https://res.cloudinary.com/dxwmjflhh/image/upload/v1727805743/happy.jpg' NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL,
     create_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,

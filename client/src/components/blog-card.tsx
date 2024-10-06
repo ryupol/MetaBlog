@@ -12,7 +12,7 @@ function BlogCard({
   image_url,
 }: Omit<BlogProps, "blog_id" | "content">) {
   return (
-    <section className="card-hover flex max-w-[392px] flex-col gap-4 rounded-xl border border-theme-border p-4 shadow-base">
+    <article className="card-hover flex max-w-[392px] flex-col gap-4 rounded-xl border border-theme-border p-4 shadow-base">
       <div className="overflow-hidden rounded-md">
         <img
           src={image_url}
@@ -24,14 +24,14 @@ function BlogCard({
         <div>
           <Tag cat={tag} />
         </div>
-        <h1 className="mb-1 line-clamp-3 font-semibold">{title}</h1>
+        <h1 className="mb-1 line-clamp-3 h-[88px] font-semibold">{title}</h1>
         <div className="flex flex-1 items-center gap-3 text-theme-subtext3">
           <Profile src={profile_url} className="h-9 w-9" />
-          <p className="mr-2 max-w-[120px] font-medium">{name}</p>
-          <p className="whitespace-wrap">{formatDate(update_at)}</p>
+          <span className="mr-2 max-w-[120px] font-medium">{name}</span>
+          <time className="whitespace-wrap">{formatDate(update_at)}</time>
         </div>
       </div>
-    </section>
+    </article>
   );
 }
 
