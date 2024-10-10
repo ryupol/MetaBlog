@@ -1,4 +1,4 @@
-version: '3.7'
+version: "3.7"
 
 services:
   db:
@@ -13,6 +13,7 @@ services:
       - "5432:5432"
     volumes:
       - postgresql_data:/var/lib/postgresql/data
+      - ./database.sql:/docker-entrypoint-initdb.d/database.sql # Mount the SQL file
     networks:
       - my_network
   adminer:

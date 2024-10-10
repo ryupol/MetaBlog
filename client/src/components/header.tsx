@@ -12,14 +12,25 @@ function Header() {
     const response = await axios.get(`/api/blogs/${advertiseId}`);
     return response?.data;
   };
-  const { data, isLoading, error } = useQuery<BlogProps, Error>(
+  const { data, isLoading, isError } = useQuery<BlogProps, Error>(
     "blogHeader",
     () => fetchBlogHeader(),
   );
 
   if (isLoading) return <HeaderSkeleton />;
 
-  if (error) return <p className="max-container">{error.message}</p>;
+  if (isError)
+    return (
+      <header className="max-container relative">
+        <div className="max-h-[600px] w-full overflow-hidden rounded-xl">
+          <img
+            src="https://res.cloudinary.com/dxwmjflhh/image/upload/v1728533736/blog1.png"
+            alt="Header Blog image"
+            className="w-full object-cover"
+          />
+        </div>
+      </header>
+    );
 
   return (
     <header className="max-container relative">

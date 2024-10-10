@@ -8,6 +8,7 @@ import Button from "../components/ui/button";
 import handleFileChange from "../hooks/handleFileChange";
 import { EditCardSkeleton } from "../components/ui/skeleton";
 import { UserTokenProps } from "../types/user.type";
+import Forbidden from "./forbidden";
 
 function EditProfile() {
   return (
@@ -28,9 +29,7 @@ function EditCard() {
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [profilePreview, setProfilePreview] = useState<string>("");
 
-  const previousUrl: string = location.state.previousUrl
-    ? location.state.previousUrl
-    : "/";
+  const previousUrl: string = location.state?.previousUrl || "/";
 
   const handleCancel = (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,7 +41,7 @@ function EditCard() {
     e.preventDefault();
 
     const defaultProfile =
-      "https://res.cloudinary.com/dxwmjflhh/image/upload/happy.jpg";
+      "https://res.cloudinary.com/dxwmjflhh/image/upload/v1727805743/happy.jpg";
 
     const formData = new FormData();
     formData.set("name", nameInput.current?.value || "");
@@ -75,11 +74,15 @@ function EditCard() {
     return response.data;
   };
 
-  const { data, isLoading } = useQuery<UserTokenProps>("getMe", () =>
-    fetchMe(),
+  const { data, isLoading, isError } = useQuery<UserTokenProps>(
+    "getMe",
+    () => fetchMe(),
+    { retry: false },
   );
 
   if (isLoading) return <EditCardSkeleton />;
+
+  if (isError) return <Forbidden />;
 
   return (
     <form

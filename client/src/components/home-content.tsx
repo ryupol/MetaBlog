@@ -1,9 +1,12 @@
-import { HomeContentSkeleton } from "./ui/skeleton";
 import axios from "axios";
-import { BlogProps } from "../types/blog.type";
-import { useQuery } from "react-query";
 import BlogCard from "./blog-card";
+import { useQuery } from "react-query";
+import { HomeContentSkeleton } from "./ui/skeleton";
+import { BlogProps } from "../types/blog.type";
+import { useNavigate } from "react-router-dom";
+
 function HomeContent() {
+  const navigate = useNavigate();
   const fetchBlogs = async () => {
     const response = await axios.get("/api/blogs");
     return response?.data.data;
@@ -14,7 +17,10 @@ function HomeContent() {
 
   if (isLoading) return <HomeContentSkeleton />;
 
-  if (error) return <p className="max-container">{error.message}</p>;
+  if (error) {
+    navigate("/error", { state: { message: error.message } });
+    return null;
+  }
 
   return (
     <div
