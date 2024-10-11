@@ -22,11 +22,11 @@ CREATE TABLE blogs (
 
 -- Insert Users
 INSERT INTO users (name, profile_url, email, password) VALUES
-('Jason Franciso', 'https://res.cloudinary.com/dxwmjflhh/image/upload/v1727867310/jason_franciso.png', 'user1@example.com', 'admin1'),
-('Tracey Wilson', 'https://res.cloudinary.com/dxwmjflhh/image/upload/v1727867310/elizabeth_slavin.png', 'user2@example.com', 'admin2'),
-('Elizabeth Slavin', 'https://res.cloudinary.com/dxwmjflhh/image/upload/v1727867310/tracey_wilson.png', 'user3@example.com', 'admin3'),
-('Ernie Smith', 'https://res.cloudinary.com/dxwmjflhh/image/upload/v1727867310/eric_smith.png', 'user4@example.com', 'admin4'),
-('Eric Smith', 'https://res.cloudinary.com/dxwmjflhh/image/upload/v1727867310/ernie_smith.png', 'user5@example.com', 'admin5');
+('Jason Franciso', 'https://res.cloudinary.com/dxwmjflhh/image/upload/v1727867310/jason_franciso.png', 'admin1@example.com', 'admin1'),
+('Tracey Wilson', 'https://res.cloudinary.com/dxwmjflhh/image/upload/v1727867310/elizabeth_slavin.png', 'admin2@example.com', 'admin2'),
+('Elizabeth Slavin', 'https://res.cloudinary.com/dxwmjflhh/image/upload/v1727867310/tracey_wilson.png', 'admin3@example.com', 'admin3'),
+('Ernie Smith', 'https://res.cloudinary.com/dxwmjflhh/image/upload/v1727867310/eric_smith.png', 'admin4@example.com', 'admin4'),
+('Eric Smith', 'https://res.cloudinary.com/dxwmjflhh/image/upload/v1727867310/ernie_smith.png', 'admin5@example.com', 'admin5');
 
 -- Insert Blogs (2 blogs for each user)
 INSERT INTO blogs (title, image_url, tag, content, user_id) VALUES
