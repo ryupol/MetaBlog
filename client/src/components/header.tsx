@@ -53,7 +53,7 @@ function Header() {
               <Profile src={data?.profile_url} className="h-9 w-9" />
               <p className="mr-2 font-medium">{data?.name}</p>
               <p className="whitespace-wrap px-2">
-                {formatDate(data?.update_at)}
+                {formatDate(data?.updated_at)}
               </p>
             </div>
           </div>

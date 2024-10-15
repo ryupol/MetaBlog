@@ -4,7 +4,10 @@ export interface BlogProps {
   title: string;
   profile_url: string;
   name: string;
-  update_at: string;
+  updated_at: string;
   image_url: string;
   content: string;
+  user_id: string;
 }
+
+export type BlogInfo = Omit<BlogProps, "blog_id" | "content" | "user_id">;

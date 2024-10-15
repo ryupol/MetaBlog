@@ -1,4 +1,4 @@
-import { BlogProps } from "../types/blog.type";
+import { BlogInfo } from "../types/blog.type";
 import formatDate from "../utils/formatDate";
 import Profile from "./ui/profile";
 import Tag from "./ui/tag";
@@ -8,9 +8,9 @@ function BlogCard({
   title,
   profile_url,
   name,
-  update_at,
+  updated_at,
   image_url,
-}: Omit<BlogProps, "blog_id" | "content">) {
+}: BlogInfo) {
   return (
     <article className="card-hover flex max-w-[392px] flex-col gap-4 rounded-xl border border-theme-border p-4 shadow-base">
       <div className="overflow-hidden rounded-md">
@@ -28,7 +28,7 @@ function BlogCard({
         <div className="flex flex-1 items-center gap-3 text-theme-subtext3">
           <Profile src={profile_url} className="h-9 w-9" />
           <span className="mr-2 max-w-[120px] font-medium">{name}</span>
-          <time className="whitespace-wrap">{formatDate(update_at)}</time>
+          <time className="whitespace-wrap">{formatDate(updated_at)}</time>
         </div>
       </div>
     </article>

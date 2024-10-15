@@ -20,7 +20,6 @@ export default {
       },
       colors: {
         primary: "rgb(75, 107, 251)", // #4B6BFB
-        "primary-5": "rgba(75, 107, 251, 0.05)", // #4B6BFB0D
         lightprimary: "rgb(95, 127, 255)", // #5F7FFF
         darkprimary: "rgb(55, 87, 231)", // #3757E7
         secondary: "rgb(244, 244, 245)", // #F4F4F5

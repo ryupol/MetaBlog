@@ -9,7 +9,7 @@ type DropDownProps = {
 };
 function DropDown({ defaultValue, allValues, onSelect }: DropDownProps) {
   const [select, setSelect] = useState(defaultValue);
-  const [openMenu, setOpenMenu] = useState(false);
+  const [openMenu, setOpenMenu] = useState<boolean>(false);
   const menuRef = useRef(null);
 
   useClickOutside(menuRef, () => setOpenMenu(false));
@@ -25,6 +25,7 @@ function DropDown({ defaultValue, allValues, onSelect }: DropDownProps) {
       <button
         className="flex w-full cursor-pointer items-center justify-between rounded-md border border-theme-skeleton px-4 py-2 shadow-sm"
         onClick={() => setOpenMenu(!openMenu)}
+        type="button"
       >
         <span>{select}</span>
         <ChevronDownIcon className="h-5 w-5" stroke="currentColor" />
@@ -32,8 +33,9 @@ function DropDown({ defaultValue, allValues, onSelect }: DropDownProps) {
       <ul
         className={`absolute z-10 mt-2 ${openMenu ? `block` : `hidden`} z-[201] w-full rounded-md border border-theme-border bg-theme-fcard py-2 shadow-xl`}
       >
-        {allValues.map((value) => (
+        {allValues.map((value, index) => (
           <li
+            key={index}
             onClick={() => {
               handleSelect(value);
             }}

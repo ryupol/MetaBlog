@@ -60,7 +60,7 @@ function SignupForm() {
                 ref={emailInput}
                 maxLength={16}
               />
-              <AtSymbolIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+              <AtSymbolIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-[#696A75]" />
             </div>
           </div>
           <div className="mt-4">
@@ -81,7 +81,7 @@ function SignupForm() {
                 minLength={6}
                 ref={passInput}
               />
-              <LockClosedIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+              <LockClosedIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-[#696A75]" />
             </div>
           </div>
           <div className="mt-4">
@@ -102,7 +102,7 @@ function SignupForm() {
                 minLength={6}
                 ref={passConInput}
               />
-              <LockClosedIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+              <LockClosedIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-[#696A75]" />
             </div>
           </div>
         </div>

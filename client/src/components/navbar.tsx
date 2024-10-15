@@ -1,5 +1,9 @@
+import axios from "axios";
 import { useRef, useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleTheme } from "../redux/theme/themeSlice";
+import { RootState } from "../redux/store";
 import {
   SunIcon,
   MoonIcon,
@@ -7,17 +11,14 @@ import {
   MagnifyingGlassIcon as SearchIcon,
   PlusCircleIcon,
 } from "@heroicons/react/24/outline";
-import { useDispatch, useSelector } from "react-redux";
-import { toggleTheme } from "../redux/theme/themeSlice";
-import { RootState } from "../redux/store";
+
 import useClickOutside from "../hooks/useClickOutside";
+import useFetchMe from "../hooks/useFetchMe";
+
 import Logo from "./ui/logo";
 import { UserMenuSkeleton } from "./ui/skeleton";
 import Profile from "./ui/profile";
-import axios from "axios";
-import { useQuery } from "react-query";
 import Button from "./ui/button";
-import { UserTokenProps } from "../types/user.type";
 
 function Navbar() {
   return (
@@ -67,16 +68,7 @@ function UserMenu() {
     await axios.post("/api/users/logout");
   };
 
-  const fetchMe = async () => {
-    const response = await axios.get("/api/users/me");
-    return response.data;
-  };
-
-  const { data, isLoading } = useQuery<UserTokenProps | null>(
-    "getMe",
-    () => fetchMe(),
-    { retry: false }, // find a way to make data update when edit profile
-  );
+  const { data, isLoading } = useFetchMe();
 
   if (isLoading) return <UserMenuSkeleton />;
 
@@ -101,7 +93,7 @@ function UserMenu() {
       </div>
       {/* Menu */}
       <div
-        className={`theme-base absolute right-0 z-10 mt-2 rounded-md shadow-md ${openMenu ? `block` : `hidden`}`}
+        className={`theme-base absolute right-0 z-10 mt-2 min-w-[230px] max-w-[500px] rounded-md shadow-md ${openMenu ? `block` : `hidden`}`}
       >
         <div className="border-b-1-slate-300 flex gap-3 p-4">
           <Profile src={data?.profile_url} className="h-10 w-10" />

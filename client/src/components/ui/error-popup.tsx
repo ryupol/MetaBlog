@@ -1,11 +1,9 @@
 import { ExclamationTriangleIcon } from "@heroicons/react/24/solid";
-import { useLocation } from "react-router-dom";
 
-function Error() {
-  const location = useLocation();
-  const message = location.state?.message || "An unknown error occurred.";
+function ErrorPopup({ message }: { message?: string }) {
+  if (!message) message = "An unknown error occurred.";
   return (
-    <main className="theme-base flex h-full w-full flex-col items-center justify-center p-20">
+    <main className="theme-base fixed left-0 top-0 z-[999] flex h-screen w-screen flex-col items-center justify-center p-20">
       <section className="flex w-[420px] flex-col items-center gap-6 rounded-xl bg-theme-fbg p-10">
         <ExclamationTriangleIcon className="m-10 text-red-500" />
         <h1 className="text-center">Oops! Something Went Wrong</h1>
@@ -18,4 +16,4 @@ function Error() {
   );
 }
 
-export default Error;
+export default ErrorPopup;

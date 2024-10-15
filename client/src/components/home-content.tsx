@@ -3,10 +3,9 @@ import BlogCard from "./blog-card";
 import { useQuery } from "react-query";
 import { HomeContentSkeleton } from "./ui/skeleton";
 import { BlogProps } from "../types/blog.type";
-import { useNavigate } from "react-router-dom";
+import ErrorPopup from "./ui/error-popup";
 
 function HomeContent() {
-  const navigate = useNavigate();
   const fetchBlogs = async () => {
     const response = await axios.get("/api/blogs");
     return response?.data.data;
@@ -17,10 +16,7 @@ function HomeContent() {
 
   if (isLoading) return <HomeContentSkeleton />;
 
-  if (error) {
-    navigate("/error", { state: { message: error.message } });
-    return null;
-  }
+  if (error) return <ErrorPopup message={error.message} />;
 
   return (
     <div
@@ -35,7 +31,7 @@ function HomeContent() {
             title={d.title}
             profile_url={d.profile_url}
             name={d.name}
-            update_at={d.update_at}
+            updated_at={d.updated_at}
           />
         </a>
       ))}

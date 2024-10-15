@@ -1,14 +1,15 @@
 import { useRef, useState } from "react";
-import { useQuery } from "react-query";
-import { CameraIcon, ExclamationCircleIcon } from "@heroicons/react/24/outline";
+import { CameraIcon } from "@heroicons/react/24/outline";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios, { AxiosError } from "axios";
 
-import Button from "../components/ui/button";
 import handleFileChange from "../hooks/handleFileChange";
-import { EditCardSkeleton } from "../components/ui/skeleton";
-import { UserTokenProps } from "../types/user.type";
+import useFetchMe from "../hooks/useFetchMe";
+
 import Forbidden from "./forbidden";
+import Button from "../components/ui/button";
+import ErrorMessage from "../components/ui/error-message";
+import { EditCardSkeleton } from "../components/ui/skeleton";
 
 function EditProfile() {
   return (
@@ -28,6 +29,7 @@ function EditCard() {
 
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [profilePreview, setProfilePreview] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false); // for loading while submitting
 
   const previousUrl: string = location.state?.previousUrl || "/";
 
@@ -39,7 +41,7 @@ function EditCard() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+    setLoading(true);
     const defaultProfile =
       "https://res.cloudinary.com/dxwmjflhh/image/upload/v1727805743/happy.jpg";
 
@@ -65,20 +67,12 @@ function EditCard() {
       } else {
         setErrorMessage("Failed to sign in. Please try again.");
       }
+    } finally {
+      setLoading(false);
     }
   };
 
-  const fetchMe = async () => {
-    const response = await axios.get("/api/users/me");
-    setProfilePreview(response.data.profile_url);
-    return response.data;
-  };
-
-  const { data, isLoading, isError } = useQuery<UserTokenProps>(
-    "getMe",
-    () => fetchMe(),
-    { retry: false },
-  );
+  const { data, isLoading, isError } = useFetchMe();
 
   if (isLoading) return <EditCardSkeleton />;
 
@@ -96,7 +90,7 @@ function EditCard() {
           className="group relative h-16 w-16 flex-shrink-0 cursor-pointer rounded-full"
         >
           <img
-            src={profilePreview}
+            src={profilePreview || data?.profile_url}
             alt="Profile"
             className="h-[100%] w-[100%] rounded-full object-cover"
           />
@@ -136,17 +130,14 @@ function EditCard() {
         maxLength={16}
       />
       <div className="mt-8 flex gap-4">
-        <Button secondary={true} onClick={handleCancel}>
+        <Button secondary={true} onClick={handleCancel} type="button">
           Cancel
         </Button>
-        <Button>Save</Button>
+        <Button type="submit" loading={loading}>
+          Save
+        </Button>
       </div>
-      {errorMessage && (
-        <div className="mt-2 flex gap-1">
-          <ExclamationCircleIcon className="h-5 w-5 text-red-500" />
-          <p className="text-sm text-red-500">{errorMessage}</p>
-        </div>
-      )}
+      <ErrorMessage message={errorMessage} />
     </form>
   );
 }
