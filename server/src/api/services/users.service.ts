@@ -28,7 +28,7 @@ class UserService {
     const name = email.split("@")[0];
     const hashed = await bcrypt.hash(password, 10);
 
-    const result = await pool.query(
+    const insertResult = await pool.query(
       `
         INSERT INTO users (name, email, password)
         VALUES ($1, $2, $3)
@@ -36,7 +36,12 @@ class UserService {
       `,
       [name, email, hashed]
     );
-    const newUser = result.rows[0];
+    const newUserId = insertResult.rows[0].user_id;
+    const selectResult = await pool.query(
+      `SELECT user_id, name, email, profile_url FROM users WHERE user_id = $1`,
+      [newUserId]
+    );
+    const newUser = selectResult.rows[0];
     logger.debug(`Register email: ${newUser.email} Successfully`);
     return newUser;
   }
@@ -93,7 +98,6 @@ class UserService {
     const oldUser = await this.findByToken(authToken);
     const oldPublicId = oldUser.profile_url.split("/").pop().split(".")[0];
 
-    console.log(oldUser.profile_url);
     const colsToUpdate = [];
     const values = [];
 

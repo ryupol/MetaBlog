@@ -50,7 +50,8 @@ export const getUserByToken = async (req: Request, res: Response, next: NextFunc
     const authToken: string = req.cookies[token];
     logger.debug(`get User with Token: ${authToken.substring(0, 8)}...`);
     const user = await userService.findByToken(authToken);
-    logger.debug(`[Token] Get email: "${user.email}" successful.`);
+    logger.debug(`[Token] Get user: "${user.email}" successful.`);
+    console.log(user);
     return res.status(200).json(user);
   } catch (error) {
     next(error);
@@ -79,6 +80,13 @@ export const updateUser = async (req: Request, res: Response, next: NextFunction
     const newUserData = { name, email, profile_url };
     logger.debug(`Start updating user token: ${authToken.substring(0, 8)}...`);
     const updatedUser = await userService.update(authToken, newUserData);
+    const newToken = await userService.signToken(updatedUser);
+    res.cookie(JWT_OPTIONS.jwtCookieName, newToken, {
+      maxAge: 3600000, // cookie expire in 1 hour
+      secure: true,
+      httpOnly: true,
+      sameSite: "none",
+    });
     logger.debug(`Updated user ID: "${updatedUser.user_id}" successful`);
     res.status(200).json({ message: "Updated user successful" });
   } catch (error) {
