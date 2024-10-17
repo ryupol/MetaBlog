@@ -58,6 +58,7 @@ function SigninForm() {
                 name="email"
                 placeholder="Enter your email address"
                 required
+                maxLength={320}
                 ref={emailInput}
               />
               <AtSymbolIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-[#696A75]" />

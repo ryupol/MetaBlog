@@ -117,7 +117,7 @@ function EditCard() {
       <input
         className="form-input px-4 py-2"
         type="text"
-        maxLength={16}
+        maxLength={24}
         placeholder={data?.name}
         ref={nameInput}
       />

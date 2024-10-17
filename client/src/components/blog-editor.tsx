@@ -47,22 +47,27 @@ function BlogEditor({
     e.preventDefault();
     setLoading(true);
 
-    const title = titleInput.current?.value || "";
-    const tag = selectedTag || "Select Tag";
-    const image = fileInput?.current?.files?.[0] || "";
-    const contentValue = contentInput.current?.value || content;
+    const titleSubmit = titleInput.current?.value || title;
+    const tagSubmit = selectedTag || "Select Tag";
+    const imageSubmit = fileInput?.current?.files?.[0] || imgPreview;
+    const contentValueSubmit = contentInput.current?.value || content;
 
-    if (!title || tag === "Select Tag" || !image || !contentValue) {
+    if (
+      !titleSubmit ||
+      tagSubmit === "Select Tag" ||
+      !imageSubmit ||
+      !contentValueSubmit
+    ) {
       setErrorMessage("Please fill in all fields and select a valid tag.");
       setLoading(false);
       return;
     }
 
     const formData = new FormData();
-    formData.set("title", title);
-    formData.set("tag", tag);
-    formData.set("image", image);
-    formData.set("content", contentValue);
+    formData.set("title", titleSubmit);
+    formData.set("tag", tagSubmit);
+    formData.set("image", imageSubmit);
+    formData.set("content", contentValueSubmit);
 
     try {
       await onSubmit(formData);

@@ -1,21 +1,14 @@
-import Profile from "./ui/profile";
-import Tag from "./ui/tag";
-import axios from "axios";
-import { BlogProps } from "../types/blog.type";
 import { advertiseId } from "../global";
 import { HeaderSkeleton } from "./ui/skeleton";
+import Profile from "./ui/profile";
+import Tag from "./ui/tag";
 import formatDate from "../utils/formatDate";
-import { useQuery } from "react-query";
+import useFetchBlogById from "../hooks/useFetchBlogById";
 
-function Header() {
-  const fetchBlogHeader = async () => {
-    const response = await axios.get(`/api/blogs/${advertiseId}`);
-    return response?.data;
-  };
-  const { data, isLoading, isError } = useQuery<BlogProps, Error>(
-    "blogHeader",
-    () => fetchBlogHeader(),
-  );
+function Header({ queryValue }: { queryValue: string }) {
+  if (queryValue) return;
+
+  const { data, isLoading, isError } = useFetchBlogById(advertiseId);
 
   if (isLoading) return <HeaderSkeleton />;
 

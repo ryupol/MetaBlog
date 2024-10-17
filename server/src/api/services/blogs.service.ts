@@ -10,6 +10,7 @@ class BlogService {
       SELECT b.*, u.name, u.profile_url
       FROM blogs b
       JOIN users u ON b.user_id = u.user_id
+      ORDER BY created_at DESC
   `);
     const blogs = result.rows;
     return blogs;
@@ -70,6 +71,8 @@ class BlogService {
       values.push(imageUrl);
     }
 
+    colsToUpdate.push("updated_at = NOW() AT TIME ZONE 'UTC' + INTERVAL '7 hours'");
+
     if (colsToUpdate.length === 0) {
       throw new AppError(400, errorCodes.FORBIDDEN, "No valid fields to update");
     }
@@ -78,7 +81,7 @@ class BlogService {
     const query = `
     UPDATE blogs
     SET ${setClause}
-    WHERE blog_id = $${colsToUpdate.length + 1}
+    WHERE blog_id = $${colsToUpdate.length}
     RETURNING *;
     `;
     values.push(blogId);

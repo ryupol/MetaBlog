@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import { EnvelopeIcon } from "@heroicons/react/24/outline";
 import Logo from "./ui/logo";
 import Button from "./ui/button";
+import { advertiseId } from "../global";
 function Footer() {
-  const quickLink = ["Home", "About", "Blog", "Contact"];
+  const quickLink = ["Home", "Blog", "Single Post", "Contact"];
   const category = [
     "Lifestyle",
     "Technology",
@@ -44,9 +45,11 @@ function Footer() {
             {quickLink.map((link) => (
               <li className="mb-[6px] text-theme-subtext1" key={link}>
                 {link === "Home" ? (
-                  <Link to="/">{link}</Link>
+                  <a href="/">{link}</a>
+                ) : link === "Single Post" ? (
+                  <a href={`/blog/${advertiseId}`}>{link}</a>
                 ) : (
-                  <a href={`#${link.toLowerCase()} `}>{link}</a>
+                  <a href={`#${link.toLowerCase()}`}>{link}</a>
                 )}
               </li>
             ))}
@@ -59,7 +62,7 @@ function Footer() {
             <h3 className="mb-6 font-semibold">Category</h3>
             {category.map((cat) => (
               <li className="mb-[6px] text-theme-subtext1" key={cat}>
-                <a href="/">{cat}</a>
+                {cat}
               </li>
             ))}
           </ul>
@@ -91,7 +94,7 @@ function Footer() {
         <Logo footer={true} />
         <nav
           aria-label="Policies"
-          className="flex items-center gap-4 text-theme-subtext1"
+          className="flex list-none items-center gap-4 text-theme-subtext1"
         >
           {policys.map((policy, index) => (
             <Fragment key={index}>

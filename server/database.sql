@@ -4,8 +4,8 @@ CREATE TABLE users (
     profile_url TEXT DEFAULT 'https://res.cloudinary.com/dxwmjflhh/image/upload/v1727805743/happy.jpg' NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL,
-    create_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    update_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+    create_at TIMESTAMP NOT NULL DEFAULT (NOW() AT TIME ZONE 'UTC' + INTERVAL '7 hours'),
+    update_at TIMESTAMP NOT NULL DEFAULT (NOW() AT TIME ZONE 'UTC' + INTERVAL '7 hours')
 );
 
 CREATE TABLE blogs (
@@ -14,8 +14,8 @@ CREATE TABLE blogs (
     image_url TEXT NOT NULL,
     tag VARCHAR(255) NOT NULL,
     content TEXT,
-    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    created_at TIMESTAMP NOT NULL DEFAULT (NOW() AT TIME ZONE 'UTC' + INTERVAL '7 hours'),
+    updated_at TIMESTAMP NOT NULL DEFAULT (NOW() AT TIME ZONE 'UTC' + INTERVAL '7 hours'),
     user_id INTEGER NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(user_id) 
 );

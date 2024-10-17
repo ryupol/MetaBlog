@@ -14,13 +14,18 @@ import {
 
 import useClickOutside from "../hooks/useClickOutside";
 import useFetchMe from "../hooks/useFetchMe";
+import useHandleSearch from "../hooks/handleSearch";
 
 import Logo from "./ui/logo";
 import { UserMenuSkeleton } from "./ui/skeleton";
 import Profile from "./ui/profile";
 import Button from "./ui/button";
+import { advertiseId } from "../global";
 
 function Navbar() {
+  const searchRef = useRef<HTMLInputElement>(null);
+  const handleSearch = useHandleSearch();
+
   return (
     <section className="max-container flex flex-1 items-center justify-between gap-16">
       <Link to="/">
@@ -30,7 +35,9 @@ function Navbar() {
         {["Home", "Blog", "Single Post", "Contract"].map((x) => (
           <li key={x}>
             {x === "Home" ? (
-              <Link to="/">{x}</Link>
+              <a href="/">{x}</a>
+            ) : x === "Single Post" ? (
+              <a href={`/blog/${advertiseId}`}>{x}</a>
             ) : (
               <a href={`#${x.toLowerCase()}`}>{x}</a>
             )}
@@ -42,6 +49,8 @@ function Navbar() {
           <input
             className="nav-input transition-all duration-100"
             placeholder="Search"
+            onKeyDown={(e) => handleSearch(e, searchRef)}
+            ref={searchRef}
           />
           <SearchIcon
             strokeWidth={2}
