@@ -2,11 +2,11 @@ import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import Home from "./pages/home";
 import Blog from "./pages/blog";
 import BlogCreate from "./pages/blog-create";
-import EditBlog from "./pages/edit-blog";
+import EditBlog from "./pages/blog-update";
 import Signin from "./pages/signin";
 import NotFound from "./pages/notfound";
 import Signup from "./pages/signup";
-import EditProfile from "./pages/edit-profile";
+import EditProfile from "./pages/profile-update";
 
 function App() {
   return (
@@ -15,10 +15,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/blog/:id" element={<Blog />} />
         <Route path="/blog/create" element={<BlogCreate />} />
-        <Route path="/edit/blog/:id" element={<EditBlog />} />
+        <Route path="/blog/update/:id" element={<EditBlog />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/edit/profile" element={<EditProfile />} />
+        <Route path="/profile/update" element={<EditProfile />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

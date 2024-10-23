@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import { Provider } from "react-redux";
 import { persistor, store } from "./redux/store.ts";
-import ThemeProvider from "./components/theme-provider.tsx";
+import ThemeProvider from "./providers/theme-provider.tsx";
 import { PersistGate } from "redux-persist/integration/react";
 import "./index.css";
 import { QueryClient, QueryClientProvider } from "react-query";

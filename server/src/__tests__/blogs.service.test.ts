@@ -85,6 +85,15 @@ describe("Blog Services", () => {
         expect(error.code).toBe(errorCodes.BLOG_NOT_FOUND);
       }
     });
+
+    test("should throw AppError if all field is empty", async () => {
+      try {
+        await blogService.update(mockBlogId, { user_id: "123" });
+      } catch (error: any) {
+        expect(error.status).toBe(400);
+        expect(error.code).toBe(errorCodes.FORBIDDEN);
+      }
+    });
   });
   describe("Delete", () => {
     test("should delete blog", async () => {

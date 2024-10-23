@@ -1,5 +1,5 @@
-import SigninForm from "../components/signin-form";
-import Logo from "../components/ui/logo";
+import SigninForm from "./form";
+import Logo from "../../components/logo";
 
 function Signin() {
   // const [errorMessage, dispatch] = useFormState(authenticate, undefined);

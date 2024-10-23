@@ -1,9 +1,9 @@
 import BlogCard from "./blog-card";
-import { BlogProps } from "../types/blog.type";
-import { advertiseId } from "../global";
-import ErrorPopup from "./ui/error-popup";
-import { HomeContentSkeleton } from "./ui/skeleton";
-import useFetchBlogs from "../hooks/useFetchBlogs";
+import { BlogProps } from "../../types/blog.type";
+import { advertiseId } from "../../global";
+import ErrorPopup from "../../components/error-popup";
+import { HomeContentSkeleton } from "../../components/skeleton";
+import useFetchBlogs from "../../hooks/useFetchBlogs";
 
 function HomeContent({ queryValue }: { queryValue: string }) {
   const { data, isLoading, error } = useFetchBlogs();

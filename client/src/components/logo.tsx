@@ -1,6 +1,6 @@
-import { RootState } from "../../redux/store";
-import blackLogo from "../../assets/black-logo.svg";
-import whiteLogo from "../../assets/white-logo.svg";
+import { RootState } from "../redux/store";
+import blackLogo from "../assets/black-logo.svg";
+import whiteLogo from "../assets/white-logo.svg";
 import { useSelector } from "react-redux";
 
 interface LogoProps {

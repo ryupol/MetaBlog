@@ -1,5 +1,5 @@
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
-import useClickOutside from "../../hooks/useClickOutside";
+import useClickOutside from "../hooks/useClickOutside";
 import { useRef, useState } from "react";
 
 type DropDownProps = {

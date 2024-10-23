@@ -11,19 +11,19 @@ import {
   TrashIcon as TrashIconSolid,
 } from "@heroicons/react/24/solid";
 
-import formatDate from "../utils/formatDate";
+import formatDate from "../../utils/formatDate";
 
-import Footer from "./footer";
-import Tag from "./ui/tag";
-import Profile from "./ui/profile";
-import { BlogContentSkeleton } from "./ui/skeleton";
-import Button from "./ui/button";
-import ErrorPopup from "./ui/error-popup";
-import ErrorMessage from "./ui/error-message";
+import Footer from "../../components/footer";
+import Tag from "../../components/tag";
+import Profile from "../../components/profile";
+import { BlogContentSkeleton } from "../../components/skeleton";
+import Button from "../../components/button";
+import ErrorPopup from "../../components/error-popup";
+import ErrorMessage from "../../components/error-message";
 
-import useClickOutside from "../hooks/useClickOutside";
-import useFetchMe from "../hooks/useFetchMe";
-import useFetchBlogById from "../hooks/useFetchBlogById";
+import useClickOutside from "../../hooks/useClickOutside";
+import useFetchMe from "../../hooks/useFetchMe";
+import useFetchBlogById from "../../hooks/useFetchBlogById";
 
 function BlogContent() {
   const { id } = useParams();

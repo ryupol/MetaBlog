@@ -1,7 +1,7 @@
-import { BlogInfo } from "../types/blog.type";
-import formatDate from "../utils/formatDate";
-import Profile from "./ui/profile";
-import Tag from "./ui/tag";
+import { BlogInfo } from "../../types/blog.type";
+import formatDate from "../../utils/formatDate";
+import Profile from "../../components/profile";
+import Tag from "../../components/tag";
 
 function BlogCard({
   tag,

@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import AppError from "../../errors/AppError";
 import errorCodes from "../../errors/errorCodes";
 import pool from "../../configs/database";
-import type { UserLogin, UserModel, updateUser, UserRegister } from "../types/users.type";
+import type { UserLogin, UserModel, UpdateUser, UserRegister } from "../types/users.type";
 import { PRIVATE_KEY_BASE64, PUBLIC_KEY_BASE64, JWT_OPTIONS } from "../../configs";
 import logger from "../../configs/log";
 import cloudinary from "../../configs/cloudinary";
@@ -94,7 +94,7 @@ class UserService {
     return user;
   }
 
-  async update(authToken: string, newUser: updateUser) {
+  async update(authToken: string, newUser: UpdateUser) {
     const oldUser = await this.findByToken(authToken);
     const oldPublicId = oldUser.profile_url.split("/").pop().split(".")[0];
 
@@ -113,7 +113,7 @@ class UserService {
 
     if (
       newUser.profile_url &&
-      oldPublicId !== newUser.profile_url?.split("/")?.pop()?.split(".")?.[0]
+      oldPublicId !== newUser.profile_url.split("/").pop()?.split(".")?.[0]
     ) {
       const [uploadResult, destroyResult] = await Promise.all([
         await cloudinary.uploader.upload(newUser.profile_url),

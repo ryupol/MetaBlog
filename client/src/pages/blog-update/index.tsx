@@ -1,14 +1,14 @@
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 
-import useFetchBlogById from "../hooks/useFetchBlogById";
-import useFetchMe from "../hooks/useFetchMe";
+import useFetchBlogById from "../../hooks/useFetchBlogById";
+import useFetchMe from "../../hooks/useFetchMe";
 
-import BlogEditor from "../components/blog-editor";
-import Forbidden from "./forbidden";
-import Navbar from "../components/navbar";
+import BlogEditor from "../../components/blog-editor";
+import Forbidden from "../../components/forbidden";
+import Navbar from "../../components/navbar";
 
-const EditBlog = () => {
+const BlogEdit = () => {
   const navigate = useNavigate();
 
   const { id } = useParams();
@@ -51,4 +51,4 @@ const EditBlog = () => {
   );
 };
 
-export default EditBlog;
+export default BlogEdit;

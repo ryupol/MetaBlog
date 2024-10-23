@@ -1,29 +1,16 @@
-import { advertiseId } from "../global";
-import { HeaderSkeleton } from "./ui/skeleton";
-import Profile from "./ui/profile";
-import Tag from "./ui/tag";
-import formatDate from "../utils/formatDate";
-import useFetchBlogById from "../hooks/useFetchBlogById";
+import { advertiseId } from "../../global";
+import { HeaderSkeleton } from "../../components/skeleton";
+import Profile from "../../components/profile";
+import Tag from "../../components/tag";
+import formatDate from "../../utils/formatDate";
+import useFetchBlogById from "../../hooks/useFetchBlogById";
 
 function Header({ queryValue }: { queryValue: string }) {
-  if (queryValue) return;
-
   const { data, isLoading, isError } = useFetchBlogById(advertiseId);
 
   if (isLoading) return <HeaderSkeleton />;
 
-  if (isError)
-    return (
-      <header className="max-container relative">
-        <div className="max-h-[600px] w-full overflow-hidden rounded-xl">
-          <img
-            src="https://res.cloudinary.com/dxwmjflhh/image/upload/v1728533736/blog1.png"
-            alt="Header Blog image"
-            className="w-full object-cover"
-          />
-        </div>
-      </header>
-    );
+  if (queryValue || isError) return <></>;
 
   return (
     <header className="max-container relative">

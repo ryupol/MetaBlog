@@ -1,11 +1,11 @@
-import Footer from "../components/footer";
-import Header from "../components/header";
-import Navbar from "../components/navbar";
-import HomeContent from "../components/home-content";
-import getQueryValue from "../utils/getQueryValue";
+import HomeContent from "./home-content";
+import Header from "./header";
+import Footer from "../../components/footer";
+import Navbar from "../../components/navbar";
+import useQueryValue from "../../hooks/useQueryValue";
 
 function Home() {
-  const queryValue = getQueryValue("search_query") || "";
+  const queryValue = useQueryValue("search_query") || "";
 
   return (
     <main className="theme-base">

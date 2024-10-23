@@ -4,26 +4,38 @@ import jwt from "jsonwebtoken";
 import pool from "../configs/database";
 import AppError from "../errors/AppError";
 import errorCodes from "../errors/errorCodes";
+import cloudinary from "../configs/cloudinary";
 
 jest.mock("jsonwebtoken");
 jest.mock("../configs/database");
+jest.mock("../configs/cloudinary");
 
 describe("User Services", () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
-
+  const mockToken = "mockedToken";
   const mockUser: UserModel = {
     user_id: "1",
-    name: "Testing",
-    profile_url: "https://dummyimage.com/300x200/000/fff",
+    name: "Tester",
+    profile_url: "path_to_image_file/new_profile_image.png",
     email: "test@gmail.com",
     password: "$2b$10$KyOAynH.jlZ.NNarRYgNsu9OKGHj.9bzlX42DXDbvANE974zUBSIq",
+  };
+  const mockTokenPayload = {
+    id: "1",
+    email: "test@gmail.com",
+    name: "Tester",
+    profile_url:
+      "https://res.cloudinary.com/dxwmjflhh/image/upload/v1720148608/mvhw8pidbeu3qq6wshmi.png",
+    iat: 1719414506,
+    exp: 1719418106,
+    iss: "ryupol",
   };
 
   describe("Register", () => {
     const validBody = {
-      name: "Testing",
+      name: "Tester",
       email: "test@gmail.com",
       password: "111",
       passwordConfirm: "111",
@@ -100,17 +112,6 @@ describe("User Services", () => {
   });
 
   describe("Token", () => {
-    const mockToken = "mockedToken";
-    const mockTokenPayload = {
-      id: "1",
-      email: "test1@gmail.com",
-      name: "Test 1",
-      profile_url: "https://dummyimage.com/300x200/000/fff",
-      iat: 1719414506,
-      exp: 1719418106,
-      iss: "ryupol",
-    };
-
     test("should sign token successfully", async () => {
       (jwt.sign as jest.Mock).mockReturnValue(mockToken);
       const token = await userService.signToken(mockUser);
@@ -160,6 +161,58 @@ describe("User Services", () => {
       (pool.query as jest.Mock).mockReturnValue({ rows: [] });
       try {
         await userService.findById(mockId);
+      } catch (error: any) {
+        expect(error.status).toBe(404);
+        expect(error.code).toBe(errorCodes.USER_NOT_FOUND);
+      }
+    });
+  });
+
+  describe("Update", () => {
+    const mockProfileResult = {
+      secure_url: mockTokenPayload.profile_url,
+    };
+    const mockNewUser: UserModel = {
+      user_id: "1",
+      name: "new Tester",
+      profile_url: "path_to_image_file/new_profile_image.png",
+      email: "test_new@gmail.com",
+      password: "$2b$10$KyOAynH.jlZ.NNarRYgNsu9OKGHj.9bzlX42DXDbvANE974zUBSIq",
+    };
+
+    const mockNewUserData = {
+      name: mockNewUser.name,
+      email: mockNewUser.email,
+      profile_url: mockNewUser.profile_url,
+    };
+
+    test("should update user successfully", async () => {
+      (jwt.verify as jest.Mock).mockReturnValue(mockTokenPayload);
+      (cloudinary.uploader.upload as jest.Mock).mockResolvedValue(mockProfileResult);
+      (cloudinary.uploader.destroy as jest.Mock).mockResolvedValue(null);
+      (pool.query as jest.Mock).mockReturnValue({ rows: [mockNewUser] });
+
+      const user = await userService.update(mockToken, mockNewUserData);
+      expect(user).toEqual(mockNewUser);
+    });
+
+    test("should throw AppError if all field is empty", async () => {
+      (jwt.verify as jest.Mock).mockReturnValue(mockTokenPayload);
+
+      try {
+        await userService.update(mockToken, {});
+      } catch (error: any) {
+        expect(error.status).toBe(400);
+        expect(error.code).toBe(errorCodes.FORBIDDEN);
+      }
+    });
+    test("should throw AppError if user not found", async () => {
+      (jwt.verify as jest.Mock).mockReturnValue(mockTokenPayload);
+      (cloudinary.uploader.upload as jest.Mock).mockResolvedValue(mockProfileResult);
+      (cloudinary.uploader.destroy as jest.Mock).mockResolvedValue(null);
+      (pool.query as jest.Mock).mockReturnValue({ rows: [] });
+      try {
+        await userService.update(mockToken, mockNewUserData);
       } catch (error: any) {
         expect(error.status).toBe(404);
         expect(error.code).toBe(errorCodes.USER_NOT_FOUND);

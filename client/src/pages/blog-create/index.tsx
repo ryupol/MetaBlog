@@ -1,9 +1,9 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
-import Navbar from "../components/navbar";
-import BlogEditor from "../components/blog-editor"; // Assuming BlogEditor is in components
-import Forbidden from "./forbidden";
-import useFetchMe from "../hooks/useFetchMe";
+import Navbar from "../../components/navbar";
+import BlogEditor from "../../components/blog-editor"; // Assuming BlogEditor is in components
+import Forbidden from "../../components/forbidden";
+import useFetchMe from "../../hooks/useFetchMe";
 
 function BlogCreate() {
   const navigate = useNavigate();

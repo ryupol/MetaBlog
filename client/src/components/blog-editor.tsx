@@ -7,9 +7,9 @@ import {
   FolderPlusIcon,
   PlusIcon,
 } from "@heroicons/react/24/outline";
-import DropDown from "./ui/dropdown";
-import Button from "./ui/button";
-import ErrorMessage from "./ui/error-message";
+import DropDown from "./dropdown";
+import Button from "./button";
+import ErrorMessage from "./error-message";
 import handleFileChange from "../hooks/handleFileChange";
 
 interface BlogEditorProps {

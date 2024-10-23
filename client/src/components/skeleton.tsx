@@ -12,6 +12,7 @@ const Shimmer = ({ className }: ShimmerProp) => (
 export function CardSkeleton() {
   return (
     <div
+      data-testid="text"
       className={`flex w-full max-w-[392px] flex-col gap-4 rounded-[12px] border border-theme-border p-4 shadow-sm`}
     >
       <Shimmer className="h-[240px] w-full rounded-[6px]" />
@@ -30,7 +31,10 @@ export function CardSkeleton() {
 
 export function HomeContentSkeleton() {
   return (
-    <div className="max-container mb-20 grid grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div
+      data-testid="home-content-skeleton"
+      className="max-container mb-20 grid grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 lg:grid-cols-3"
+    >
       {Array.from({ length: 6 }).map((_, index) => (
         <CardSkeleton key={index} />
       ))}
@@ -40,7 +44,7 @@ export function HomeContentSkeleton() {
 
 export function HeaderSkeleton() {
   return (
-    <div className="max-container relative">
+    <div data-testid="header-skeleton" className="max-container relative">
       <div className="h-[600px] w-full overflow-hidden rounded-xl">
         <Shimmer className="h-full w-full object-cover" />
         <div className="theme-base absolute bottom-[-64px] left-[64px] flex w-[598px] flex-col gap-4 rounded-xl border border-theme-border p-10 shadow-base">
@@ -59,12 +63,20 @@ export function HeaderSkeleton() {
 }
 
 export function UserMenuSkeleton() {
-  return <Shimmer className="relative h-11 w-11 rounded-full" />;
+  return (
+    <Shimmer
+      data-testid="user-menu-skeleton"
+      className="relative h-11 w-11 rounded-full"
+    />
+  );
 }
 
 export function EditCardSkeleton() {
   return (
-    <div className="w-[40%] max-w-[600px] rounded-xl border border-theme-skeleton bg-theme-fbg p-10 text-theme-maintext">
+    <div
+      data-testid="text"
+      className="w-[40%] max-w-[600px] rounded-xl border border-theme-skeleton bg-theme-fbg p-10 text-theme-maintext"
+    >
       <div className="flex items-center justify-between">
         <Shimmer className="h-8 w-24 rounded-md px-2" />
         <Shimmer className="h-16 w-16 flex-shrink-0 cursor-pointer rounded-full" />
@@ -83,7 +95,10 @@ export function EditCardSkeleton() {
 
 export function BlogContentSkeleton() {
   return (
-    <div className="max-container-blog flex flex-col gap-4 py-12">
+    <div
+      data-testid="blog-content-skeleton"
+      className="max-container-blog flex flex-col gap-4 py-12"
+    >
       <Shimmer className="h-6 w-24 rounded-md px-2" />
       <Shimmer className="h-8 w-full rounded-md" />
       <div className="flex items-center gap-4">

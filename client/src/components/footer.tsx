@@ -1,8 +1,7 @@
 import { Fragment } from "react";
-import { Link } from "react-router-dom";
 import { EnvelopeIcon } from "@heroicons/react/24/outline";
-import Logo from "./ui/logo";
-import Button from "./ui/button";
+import Logo from "./logo";
+import Button from "./button";
 import { advertiseId } from "../global";
 function Footer() {
   const quickLink = ["Home", "Blog", "Single Post", "Contact"];

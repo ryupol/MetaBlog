@@ -12,3 +12,11 @@ export type BlogCreated = Blog & { user_id: string };
 export type BlogModel = BlogCreated & { blog_id: string };
 
 export type AllBlogInfo = BlogModel & { name: string; profile_url: string };
+
+export type UpdateBlog = {
+  user_id: string;
+  title?: string;
+  image_url?: string;
+  tag?: string;
+  content?: string;
+};

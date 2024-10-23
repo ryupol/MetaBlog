@@ -1,5 +1,5 @@
-import Button from "../components/ui/button";
-import Logo from "../components/ui/logo";
+import Button from "./button";
+import Logo from "./logo";
 
 function Forbidden() {
   return (

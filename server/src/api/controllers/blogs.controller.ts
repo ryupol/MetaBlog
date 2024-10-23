@@ -1,4 +1,5 @@
 import { NextFunction, Request, Response } from "express";
+import isImage from "is-image";
 import blogService from "../services/blogs.service";
 import AppError from "../../errors/AppError";
 import errorCodes from "../../errors/errorCodes";
@@ -39,11 +40,15 @@ export const updateBlog = async (req: Request, res: Response, next: NextFunction
   try {
     const blogId = req.params.id;
     const { title, tag, content } = req.body;
-    logger.debug(`Start updating blog: ${title}`);
-    const image_url = req.file?.path || "";
+
+    if (!req.file || !req.file.mimetype.startsWith("image/")) {
+      throw new AppError(400, errorCodes.BAD_REQUEST, "Can't upload file that is not image.");
+    }
+    const image_url = req.file.path;
 
     const token: string = JWT_OPTIONS.jwtCookieName;
     const authToken: string = req.cookies[token];
+    logger.debug(`Start updating blog: ${title}`);
     const user = await userService.findByToken(authToken);
 
     const { id: user_id } = user;

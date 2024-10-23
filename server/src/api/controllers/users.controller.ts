@@ -27,7 +27,6 @@ export const register = async (req: Request, res: Response, next: NextFunction) 
 export const login = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const userData = req.body;
-    console.log(userData);
     logger.debug(`Starting login with email: ${userData.email}`);
     const user = await userService.login(userData);
     const token = await userService.signToken(user);
@@ -51,7 +50,6 @@ export const getUserByToken = async (req: Request, res: Response, next: NextFunc
     logger.debug(`get User with Token: ${authToken.substring(0, 8)}...`);
     const user = await userService.findByToken(authToken);
     logger.debug(`[Token] Get user: "${user.email}" successful.`);
-    console.log(user);
     return res.status(200).json(user);
   } catch (error) {
     next(error);
@@ -72,7 +70,11 @@ export const getUserById = async (req: Request, res: Response, next: NextFunctio
 export const updateUser = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const { name, email } = req.body;
-    const profile_url = req.file?.path || "";
+
+    if (!req.file || !req.file.mimetype.startsWith("image/")) {
+      throw new AppError(400, errorCodes.BAD_REQUEST, "Can't upload file that is not image.");
+    }
+    const profile_url = req.file.path;
 
     const token: string = JWT_OPTIONS.jwtCookieName;
     const authToken: string = req.cookies[token];

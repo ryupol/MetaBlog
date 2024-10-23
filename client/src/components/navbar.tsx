@@ -16,10 +16,10 @@ import useClickOutside from "../hooks/useClickOutside";
 import useFetchMe from "../hooks/useFetchMe";
 import useHandleSearch from "../hooks/handleSearch";
 
-import Logo from "./ui/logo";
-import { UserMenuSkeleton } from "./ui/skeleton";
-import Profile from "./ui/profile";
-import Button from "./ui/button";
+import Logo from "./logo";
+import { UserMenuSkeleton } from "./skeleton";
+import Profile from "./profile";
+import Button from "./button";
 import { advertiseId } from "../global";
 
 function Navbar() {

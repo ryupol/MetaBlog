@@ -2,7 +2,7 @@ import cloudinary from "../../configs/cloudinary";
 import pool from "../../configs/database";
 import AppError from "../../errors/AppError";
 import errorCodes from "../../errors/errorCodes";
-import { BlogCreated } from "../types/blogs.type";
+import { BlogCreated, UpdateBlog } from "../types/blogs.type";
 
 class BlogService {
   async getAll() {
@@ -31,7 +31,7 @@ class BlogService {
     return newBlog;
   }
 
-  async update(blogId: string, newBlog: BlogCreated) {
+  async update(blogId: string, newBlog: UpdateBlog) {
     const oldBlog = await this.getById(blogId);
     const oldPublicId = oldBlog.image_url.split("/").pop().split(".")[0];
     if (oldBlog.user_id !== newBlog.user_id) {
@@ -57,7 +57,7 @@ class BlogService {
     if (
       newBlog.image_url &&
       oldPublicId !== "happy" && // Add default blog Image later on (write date: 10/2/2024)
-      oldPublicId !== newBlog.image_url?.split("/")?.pop()?.split(".")?.[0]
+      oldPublicId !== newBlog.image_url.split("/").pop()?.split(".")?.[0]
     ) {
       const [uploadResult, destroyResult] = await Promise.all([
         cloudinary.uploader.upload(newBlog.image_url),
@@ -66,16 +66,16 @@ class BlogService {
           : Promise.resolve("No destroy operation"),
       ]);
       const imageUrl = uploadResult.secure_url;
-      newBlog["image_url"] = imageUrl || "";
+      newBlog["image_url"] = imageUrl;
       colsToUpdate.push("image_url = $" + (colsToUpdate.length + 1));
       values.push(imageUrl);
     }
 
-    colsToUpdate.push("updated_at = NOW() AT TIME ZONE 'UTC' + INTERVAL '7 hours'");
-
     if (colsToUpdate.length === 0) {
       throw new AppError(400, errorCodes.FORBIDDEN, "No valid fields to update");
     }
+
+    colsToUpdate.push("updated_at = NOW() AT TIME ZONE 'UTC' + INTERVAL '7 hours'");
 
     const setClause = colsToUpdate.join(", ");
     const query = `

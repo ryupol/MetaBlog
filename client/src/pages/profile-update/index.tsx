@@ -3,13 +3,13 @@ import { CameraIcon } from "@heroicons/react/24/outline";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios, { AxiosError } from "axios";
 
-import handleFileChange from "../hooks/handleFileChange";
-import useFetchMe from "../hooks/useFetchMe";
+import handleFileChange from "../../hooks/handleFileChange";
+import useFetchMe from "../../hooks/useFetchMe";
 
-import Forbidden from "./forbidden";
-import Button from "../components/ui/button";
-import ErrorMessage from "../components/ui/error-message";
-import { EditCardSkeleton } from "../components/ui/skeleton";
+import Forbidden from "../../components/forbidden";
+import Button from "../../components/button";
+import ErrorMessage from "../../components/error-message";
+import { EditCardSkeleton } from "../../components/skeleton";
 
 function EditProfile() {
   return (

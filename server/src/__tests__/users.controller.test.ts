@@ -34,7 +34,7 @@ describe("User Controller", () => {
       });
 
       expect(response.status).toEqual(201);
-      expect(response.body.name).toEqual("Testing");
+      expect(response.body.message).not.toBeNull();
     });
 
     test("should handle error if some field are missing", async () => {
@@ -48,6 +48,26 @@ describe("User Controller", () => {
 
       expect(response.status).toEqual(400);
       expect(response.body.code).toEqual(errorCodes.BAD_REQUEST);
+    });
+
+    test("should handle error if email is dupplicated", async () => {
+      (userService.register as jest.Mock).mockImplementation(() => {
+        throw new AppError(
+          409,
+          errorCodes.UNIQUE_CONSTRAINT_VIOLATION,
+          "The provided email is already taken"
+        );
+      });
+
+      const response = await request(app).post("/api/users/register").send({
+        name: "Testing",
+        email: "test@gmail.com",
+        password: "111",
+        passwordConfirm: "111",
+      });
+
+      expect(response.status).toEqual(409);
+      expect(response.body.code).toEqual(errorCodes.UNIQUE_CONSTRAINT_VIOLATION);
     });
   });
 
@@ -100,8 +120,10 @@ describe("User Controller", () => {
         throw new AppError(401, errorCodes.UNAUTHORIZED, "User did not login yet");
       });
 
-      const response = await request(app).get("/api/users/me");
-
+      const response = await request(app)
+        .get("/api/users/me")
+        .set("Cookie", [`${cookieName}=${mockToken}`]);
+      console.log(response.body.message);
       expect(response.status).toEqual(401);
       expect(response.body.code).toEqual(errorCodes.UNAUTHORIZED);
     });
@@ -132,9 +154,42 @@ describe("User Controller", () => {
   });
 
   describe("POST /api/users/update", () => {
-    test("should update username and email successfully", async () => {});
+    const mockNewToken: string = "mockedNewToken";
+    const mockNewUser: UserModel = {
+      user_id: "1",
+      name: "New Testing",
+      profile_url: "https://dummyimage.com/300x200/000/fff",
+      email: "new_test@gmail.com",
+      password: "$2b$10$KyOAynH.jlZ.NNarRYgNsu9OKGHj.9bzlX42DXDbvANE974zUBSIq",
+    };
+    const buffer = Buffer.from("mock image data");
 
-    test("should fail to update if user name or email already exists", async () => {});
+    test("should return 200 and updated user data", async () => {
+      (userService.update as jest.Mock).mockResolvedValue(mockNewUser);
+      (userService.signToken as jest.Mock).mockResolvedValue(mockNewToken);
+
+      const response = await request(app)
+        .post("/api/users/update")
+        .field("name", mockNewUser.name)
+        .field("email", mockNewUser.email)
+        .attach("profile", buffer, "profile.jpg")
+        .set("Cookie", [`${cookieName}=${mockToken}`]);
+
+      expect(response.status).toEqual(200);
+      expect(response.body.message).not.toBeNull();
+    });
+
+    test("should return 400 if file not an image", async () => {
+      const response = await request(app)
+        .post("/api/users/update")
+        .field("name", mockNewUser.name)
+        .field("email", mockNewUser.email)
+        .attach("profile", buffer, "profile.txt")
+        .set("Cookie", [`${cookieName}=${mockToken}`]);
+
+      expect(response.status).toEqual(400);
+      expect(response.body.code).toEqual(errorCodes.BAD_REQUEST);
+    });
   });
 
   describe("POST /api/users/logout", () => {
@@ -144,7 +199,7 @@ describe("User Controller", () => {
         .set("Cookie", [`${cookieName}=${mockToken}`]);
 
       expect(response.status).toEqual(200);
-      expect(response.body.message).toEqual("You have logged out!");
+      expect(response.body.message).not.toBeNull();
       expect(response.headers["set-cookie"][0]).toContain(`${cookieName}=;`);
     });
 

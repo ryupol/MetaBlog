@@ -7,7 +7,7 @@ import {
   ExclamationCircleIcon,
   LockClosedIcon,
 } from "@heroicons/react/24/outline";
-import Button from "./ui/button";
+import Button from "../../components/button";
 
 function SignupForm() {
   const navigate = useNavigate();

@@ -73,8 +73,7 @@ describe("Blog Controller", () => {
   });
 
   describe("POST /api/blogs/update/:id", () => {
-    const buffer = Buffer.alloc(150 * 150 * 10, ".");
-
+    const buffer = Buffer.from("mock image data");
     test("should update and return status 200", async () => {
       (blogService.update as jest.Mock).mockResolvedValue(mockBlog);
       (userService.findByToken as jest.Mock).mockResolvedValue(mockTokenPayload);
