@@ -69,5 +69,17 @@ export const handlers = [
     });
   }),
 
-  // All users
+  // Register
+
+  // Login
+
+  // Get user
+
+  // edit user
+
+  // Logout
+
+  // edit blog
+
+  // delete blog
 ];

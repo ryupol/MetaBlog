@@ -17,7 +17,7 @@ describe("BlogCard Component", () => {
     const blogImage = screen.getByAltText("Card Image");
     expect(blogImage).toHaveAttribute("src", mockData.image_url);
 
-    const titleElement = screen.getByText("Learning React Testing");
+    const titleElement = screen.getByText(mockData.title);
     expect(titleElement).toBeInTheDocument();
 
     const tagElement = screen.getByText(mockData.tag);

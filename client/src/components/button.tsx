@@ -30,7 +30,11 @@ function Button({
     >
       {loading ? (
         <div className="flex gap-2">
-          <ArrowPathIcon className="h-5 w-5 animate-spin" strokeWidth={2} />
+          <ArrowPathIcon
+            data-testid="spinner"
+            className="h-5 w-5 animate-spin"
+            strokeWidth={2}
+          />
           <span>{children}</span>
         </div>
       ) : (
