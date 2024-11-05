@@ -3,7 +3,7 @@ import { CameraIcon } from "@heroicons/react/24/outline";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios, { AxiosError } from "axios";
 
-import handleFileChange from "../../hooks/handleFileChange";
+import handleImageChange from "../../hooks/handleImageChange";
 import useFetchMe from "../../hooks/useFetchMe";
 
 import Forbidden from "../../components/forbidden";
@@ -28,7 +28,7 @@ function EditCard() {
   const profileInput = useRef<HTMLInputElement>(null);
 
   const [errorMessage, setErrorMessage] = useState<string>("");
-  const [profilePreview, setProfilePreview] = useState<string>("");
+  const [imgPreview, setImgPreview] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false); // for loading while submitting
 
   const previousUrl: string = location.state?.previousUrl || "/";
@@ -90,7 +90,7 @@ function EditCard() {
           className="group relative h-16 w-16 flex-shrink-0 cursor-pointer rounded-full"
         >
           <img
-            src={profilePreview || data?.profile_url}
+            src={String(imgPreview) || data?.profile_url}
             alt="Profile"
             className="h-[100%] w-[100%] rounded-full object-cover"
           />
@@ -101,15 +101,12 @@ function EditCard() {
             Change Profile
           </p>
           <input
+            accept="image/*"
             id="profile-input"
             type="file"
             className="hidden"
             ref={profileInput}
-            onChange={(e) => {
-              handleFileChange(e, {
-                onFileLoad: (result) => setProfilePreview(result as string),
-              });
-            }}
+            onChange={(e) => handleImageChange(e, setImgPreview)}
           />
         </label>
       </div>

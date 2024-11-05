@@ -1,6 +1,6 @@
-import { RootState } from "../redux/store";
-import blackLogo from "../assets/black-logo.svg";
-import whiteLogo from "../assets/white-logo.svg";
+import { RootState } from "@/redux/store";
+import blackLogo from "@/assets/black-logo.svg";
+import whiteLogo from "@/assets/white-logo.svg";
 import { useSelector } from "react-redux";
 
 interface LogoProps {
@@ -12,7 +12,11 @@ function Logo({ footer = false, signForm = false }: LogoProps) {
   theme = signForm ? "dark" : theme;
   return (
     <div className="flex items-center gap-2 font-jakarta">
-      <img src={theme === "light" ? blackLogo : whiteLogo} alt="Blogna Logo" />
+      {theme === "light" ? (
+        <img src={blackLogo} alt="black-logo" />
+      ) : (
+        <img src={whiteLogo} alt="white-logo" />
+      )}
       <div className={`${theme === "light" ? "" : "text-white"}`}>
         <h4 className={`${footer ? "text-xl" : "text-2xl"} font-jakarta`}>
           Meta<b className="font-extrabold">Blog</b>

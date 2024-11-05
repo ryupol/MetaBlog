@@ -10,7 +10,7 @@ import {
 import DropDown from "./dropdown";
 import Button from "./button";
 import ErrorMessage from "./error-message";
-import handleFileChange from "../hooks/handleFileChange";
+import handleFileChange from "../hooks/handleImageChange";
 
 interface BlogEditorProps {
   initialTitle?: string;

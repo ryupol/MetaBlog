@@ -3,7 +3,18 @@ interface TagProps {
   header?: boolean;
 }
 
-const categoryColors: { [key: string]: { default: string; header: string } } = {
+type Category =
+  | "Lifestyle"
+  | "Technology"
+  | "Travel"
+  | "Business"
+  | "Economy"
+  | "Sports";
+
+const categoryColors: Record<
+  Category | "default",
+  { default: string; header: string }
+> = {
   Lifestyle: {
     default: "bg-[#026AA2] bg-opacity-5 text-[#026AA2]",
     header: "bg-[#026AA2] text-white",
@@ -36,7 +47,7 @@ const categoryColors: { [key: string]: { default: string; header: string } } = {
 };
 
 function Tag({ cat, header }: TagProps) {
-  const selectedCat = categoryColors[cat || "default"];
+  const selectedCat = categoryColors[cat as Category] || categoryColors.default;
   const color = header ? selectedCat.header : selectedCat.default;
   return (
     <div

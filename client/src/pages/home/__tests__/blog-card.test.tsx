@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import { describe, it, expect } from "vitest";
 import BlogCard from "../blog-card";
 
 const mockData = {
@@ -11,7 +12,7 @@ const mockData = {
 };
 
 describe("BlogCard Component", () => {
-  test("renders the blog card correctly", () => {
+  it("renders the blog card correctly", () => {
     render(<BlogCard {...mockData} />);
 
     const blogImage = screen.getByAltText("Card Image");

@@ -1,9 +1,10 @@
 import { render, screen } from "@testing-library/react";
+import { describe, it, expect, vi, Mock } from "vitest";
 import Header from "../header";
 import useFetchBlogById from "@/hooks/useFetchBlogById";
 import { advertiseId } from "@/global";
 
-jest.mock("@/hooks/useFetchBlogById");
+vi.mock("@/hooks/useFetchBlogById");
 
 describe("Header Component", () => {
   const mockData = {
@@ -16,9 +17,9 @@ describe("Header Component", () => {
     updated_at: "2024-10-22T12:34:56Z",
   };
 
-  test("renders HeaderSkeleton when loading", () => {
+  it("renders HeaderSkeleton when loading", () => {
     // Mock the hook to return loading state
-    (useFetchBlogById as jest.Mock).mockReturnValue({
+    (useFetchBlogById as Mock).mockReturnValue({
       data: null,
       isLoading: true,
       isError: false,
@@ -31,9 +32,9 @@ describe("Header Component", () => {
     expect(screen.getByTestId("header-skeleton")).toBeInTheDocument();
   });
 
-  test("renders nothing when queryValue is provided or there is an error", () => {
+  it("renders nothing when queryValue is provided or there is an error", () => {
     // Mock the hook to return error state
-    (useFetchBlogById as jest.Mock).mockReturnValue({
+    (useFetchBlogById as Mock).mockReturnValue({
       data: null,
       isLoading: false,
       isError: true,
@@ -46,9 +47,9 @@ describe("Header Component", () => {
     expect(container.firstChild).toBeNull();
   });
 
-  test("renders the blog data when loaded", () => {
+  it("renders the blog data when loaded", () => {
     // Mock the hook to return success state
-    (useFetchBlogById as jest.Mock).mockReturnValue({
+    (useFetchBlogById as Mock).mockReturnValue({
       data: mockData,
       isLoading: false,
       isError: false,

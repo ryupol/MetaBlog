@@ -1,15 +1,18 @@
 import { render, screen } from "@testing-library/react";
+import { describe, it, expect, Mock, vi } from "vitest";
 import HomeContent from "../home-content";
 import useFetchBlogs from "@/hooks/useFetchBlogs";
 
 // Mock dependencies
-jest.mock("@/hooks/useFetchBlogs");
-jest.mock("@/components/error-popup", () => () => <div>ErrorPopup</div>);
-jest.mock("@/components/skeleton", () => ({
+vi.mock("@/hooks/useFetchBlogs");
+vi.mock("@/components/error-popup", () => ({
+  default: () => <div>ErrorPopup</div>,
+}));
+vi.mock("@/components/skeleton", () => ({
   HomeContentSkeleton: () => <div>Loading...</div>,
 }));
 
-const mockedUseFetchBlogs = useFetchBlogs as jest.Mock;
+const mockedUseFetchBlogs = useFetchBlogs as Mock;
 
 describe("HomeContent Unit Tests", () => {
   const mockBlogs = [
@@ -33,7 +36,7 @@ describe("HomeContent Unit Tests", () => {
     },
   ];
 
-  test("renders loading skeleton when loading", () => {
+  it("renders loading skeleton when loading", () => {
     mockedUseFetchBlogs.mockReturnValue({
       data: null,
       isLoading: true,
@@ -43,7 +46,7 @@ describe("HomeContent Unit Tests", () => {
     expect(screen.getByText("Loading...")).toBeInTheDocument();
   });
 
-  test("renders error popup when there is an error", () => {
+  it("renders error popup when there is an error", () => {
     mockedUseFetchBlogs.mockReturnValue({
       data: null,
       isLoading: false,
@@ -53,7 +56,7 @@ describe("HomeContent Unit Tests", () => {
     expect(screen.getByText("ErrorPopup")).toBeInTheDocument();
   });
 
-  test("renders blog cards when data is available", async () => {
+  it("renders blog cards when data is available", async () => {
     mockedUseFetchBlogs.mockReturnValue({
       data: mockBlogs,
       isLoading: false,
@@ -81,7 +84,7 @@ describe("HomeContent Unit Tests", () => {
     });
   });
 
-  test("filters blogs by query value", () => {
+  it("filters blogs by query value", () => {
     mockedUseFetchBlogs.mockReturnValue({
       data: mockBlogs,
       isLoading: false,
@@ -92,7 +95,7 @@ describe("HomeContent Unit Tests", () => {
     expect(screen.getByText("Another Blog")).toBeInTheDocument();
   });
 
-  test("displays 'No blog found' if filtered results are empty", () => {
+  it("displays 'No blog found' if filtered results are empty", () => {
     mockedUseFetchBlogs.mockReturnValue({
       data: mockBlogs,
       isLoading: false,

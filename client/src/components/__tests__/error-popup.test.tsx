@@ -1,8 +1,10 @@
 import { render, screen } from "@testing-library/react";
+import { describe, it, expect } from "vitest";
+
 import ErrorPopup from "../error-popup";
 
 describe("ErrorPopup Component", () => {
-  test("renders with default message", () => {
+  it("renders with default message", () => {
     render(<ErrorPopup />);
 
     expect(screen.getByTestId("exclamation-triangle")).toBeInTheDocument();
@@ -11,7 +13,7 @@ describe("ErrorPopup Component", () => {
     ).toBeInTheDocument();
   });
 
-  test("renders with custom error message", () => {
+  it("renders with custom error message", () => {
     const customMessage = "A specific error occurred.";
     render(<ErrorPopup message={customMessage} />);
 
@@ -20,7 +22,7 @@ describe("ErrorPopup Component", () => {
     ).toBeInTheDocument();
   });
 
-  test("displays icon, heading, and refresh link", () => {
+  it("displays icon, heading, and refresh link", () => {
     render(<ErrorPopup message="Test error message" />);
 
     expect(screen.getByTestId("exclamation-triangle")).toBeInTheDocument();

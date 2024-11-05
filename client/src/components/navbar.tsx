@@ -14,7 +14,7 @@ import {
 
 import useClickOutside from "../hooks/useClickOutside";
 import useFetchMe from "../hooks/useFetchMe";
-import useHandleSearch from "../hooks/handleSearch";
+import useHandleSearch from "../hooks/useHandleSearch";
 
 import Logo from "./logo";
 import { UserMenuSkeleton } from "./skeleton";

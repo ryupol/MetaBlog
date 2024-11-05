@@ -22,13 +22,13 @@ function HomeContent({ queryValue }: { queryValue: string }) {
       data?.length > 0 &&
       data
         .slice()
-        .filter((d: BlogProps) => d.blog_id !== String(adId))
+        .filter((d: BlogProps) => d.blog_id !== adId)
         .filter((d: BlogProps) =>
           d.title.toLowerCase().includes(String(queryValue.toLowerCase())),
         ).length > 0 ? (
         data
           .slice()
-          .filter((d: BlogProps) => d.blog_id !== String(adId))
+          .filter((d: BlogProps) => d.blog_id !== adId)
           .filter((d: BlogProps) =>
             d.title.toLowerCase().includes(String(queryValue.toLowerCase())),
           )
