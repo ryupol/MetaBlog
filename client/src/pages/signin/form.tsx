@@ -30,7 +30,6 @@ function SigninForm() {
       navigate(previousUrl, { replace: true });
     } catch (error) {
       if (error instanceof AxiosError && error.response) {
-        // Safely access error.response.data.message
         setErrorMessage(error.response.data.message || "An error occurred");
       } else {
         setErrorMessage("Failed to sign in. Please try again.");

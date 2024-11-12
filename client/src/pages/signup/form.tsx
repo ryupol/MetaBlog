@@ -29,7 +29,6 @@ function SignupForm() {
       navigate("/", { replace: true });
     } catch (error) {
       if (error instanceof AxiosError && error.response) {
-        // Safely access error.response.data.message
         setErrorMessage(error.response.data.message || "An error occurred");
       } else {
         setErrorMessage("Failed to sign up. Please try again.");
@@ -66,7 +65,7 @@ function SignupForm() {
           <div className="mt-4">
             <label
               className="mb-3 mt-5 block text-xs font-medium"
-              htmlFor="password"
+              htmlFor="create-password"
             >
               Create Password
             </label>
@@ -87,7 +86,7 @@ function SignupForm() {
           <div className="mt-4">
             <label
               className="mb-3 mt-5 block text-xs font-medium text-theme-maintext"
-              htmlFor="password"
+              htmlFor="confirm-password"
             >
               Confirm Password
             </label>
@@ -122,7 +121,7 @@ function SignupForm() {
         <p className="mt-4 text-sm">
           Already have an account?{" "}
           <a
-            href="/signup"
+            href="/signin"
             className="font-semibold text-lightprimary underline hover:text-darkprimary"
           >
             Login

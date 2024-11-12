@@ -8,7 +8,7 @@ function useFetchBlogs() {
     return response?.data.data;
   };
 
-  return useQuery<BlogProps[], Error>("blogs", fetchAllBlogs);
+  return useQuery<BlogProps[]>("blogs", fetchAllBlogs);
 }
 
 export default useFetchBlogs;

@@ -10,7 +10,7 @@ import {
 import DropDown from "./dropdown";
 import Button from "./button";
 import ErrorMessage from "./error-message";
-import handleFileChange from "../hooks/handleImageChange";
+import handleImageChange from "../hooks/handleImageChange";
 
 interface BlogEditorProps {
   initialTitle?: string;
@@ -89,8 +89,13 @@ function BlogEditor({
       <hr className="border border-theme-border" />
 
       {/* Blog Title */}
-      <p className="mt-6 py-2 font-semibold">Blog Title</p>
+      <label htmlFor="blog-title" className="mt-6 block py-2 font-semibold">
+        Blog Title
+      </label>
       <input
+        type="text"
+        id="blog-title"
+        name="blog-title"
         ref={titleInput}
         value={title}
         onChange={(e) => setTitle(e.target.value)}
@@ -99,19 +104,21 @@ function BlogEditor({
       />
 
       {/* Blog Tag */}
-      <p className="mt-4 py-2 font-semibold">Blog Tag</p>
-      <DropDown
-        defaultValue={selectedTag}
-        allValues={[
-          "Technology",
-          "Lifestyle",
-          "Travel",
-          "Business",
-          "Economy",
-          "Sports",
-        ]}
-        onSelect={(value: string) => setSelectedTag(value)}
-      />
+      <div data-testid="blog-tag-wrapper">
+        <p className="mt-4 py-2 font-semibold">Blog Tag</p>
+        <DropDown
+          defaultValue={selectedTag}
+          allValues={[
+            "Technology",
+            "Lifestyle",
+            "Travel",
+            "Business",
+            "Economy",
+            "Sports",
+          ]}
+          onSelect={(value: string) => setSelectedTag(value)}
+        />
+      </div>
 
       {/* Blog Image */}
       <p className="mt-4 py-2 font-semibold">Blog Image</p>
@@ -141,33 +148,32 @@ function BlogEditor({
         id="file-input"
         className="hidden"
         type="file"
+        data-testid="file-input"
         ref={fileInput}
-        onChange={(e) =>
-          handleFileChange(e, {
-            onFileLoad: (result) => setImgPreview(result as string),
-          })
-        }
+        onChange={(e) => handleImageChange(e, setImgPreview)}
       />
 
       {/* Blog Content */}
-      <p className="mt-4 py-2 font-semibold">Blog Content</p>
-      <ReactQuill
-        ref={contentInput}
-        value={content}
-        onChange={setContent}
-        theme="snow"
-        modules={{
-          toolbar: [
-            [{ header: [1, 2, 3, false] }],
-            ["bold", "italic", "underline", "blockquote"],
-            [{ list: "ordered" }, { list: "bullet" }],
-            ["link"],
-            [{ "code-block": true }],
-            ["clean"],
-          ],
-        }}
-        className="mb-8"
-      />
+      <p className="mt-4 block py-2 font-semibold">Blog Content</p>
+      <div data-testid="blog-editor-wrapper">
+        <ReactQuill
+          ref={contentInput}
+          value={content}
+          onChange={setContent}
+          theme="snow"
+          modules={{
+            toolbar: [
+              [{ header: [1, 2, 3, false] }],
+              ["bold", "italic", "underline", "blockquote"],
+              [{ list: "ordered" }, { list: "bullet" }],
+              ["link"],
+              [{ "code-block": true }],
+              ["clean"],
+            ],
+          }}
+          className="mb-8"
+        />
+      </div>
 
       {/* Submit Button */}
       <Button className="flex gap-2" loading={loading}>

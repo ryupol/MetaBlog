@@ -1,8 +1,8 @@
 import HomeContent from "./home-content";
 import Header from "./header";
-import Footer from "../../components/footer";
-import Navbar from "../../components/navbar";
-import useQueryValue from "../../hooks/useQueryValue";
+import Footer from "@/components/footer";
+import Navbar from "@/components/navbar";
+import useQueryValue from "@/hooks/useQueryValue";
 
 function Home() {
   const queryValue = useQueryValue("search_query") || "";

@@ -1,6 +1,6 @@
 type HandleFileChange = (
   event: React.ChangeEvent<HTMLInputElement>,
-  setState: React.Dispatch<React.SetStateAction<string | null>>,
+  setState: React.Dispatch<React.SetStateAction<string>>,
 ) => void;
 
 const handleImageChange: HandleFileChange = (event, setState) => {

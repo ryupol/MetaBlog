@@ -12,7 +12,7 @@ const Shimmer = ({ className }: ShimmerProp) => (
 export function CardSkeleton() {
   return (
     <div
-      data-testid="text"
+      data-testid="card-skeleton"
       className={`flex w-full max-w-[392px] flex-col gap-4 rounded-[12px] border border-theme-border p-4 shadow-sm`}
     >
       <Shimmer className="h-[240px] w-full rounded-[6px]" />
@@ -64,17 +64,16 @@ export function HeaderSkeleton() {
 
 export function UserMenuSkeleton() {
   return (
-    <Shimmer
-      data-testid="user-menu-skeleton"
-      className="relative h-11 w-11 rounded-full"
-    />
+    <div data-testid="user-menu-skeleton">
+      <Shimmer className="relative h-11 w-11 rounded-full" />
+    </div>
   );
 }
 
 export function EditCardSkeleton() {
   return (
     <div
-      data-testid="text"
+      data-testid="edit-card-skeleton"
       className="w-[40%] max-w-[600px] rounded-xl border border-theme-skeleton bg-theme-fbg p-10 text-theme-maintext"
     >
       <div className="flex items-center justify-between">

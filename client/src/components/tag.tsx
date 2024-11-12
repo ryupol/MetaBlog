@@ -52,6 +52,7 @@ function Tag({ cat, header }: TagProps) {
   return (
     <div
       className={`${color} inline-block rounded-md px-[10px] py-1 text-sm font-medium`}
+      data-testid="tag"
     >
       {cat || "Unknown"}
     </div>

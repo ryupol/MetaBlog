@@ -1,7 +1,14 @@
 import "@testing-library/jest-dom";
 
-// import { server } from "./src/mocks/server";
+import { afterAll, beforeAll, afterEach, vi } from "vitest";
+import { server } from "./src/mocks/server";
 
-// beforeAll(() => server.listen());
-// afterEach(() => server.resetHandlers());
-// afterAll(() => server.close());
+beforeAll(() => {
+  vi.clearAllMocks();
+  server.listen();
+});
+afterEach(() => {
+  server.resetHandlers();
+});
+
+afterAll(() => server.close());

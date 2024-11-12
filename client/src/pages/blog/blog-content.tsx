@@ -1,33 +1,21 @@
-import axios, { AxiosError } from "axios";
-import { useRef, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import {
-  ExclamationCircleIcon,
-  PencilIcon,
-  TrashIcon,
-} from "@heroicons/react/24/outline";
-import {
-  PencilIcon as PencilIconSolid,
-  TrashIcon as TrashIconSolid,
-} from "@heroicons/react/24/solid";
+import { useParams } from "react-router-dom";
 
-import formatDate from "../../utils/formatDate";
+import DeleteBlogButton from "./delete-blog-button";
+import EditBlogButton from "./edit-blog-button";
 
-import Footer from "../../components/footer";
-import Tag from "../../components/tag";
-import Profile from "../../components/profile";
-import { BlogContentSkeleton } from "../../components/skeleton";
-import Button from "../../components/button";
-import ErrorPopup from "../../components/error-popup";
-import ErrorMessage from "../../components/error-message";
+import formatDate from "@/utils/formatDate";
 
-import useClickOutside from "../../hooks/useClickOutside";
-import useFetchMe from "../../hooks/useFetchMe";
-import useFetchBlogById from "../../hooks/useFetchBlogById";
+import Footer from "@/components/footer";
+import Tag from "@/components/tag";
+import Profile from "@/components/profile";
+import { BlogContentSkeleton } from "@/components/skeleton";
+import ErrorPopup from "@/components/error-popup";
+
+import useFetchMe from "@/hooks/useFetchMe";
+import useFetchBlogById from "@/hooks/useFetchBlogById";
 
 function BlogContent() {
   const { id } = useParams();
-
   const { data, isLoading, error } = useFetchBlogById(id);
 
   const { data: user } = useFetchMe();
@@ -56,9 +44,9 @@ function BlogContent() {
 
           {/* Edit and Delete Icons */}
           {data?.user_id === user?.id ? (
-            <div className="flex gap-2">
-              <EditButton />
-              <DeleteButton />
+            <div className="flex gap-2" data-testid="edit-del-wrapper">
+              <EditBlogButton />
+              <DeleteBlogButton />
             </div>
           ) : null}
         </section>
@@ -83,84 +71,4 @@ function BlogContent() {
   );
 }
 
-function EditButton() {
-  const { id } = useParams();
-
-  return (
-    <a className="group hover:cursor-pointer" href={`/edit/blog/${id}`}>
-      <PencilIcon className="h-4 w-4 text-theme-subtext3 group-hover:hidden" />
-      <PencilIconSolid className="hidden h-4 w-4 text-primary group-hover:block" />
-    </a>
-  );
-}
-function DeleteButton() {
-  const { id } = useParams();
-  const navigate = useNavigate();
-
-  const [openPopup, setOpenPopup] = useState<boolean>(false);
-  const [errorMessage, setErrorMessage] = useState<string>("");
-  const [loading, setLoading] = useState<boolean>(false); // for loading while submitting
-
-  const popupRef = useRef(null);
-
-  useClickOutside(popupRef, () => setOpenPopup(false));
-
-  const handleDelete = async () => {
-    setLoading(true);
-
-    try {
-      await axios.post(`/api/blogs/delete/${id}`);
-      navigate("/", { replace: true });
-    } catch (error) {
-      if (error instanceof AxiosError && error.response) {
-        // Safely access error.response.data.message
-        setErrorMessage(error.response.data.message || "An error occurred");
-      } else {
-        setErrorMessage("Failed to delete. Please try again.");
-      }
-    } finally {
-      setLoading(false);
-    }
-  };
-  return (
-    <>
-      <button
-        onClick={() => setOpenPopup(true)}
-        className="group hover:cursor-pointer"
-      >
-        <TrashIcon className="h-4 w-4 text-theme-subtext3 group-hover:hidden" />
-        <TrashIconSolid className="hidden h-4 w-4 text-red-500 group-hover:block" />
-      </button>
-
-      {/* Popup */}
-      <div
-        className={`${
-          openPopup ? `flex` : `hidden`
-        } fixed inset-0 z-50 items-center justify-center bg-black bg-opacity-50`}
-      >
-        <div
-          className="theme-base flex w-full max-w-sm flex-col items-center gap-2 rounded-xl p-5 transition-all duration-300"
-          ref={popupRef}
-        >
-          <ExclamationCircleIcon className="h-20 w-20 text-orange-300 opacity-80" />
-          <h3 className="mb-2 text-xl font-semibold">Are you sure?</h3>
-          <p className="mb-4">You won't be able to revert this!</p>
-          <ErrorMessage message={errorMessage} />
-          <div className="mt-2 flex justify-end gap-4">
-            <Button type="submit" loading={loading} onClick={handleDelete}>
-              Yes, delete it!
-            </Button>
-            <Button
-              className="bg-red-600 hover:bg-red-600/80 active:bg-red-600/50"
-              type="button"
-              onClick={() => setOpenPopup(false)}
-            >
-              Cancel
-            </Button>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-}
 export default BlogContent;

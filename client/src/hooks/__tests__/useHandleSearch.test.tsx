@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, Mock } from "vitest";
+import { describe, it, expect, vi, Mock, beforeEach } from "vitest";
 import { useNavigate } from "react-router-dom";
 import useHandleSearch from "../useHandleSearch";
 
@@ -15,7 +15,6 @@ vi.mock("react-router-dom", () => ({
 describe("useHandleSearch", () => {
   beforeEach(() => {
     (useNavigate as Mock).mockImplementation(() => navigate);
-    vi.clearAllMocks();
   });
 
   const navigate = vi.fn();

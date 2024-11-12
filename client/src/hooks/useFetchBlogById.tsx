@@ -8,7 +8,9 @@ function useFetchBlogById(id?: string | number) {
     return response?.data;
   };
 
-  return useQuery<BlogProps, Error>("blogData", fetchBlogById);
+  return useQuery<BlogProps, Error>("blogData", fetchBlogById, {
+    retry: false,
+  });
 }
 
 export default useFetchBlogById;

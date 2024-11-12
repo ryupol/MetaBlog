@@ -93,10 +93,11 @@ function UserMenu() {
     );
 
   return (
-    <section className="relative" ref={menuRef}>
+    <section data-testid="user-menu" className="relative" ref={menuRef}>
       <div
         className="cursor-pointer rounded-full border border-primary"
         onClick={() => setOpenMenu(!openMenu)}
+        data-testid="user-profile"
       >
         <Profile src={data?.profile_url} className="h-10 w-10" />
       </div>
@@ -147,6 +148,7 @@ function UserMenu() {
           </li>
           {/* Logout Menu */}
           <li
+            data-testid="logout-button"
             onClick={() => {
               signOut();
               window.location.reload();

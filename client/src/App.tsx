@@ -1,4 +1,4 @@
-import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/home";
 import Blog from "./pages/blog";
 import BlogCreate from "./pages/blog-create";
@@ -10,18 +10,16 @@ import EditProfile from "./pages/profile-update";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/blog/:id" element={<Blog />} />
-        <Route path="/blog/create" element={<BlogCreate />} />
-        <Route path="/blog/update/:id" element={<EditBlog />} />
-        <Route path="/signin" element={<Signin />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/profile/update" element={<EditProfile />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/blog/:id" element={<Blog />} />
+      <Route path="/blog/create" element={<BlogCreate />} />
+      <Route path="/blog/update/:id" element={<EditBlog />} />
+      <Route path="/signin" element={<Signin />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/profile/update" element={<EditProfile />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }
 

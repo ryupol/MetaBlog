@@ -2,8 +2,6 @@ import SigninForm from "./form";
 import Logo from "../../components/logo";
 
 function Signin() {
-  // const [errorMessage, dispatch] = useFormState(authenticate, undefined);
-
   return (
     <main className="theme-base flex min-h-screen items-center justify-center">
       <div className="relative mx-auto flex w-full max-w-[400px] flex-col space-y-2.5 rounded-xl bg-theme-fbg p-3 md:-mt-32">
