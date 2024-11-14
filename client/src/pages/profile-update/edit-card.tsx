@@ -106,20 +106,20 @@ function EditCard() {
           />
         </label>
       </div>
-      <label htmlFor="name-input" className="mt-4 font-semibold">
+      <label htmlFor="name-input" className="font-semibold">
         Name
       </label>
       <input
         id="name-input"
         name="name-input"
         data-testid="name-input"
-        className="form-input px-4 py-2"
+        className="form-input mb-4 px-4 py-2"
         type="text"
         maxLength={24}
         placeholder={data?.name}
         ref={nameInput}
       />
-      <label htmlFor="email-input" className="mt-4 font-semibold">
+      <label htmlFor="email-input" className="font-semibold">
         Email
       </label>
       <input
@@ -127,7 +127,7 @@ function EditCard() {
         name="email-input"
         data-testid="email-input"
         type="email"
-        className="form-input px-4 py-2"
+        className="form-input mb-4 px-4 py-2"
         placeholder={data?.email}
         ref={emailInput}
         maxLength={16}

@@ -14,6 +14,6 @@ describe("EditBlogButton", () => {
 
     // Check if the link is rendered correctly with the id in the href
     const editButton = screen.getByTestId("edit-button");
-    expect(editButton).toHaveAttribute("href", `/edit/blog/${mockBlogId}`);
+    expect(editButton).toHaveAttribute("href", `/blog/update/${mockBlogId}`);
   });
 });

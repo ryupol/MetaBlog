@@ -8,7 +8,7 @@ function EditBlogButton() {
   return (
     <a
       className="group hover:cursor-pointer"
-      href={`/edit/blog/${id}`}
+      href={`/blog/update/${id}`}
       data-testid="edit-button"
     >
       <PencilIcon className="h-4 w-4 text-theme-subtext3 group-hover:hidden" />

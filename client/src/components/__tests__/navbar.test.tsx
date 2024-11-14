@@ -143,7 +143,7 @@ describe("Navbar Component", () => {
     fireEvent.click(editProfileButton);
 
     // Verify that the correct state is passed to navigate
-    expect(mockedUseNavigate).toHaveBeenCalledWith("/edit/profile", {
+    expect(mockedUseNavigate).toHaveBeenCalledWith("/profile/update", {
       state: { previousUrl: "/current-path" },
     });
   });

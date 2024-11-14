@@ -36,6 +36,8 @@ function Navbar() {
           <li key={x}>
             {x === "Home" ? (
               <a href="/">{x}</a>
+            ) : x === "Blog" ? (
+              <a href={`/#${x.toLowerCase()}`}>{x}</a>
             ) : x === "Single Post" ? (
               <a href={`/blog/${advertiseId}`}>{x}</a>
             ) : (
@@ -113,7 +115,7 @@ function UserMenu() {
             <button
               className="text-primary underline hover:text-lightprimary active:text-darkprimary"
               onClick={() =>
-                navigate("/edit/profile", {
+                navigate("/profile/update", {
                   state: {
                     previousUrl: location.pathname,
                   },
