@@ -56,7 +56,9 @@ class UserService {
       algorithm,
       issuer,
     } as jwt.SignOptions);
-    logger.debug(`Using ${algorithm} algorithm to sign token: ${token.substring(0, 8)}...`);
+    logger.debug(
+      `Using ${algorithm} algorithm to sign token: ${token.substring(0, 8)}...`
+    );
     return token;
   }
 
@@ -65,11 +67,19 @@ class UserService {
     const result = await pool.query("SELECT * FROM users WHERE email = $1", [email]);
     const user = result.rows[0];
     if (!user) {
-      throw new AppError(404, errorCodes.USER_NOT_FOUND, `Email: ${email} doesn't exists`);
+      throw new AppError(
+        404,
+        errorCodes.USER_NOT_FOUND,
+        `Email: ${email} doesn't exists`
+      );
     }
     const match: boolean = await bcrypt.compare(password, user.password);
     if (!match) {
-      throw new AppError(403, errorCodes.FORBIDDEN, "Login fail (wrong email or password)");
+      throw new AppError(
+        403,
+        errorCodes.FORBIDDEN,
+        "Login fail (wrong email or password)"
+      );
     }
     return user;
   }

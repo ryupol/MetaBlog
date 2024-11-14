@@ -8,9 +8,11 @@ function Home() {
   const queryValue = useQueryValue("search_query") || "";
 
   return (
-    <main className="theme-base">
+    <main className="theme-base" id="home">
       <Navbar />
-      <Header queryValue={queryValue || ""} />
+      <div>
+        <Header queryValue={queryValue || ""} />
+      </div>
       <h1 className={`max-container mb-8 ${queryValue ? "mt-12" : "mt-36"}`}>
         {queryValue ? "Search Result" : "Latest Post"}
       </h1>

@@ -27,7 +27,7 @@ function Navbar() {
   const handleSearch = useHandleSearch();
 
   return (
-    <section className="max-container flex flex-1 items-center justify-between gap-16">
+    <section className="max-container flex flex-1 items-center justify-between gap-16 max-sm:gap-4">
       <Link to="/">
         <Logo />
       </Link>

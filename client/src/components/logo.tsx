@@ -17,7 +17,9 @@ function Logo({ footer = false, signForm = false }: LogoProps) {
       ) : (
         <img src={whiteLogo} alt="white-logo" />
       )}
-      <div className={`${theme === "light" ? "" : "text-white"}`}>
+      <div
+        className={`${theme === "light" ? "" : "text-white"} ${!footer ? "max-sm:hidden" : ""}`}
+      >
         <h4 className={`${footer ? "text-xl" : "text-2xl"} font-jakarta`}>
           Meta<b className="font-extrabold">Blog</b>
         </h4>
