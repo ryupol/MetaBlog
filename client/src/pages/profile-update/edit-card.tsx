@@ -48,6 +48,7 @@ function EditCard() {
     try {
       const config = { headers: { "Content-Type": "multipart/form-data" } };
       const objectformData = Object.fromEntries(formData);
+      console.log(objectformData);
       await axios.post("/api/users/update", objectformData, config);
       navigate(previousUrl, { replace: true });
     } catch (error) {
@@ -77,6 +78,7 @@ function EditCard() {
       <div className="flex items-center justify-between">
         <h1>Edit Profile</h1>
         <label
+          data-cy="profile-input"
           htmlFor="profile-input"
           className="group relative h-16 w-16 flex-shrink-0 cursor-pointer rounded-full"
         >
@@ -95,7 +97,6 @@ function EditCard() {
             Change Profile
           </label>
           <input
-            accept="image/*"
             id="profile-input"
             name="profile-input"
             data-testid="profile-input"
@@ -130,7 +131,7 @@ function EditCard() {
         className="form-input mb-4 px-4 py-2"
         placeholder={data?.email}
         ref={emailInput}
-        maxLength={16}
+        maxLength={320}
       />
       <div className="mt-8 flex gap-4">
         <Button secondary={true} onClick={handleCancel} type="button">

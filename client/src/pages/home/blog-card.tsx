@@ -12,7 +12,10 @@ function BlogCard({
   image_url,
 }: BlogInfo) {
   return (
-    <article className="card-hover flex max-w-[392px] flex-col gap-4 rounded-xl border border-theme-border p-4 shadow-base">
+    <article
+      data-cy="blog-card"
+      className="card-hover flex max-w-[392px] flex-col gap-4 rounded-xl border border-theme-border p-4 shadow-base"
+    >
       <div className="overflow-hidden rounded-md">
         <img
           src={image_url}
@@ -30,7 +33,7 @@ function BlogCard({
           <span className="mr-2 max-w-[130px] overflow-clip text-nowrap font-medium">
             {name}
           </span>
-          <time className="overflow-hidden text-nowrap">
+          <time className="overflow-hidden text-wrap">
             {formatDate(updated_at)}
           </time>
         </div>

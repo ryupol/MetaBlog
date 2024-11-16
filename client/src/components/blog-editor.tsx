@@ -123,7 +123,7 @@ function BlogEditor({
       {/* Blog Image */}
       <p className="mt-4 py-2 font-semibold">Blog Image</p>
       {imgPreview ? (
-        <label htmlFor="file-input" className="group">
+        <label data-cy="image-input" htmlFor="file-input" className="group">
           <div className="relative h-[400px] w-full cursor-pointer overflow-hidden rounded-xl">
             <img
               src={imgPreview}

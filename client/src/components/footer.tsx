@@ -15,7 +15,10 @@ function Footer() {
   ];
   const policys = ["Terms of Use", "Privary Policy", "Cookie Policy"];
   return (
-    <footer className="flex flex-col items-center justify-center gap-16 border-t border-theme-border bg-theme-fbg pt-12 font-jakarta">
+    <footer
+      data-cy="footer"
+      className="flex flex-col items-center justify-center gap-16 border-t border-theme-border bg-theme-fbg pt-12 font-jakarta"
+    >
       <div className="max-container text-sans flex w-[100%] justify-between gap-12 max-md:flex-col max-md:items-center max-md:text-center">
         {/* About Section */}
         <section id="contract" className="max-w-[300px] max-md:max-w-[100%]">

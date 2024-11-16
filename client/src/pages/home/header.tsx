@@ -13,7 +13,7 @@ function Header({ queryValue }: { queryValue: string }) {
   if (queryValue || isError) return <></>;
 
   return (
-    <header className="max-container relative">
+    <header data-cy="header" className="max-container relative">
       <div className="max-h-[600px] w-full overflow-hidden rounded-xl">
         <img
           src={data?.image_url}
@@ -22,7 +22,10 @@ function Header({ queryValue }: { queryValue: string }) {
         />
         {/* Blog Header Card */}
         <a href={`blog/${data?.blog_id}`}>
-          <div className="theme-base card-hover absolute left-[10%] top-[60%] flex max-w-[598px] flex-col gap-4 rounded-xl border border-theme-border p-10 shadow-base max-md:w-[420px] max-sm:left-[6%] max-sm:w-[320px] max-sm:p-4">
+          <div
+            data-cy="header-card"
+            className="theme-base card-hover absolute left-[10%] top-[60%] flex max-w-[598px] flex-col gap-4 rounded-xl border border-theme-border p-10 shadow-base max-md:w-[420px] max-sm:left-[6%] max-sm:w-[320px] max-sm:p-4"
+          >
             <div>
               <Tag cat={data?.tag} header={true} />
             </div>

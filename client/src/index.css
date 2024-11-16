@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scrollbar-color: rgb(var(--theme-skeleton)) rgba(0, 0, 0, 0);
   scroll-behavior: smooth;
 
   /* outline: 1px solid red; */
@@ -33,7 +34,7 @@ body {
 .ql-toolbar {
   position: sticky;
   top: 0;
-  z-index: 200;
+  z-index: 9;
   background: rgb(var(--theme-bg));
   border: 1px solid rgb(var(--theme-skeleton)) !important;
   border-top-left-radius: 5px;

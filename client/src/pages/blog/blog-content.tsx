@@ -34,7 +34,10 @@ function BlogContent() {
         <section className="flex items-center justify-between">
           <div className="text-slate-gray my-4 flex flex-1 items-center gap-3 text-xs">
             <Profile src={data?.profile_url} className="h-9 w-9" />
-            <span className="line-clamp-2 max-w-[120px] font-semibold">
+            <span
+              data-cy="creator-name"
+              className="line-clamp-2 max-w-[120px] font-semibold"
+            >
               {data?.name}
             </span>
             <time className="whitespace-wrap pl-4">

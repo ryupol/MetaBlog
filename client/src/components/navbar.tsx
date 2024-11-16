@@ -51,6 +51,7 @@ function Navbar() {
           <input
             className="nav-input transition-all duration-100"
             placeholder="Search"
+            name="search-input"
             onKeyDown={(e) => handleSearch(e, searchRef)}
             ref={searchRef}
           />
@@ -100,6 +101,7 @@ function UserMenu() {
         className="cursor-pointer rounded-full border border-primary"
         onClick={() => setOpenMenu(!openMenu)}
         data-testid="user-profile"
+        data-cy="user-profile"
       >
         <Profile src={data?.profile_url} className="h-10 w-10" />
       </div>
@@ -111,7 +113,7 @@ function UserMenu() {
           <Profile src={data?.profile_url} className="h-10 w-10" />
           <div>
             <p>{data?.name}</p>
-            <p>{data?.email}</p>
+            <p className="max-w-36 overflow-x-auto">{data?.email}</p>
             <button
               className="text-primary underline hover:text-lightprimary active:text-darkprimary"
               onClick={() =>

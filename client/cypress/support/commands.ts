@@ -35,3 +35,14 @@
 //     }
 //   }
 // }
+
+Cypress.Commands.add("login", (email, password) => {
+  cy.session(`${email}-${password}`, () => {
+    cy.visit("/signin");
+    cy.get("input[name=email]").type(email);
+    cy.get("input[name=password]").type(`${password}{enter}`);
+    cy.wait(1000);
+    cy.getCookie("token").should("exist");
+    cy.contains(/login/i).should("not.exist");
+  });
+});

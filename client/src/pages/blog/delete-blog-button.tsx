@@ -55,16 +55,27 @@ function DeleteBlogButton() {
             ref={popupRef}
           >
             <ExclamationCircleIcon className="h-20 w-20 text-orange-300 opacity-80" />
-            <h3 className="mb-2 text-xl font-semibold">Are you sure?</h3>
+            <h3
+              className="mb-2 text-xl font-semibold"
+              data-cy="confirm-delete-text"
+            >
+              Are you sure?
+            </h3>
             <p className="mb-4">You won't be able to revert this!</p>
             <ErrorMessage message={errorMessage} />
             <div className="mt-2 flex justify-end gap-4">
-              <Button type="submit" loading={loading} onClick={handleDelete}>
+              <Button
+                data-cy="confirm-delete-button"
+                type="submit"
+                loading={loading}
+                onClick={handleDelete}
+              >
                 Yes, delete it!
               </Button>
               <Button
                 className="bg-red-600 hover:bg-red-600/80 active:bg-red-600/50"
                 type="button"
+                data-cy="cancel-delete-button"
                 onClick={() => setOpenPopup(false)}
               >
                 Cancel
