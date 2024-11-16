@@ -69,12 +69,12 @@ export const getUserById = async (req: Request, res: Response, next: NextFunctio
 
 export const updateUser = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const { name, email } = req.body;
+    const { name, email, profile } = req.body;
 
-    if (!req.file || !req.file.mimetype.startsWith("image/")) {
+    if (!profile && (!req.file || !req.file.mimetype.startsWith("image/"))) {
       throw new AppError(400, errorCodes.BAD_REQUEST, "Can't upload file that is not image.");
     }
-    const profile_url = req.file.path;
+    const profile_url = req.file ? req.file.path : profile;
 
     const token: string = JWT_OPTIONS.jwtCookieName;
     const authToken: string = req.cookies[token];
