@@ -1,0 +1,10 @@
+.env
+.gitignore
+docker-compose.yaml
+docker-compose.yml
+
+node_modules/
+dists/
+
+coverage/
+tests/

@@ -23,6 +23,6 @@ RUN yarn install --production
 
 COPY --from=development /app/dist ./dist
 
-EXPOSE 8080
+EXPOSE 8000
 
 CMD ["yarn", "start"]
