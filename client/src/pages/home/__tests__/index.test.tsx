@@ -1,10 +1,8 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { describe, it, expect, vi, Mock } from "vitest";
 import Home from "..";
 import TestWrapperProvider from "@/providers/test-wrapper-provider";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
-import { http, HttpResponse } from "msw";
-import { server } from "@/mocks/server";
 import useQueryValue from "@/hooks/useQueryValue";
 
 vi.mock("@/hooks/useQueryValue");
