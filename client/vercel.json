@@ -3,6 +3,10 @@
     {
       "source": "/api/:match*",
       "destination": "https://blog-api-gv1z.onrender.com/api/:match*"
+    },
+    {
+      "source": "/:path*",
+      "destination": "/index.html"
     }
   ]
 }
