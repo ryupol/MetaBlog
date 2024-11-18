@@ -1,3 +1,9 @@
 {
+  "rewrites": [
+    {
+      "source": "/api/:match*",
+      "destination": "https://blog-api-gv1z.onrender.com/api/:match*"
+    }
+  ],
   "routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }]
 }
