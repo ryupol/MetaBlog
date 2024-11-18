@@ -2,6 +2,8 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const APP_NAME = "MetaBlog";
+const PORT = process.env.PORT || 8000;
+
 const BASE_PATH = process.cwd();
 const LOG_SAVE_LEVEL = process.env.LOG_SAVE_LEVEL || "debug";
 
@@ -32,6 +34,7 @@ const CLOUDINARY_URL = process.env.CLOUDINARY_URL;
 
 export {
   APP_NAME,
+  PORT,
   BASE_PATH,
   LOG_SAVE_LEVEL,
   CLIENT_URL,
