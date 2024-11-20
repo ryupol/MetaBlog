@@ -14,7 +14,7 @@ function Header({ queryValue }: { queryValue: string }) {
 
   return (
     <header data-cy="header" className="max-container relative">
-      <div className="max-h-[600px] w-full overflow-hidden rounded-xl">
+      <div className="aspect-video max-h-[600px] w-full overflow-hidden rounded-xl">
         <img
           src={data?.image_url}
           alt="Header Blog image"

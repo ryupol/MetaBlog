@@ -45,9 +45,9 @@ export function HomeContentSkeleton() {
 export function HeaderSkeleton() {
   return (
     <div data-testid="header-skeleton" className="max-container relative">
-      <div className="h-[600px] w-full overflow-hidden rounded-xl">
+      <div className="aspect-video max-h-[600px] w-full overflow-hidden rounded-xl">
         <Shimmer className="h-full w-full object-cover" />
-        <div className="theme-base absolute bottom-[-64px] left-[64px] flex w-[598px] flex-col gap-4 rounded-xl border border-theme-border p-10 shadow-base">
+        <div className="theme-base card-hover absolute left-[10%] top-[60%] flex max-w-[598px] flex-col gap-4 rounded-xl border border-theme-border p-10 shadow-base max-md:w-[420px] max-sm:left-[6%] max-sm:w-[320px] max-sm:p-4">
           <Shimmer className="mt-2 h-6 w-24 rounded-md" />
           <Shimmer className="h-6 w-full rounded-md" />
           <Shimmer className="h-6 w-[70%] rounded-md" />
